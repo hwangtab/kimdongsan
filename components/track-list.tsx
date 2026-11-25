@@ -96,9 +96,7 @@ export function TrackList({
             {isOpen && (
               <div className="grid gap-8 pb-10 md:grid-cols-[1.08fr_0.92fr] md:gap-12">
                 <div>
-                  <p className="text-[15px] leading-[1.9] text-muted">
-                    {note}
-                  </p>
+                  <p className="longform text-[15px] text-muted">{note}</p>
 
                   {excerpt.length > 0 && (
                     <div className="mt-7 border-l-2 border-ink pl-5">
@@ -130,7 +128,7 @@ export function TrackList({
                           <p className="mono mb-3 text-muted">
                             {locale === "ko" ? "한국어 원문" : "Korean original"}
                           </p>
-                          <div className="whitespace-pre-line text-[14px] leading-[1.85] text-muted">
+                          <div className="serif whitespace-pre-line text-[15px] leading-[1.9] text-muted">
                             {track.lyrics.join("\n")}
                           </div>
                         </div>
@@ -152,7 +150,7 @@ export function TrackList({
                   </div>
                   <div>
                     <p className="mono mb-2 text-muted">{labels.trackCredits}</p>
-                    <ul className="space-y-1.5 text-[13px] leading-[1.7] text-muted">
+                    <ul className="longform space-y-1.5 text-[13px] leading-[1.7] text-muted">
                       {credits.map((credit) => (
                         <li key={credit}>{credit}</li>
                       ))}

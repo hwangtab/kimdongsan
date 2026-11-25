@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BIOS, MEMBERS, SITE, TIMELINE } from "@/data/site";
 import { DISCOGRAPHY } from "@/data/discography";
+import { MiwonTitle } from "@/components/miwon-title";
+import { BrandTitle } from "@/components/brand-title";
 import { QUOTES } from "@/data/press";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
@@ -41,8 +43,14 @@ export default async function AboutPage({
   return (
     <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
       <p className="eyebrow">{dict.about.eyebrow}</p>
-      <h1 className="display mt-5 whitespace-pre-line text-[clamp(2.8rem,7.4vw,5.8rem)]">
-        {dict.about.title}
+      <h1 className="mt-5">
+        <BrandTitle
+          slug="about-brand"
+          locale={locale}
+          alt={dict.about.title.replace("\n", " ")}
+          priority
+          className="h-auto w-full max-w-[420px]"
+        />
       </h1>
       <p className="serif mt-7 max-w-2xl text-[clamp(1.1rem,2.2vw,1.4rem)] leading-[1.7]">
         {dict.about.lead}
@@ -52,17 +60,23 @@ export default async function AboutPage({
         <div>
           <p className="eyebrow">{dict.about.bioTitle}</p>
         </div>
-        <div className="space-y-5 text-[16px] leading-[1.95] text-muted">
+        <div className="space-y-5">
           {bio.split("\n\n").map((paragraph) => (
-            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            <p key={paragraph.slice(0, 24)} className="longform text-muted">
+              {paragraph}
+            </p>
           ))}
         </div>
       </div>
 
       <section className="mt-20 md:mt-28">
         <p className="eyebrow">{dict.about.methodEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.4rem)]">
-          {dict.about.methodTitle}
+        <h2 className="mt-4">
+          <MiwonTitle
+            slug="method"
+            locale={locale}
+            alt={dict.about.methodTitle}
+          />
         </h2>
         <div className="mt-10 grid gap-8 border-t border-ink pt-8 md:grid-cols-3">
           {dict.about.method.map((step) => (
@@ -71,7 +85,7 @@ export default async function AboutPage({
               <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em]">
                 {step.title}
               </h3>
-              <p className="mt-3 text-[14px] leading-[1.85] text-muted">
+              <p className="longform mt-3 text-[14px] text-muted">
                 {step.body}
               </p>
             </div>
@@ -95,7 +109,7 @@ export default async function AboutPage({
               className="grid gap-3 border-b border-line py-6 md:grid-cols-[120px_1fr] md:gap-10"
             >
               <p className="latin text-2xl font-light">{item.year}</p>
-              <p className="max-w-3xl text-[15px] leading-[1.85] text-muted">
+              <p className="longform max-w-3xl text-muted">
                 {t(locale, { ko: item.ko, en: item.en })}
               </p>
             </div>
@@ -105,8 +119,12 @@ export default async function AboutPage({
 
       <section className="mt-20 md:mt-28">
         <p className="eyebrow">{dict.about.discographyEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.4rem)]">
-          {dict.about.discographyTitle}
+        <h2 className="mt-4">
+          <MiwonTitle
+            slug="discography"
+            locale={locale}
+            alt={dict.about.discographyTitle}
+          />
         </h2>
         <div className="mt-10 border-t border-ink">
           {DISCOGRAPHY.map((release) => (
@@ -137,7 +155,7 @@ export default async function AboutPage({
                     {t(locale, { ko: release.role, en: release.roleEn })}
                   </p>
                   {release.note && (
-                    <p className="mt-1 text-[12px] text-muted">
+                    <p className="longform mt-1 text-[13px] text-muted">
                       {t(locale, { ko: release.note, en: release.noteEn })}
                     </p>
                   )}
@@ -151,8 +169,12 @@ export default async function AboutPage({
 
       <section className="mt-20 md:mt-28">
         <p className="eyebrow">{dict.about.membersEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.4rem)]">
-          {dict.about.membersTitle}
+        <h2 className="mt-4">
+          <MiwonTitle
+            slug="members"
+            locale={locale}
+            alt={dict.about.membersTitle}
+          />
         </h2>
         <p className="mt-4 max-w-2xl text-[15px] leading-[1.85] text-muted">
           {dict.about.membersNote}
@@ -192,7 +214,7 @@ export default async function AboutPage({
           <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.4rem)]">
             {dict.about.longPlayerTitle}
           </h2>
-          <p className="mt-5 max-w-xl text-[15px] leading-[1.9] text-muted">
+          <p className="longform mt-5 max-w-xl text-muted">
             {dict.about.longPlayerBody}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">

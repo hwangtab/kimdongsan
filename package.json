@@ -11,7 +11,10 @@
     "assets:images": "./scripts/prepare-images.sh",
     "assets:waveforms": "python3 scripts/waveforms.py",
     "assets:og": "uv run --with pillow python scripts/prepare-og.py",
-    "assets:font": "uv run --with fonttools --with brotli python scripts/subset-font.py"
+    "assets:font": "uv run --with fonttools --with brotli python scripts/subset-font.py",
+    "assets:miwon": "uv run --with pillow python scripts/miwon-titles.py",
+    "assets:pixel-font": "uv run --with fonttools --with brotli python scripts/subset-pixel-font.py",
+    "assets:brand": "uv run --with fonttools --with brotli --with pillow python scripts/brand-titles.py"
   },
   "dependencies": {
     "next": "16.4.6",

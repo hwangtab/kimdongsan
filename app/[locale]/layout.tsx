@@ -15,6 +15,13 @@ const pretendard = localFont({
   weight: "100 900",
 });
 
+const pixel = localFont({
+  src: "../../public/fonts/DungGeunMo-subset.woff2",
+  variable: "--font-pixel",
+  display: "swap",
+  weight: "400",
+});
+
 const batang = Gowun_Batang({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -84,7 +91,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${pretendard.variable} ${batang.variable} ${jost.variable}`}
+      className={`${pretendard.variable} ${pixel.variable} ${batang.variable} ${jost.variable}`}
     >
       <body className="flex min-h-screen flex-col">
         <SiteHeader

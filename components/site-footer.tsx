@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/messages/ko";
 import type { Locale } from "@/lib/i18n";
 import { SITE } from "@/data/site";
+import { BrandTitle } from "@/components/brand-title";
 
 export function SiteFooter({
   locale,
@@ -14,9 +15,12 @@ export function SiteFooter({
     <footer className="site-footer no-print border-t border-line bg-paper-deep">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-8">
         <div>
-          <p className="text-xl font-bold tracking-[-0.03em]">
-            김동산과 블루이웃
-          </p>
+          <BrandTitle
+            slug="brand-small"
+            locale={locale}
+            alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
+            className="h-6 w-auto"
+          />
           <p className="latin mt-1 text-sm text-muted">
             Kim Dongsan &amp; Blueeewoot
           </p>

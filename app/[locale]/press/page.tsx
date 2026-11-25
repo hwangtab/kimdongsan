@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyBio } from "@/components/copy-bio";
+import { MiwonTitle } from "@/components/miwon-title";
 import { BIOS } from "@/data/site";
 import { COVERAGE, PRESS_KIT, QUOTES } from "@/data/press";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
@@ -40,15 +41,15 @@ export default async function PressPage({
   return (
     <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
       <p className="eyebrow">{dict.press.eyebrow}</p>
-      <h1 className="display mt-5 text-[clamp(2.8rem,7vw,5.4rem)]">
-        {dict.press.title}
+      <h1 className="mt-5">
+        <MiwonTitle slug="press-title" locale={locale} alt={dict.press.title} priority />
       </h1>
 
       <section className="mt-12 grid gap-10 border-t border-ink pt-10 md:grid-cols-[0.72fr_1.28fr] md:gap-16">
         <div>
           <p className="eyebrow">{dict.press.bioEyebrow}</p>
-          <h2 className="display mt-4 text-[clamp(1.7rem,3.6vw,2.5rem)]">
-            {dict.press.bioTitle}
+          <h2 className="mt-4">
+            <MiwonTitle slug="press-bio" locale={locale} alt={dict.press.bioTitle} />
           </h2>
           <p className="mt-4 text-[14px] leading-[1.8] text-muted">
             {dict.press.bioNote}
@@ -136,7 +137,7 @@ export default async function PressPage({
         <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
           {dict.press.kitTitle}
         </h2>
-        <p className="mt-4 max-w-2xl text-[14px] leading-[1.8] text-muted">
+        <p className="longform mt-4 max-w-2xl text-[15px] text-muted">
           {dict.press.kitNote}
         </p>
         <div className="mt-8 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">

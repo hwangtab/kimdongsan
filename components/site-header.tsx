@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
+import { BrandTitle } from "@/components/brand-title";
 
 type Nav = {
   album: string;
@@ -52,16 +53,14 @@ export function SiteHeader({
     <>
       <header className="no-print sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
-        <Link href={`/${locale}`} className="group flex min-w-0 items-baseline gap-3">
-          <span
-            className={`truncate ${
-              locale === "en"
-                ? "latin text-[13px] font-medium tracking-[0.04em] md:text-sm"
-                : "text-[15px] font-bold tracking-[-0.03em] md:text-base"
-            }`}
-          >
-            {wordmark}
-          </span>
+        <Link href={`/${locale}`} className="group flex min-w-0 items-center gap-2">
+          <BrandTitle
+            slug="brand-small"
+            locale={locale}
+            alt={wordmark}
+            priority
+            className="h-[17px] w-auto max-w-[54vw] object-contain object-left md:h-[19px]"
+          />
           <span className="mono hidden text-muted sm:inline">EPK</span>
         </Link>
 

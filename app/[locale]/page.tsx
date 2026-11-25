@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AudioPlayer } from "@/components/audio-player";
+import { BrandTitle } from "@/components/brand-title";
+import { MiwonTitle } from "@/components/miwon-title";
 import { ALBUM, TRACKS, waveformFor } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { QUOTES } from "@/data/press";
@@ -98,14 +100,14 @@ export default async function HomePage({
       <section className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-12 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-16 md:px-8 md:pb-24 md:pt-20">
         <div>
           <p className="eyebrow">{dict.home.eyebrow}</p>
-          <h1
-            className={`display mt-5 whitespace-pre-line ${
-              locale === "en"
-                ? "text-[clamp(2.6rem,5.6vw,4.9rem)]"
-                : "text-[clamp(3rem,8.4vw,6.6rem)]"
-            }`}
-          >
-            {locale === "ko" ? "김동산과\n블루이웃" : "Kim Dongsan\n& Blueeewoot"}
+          <h1 className="mt-5">
+            <BrandTitle
+              slug="brand-hero"
+              locale={locale}
+              alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
+              priority
+              className="h-auto w-full max-w-[420px]"
+            />
           </h1>
           {locale === "ko" && (
             <p className="latin mt-5 text-[clamp(1rem,2vw,1.35rem)] font-light tracking-[0.18em] text-muted">
@@ -115,7 +117,7 @@ export default async function HomePage({
           <p className="mt-8 max-w-xl whitespace-pre-line text-[clamp(1.05rem,2.2vw,1.35rem)] font-medium leading-[1.55]">
             {dict.home.lead}
           </p>
-          <p className="mt-5 max-w-xl text-[15px] leading-[1.85] text-muted">
+          <p className="longform mt-5 max-w-xl text-muted">
             {dict.home.body}
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -198,12 +200,16 @@ export default async function HomePage({
           <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
             <div>
               <p className="eyebrow">{dict.home.featuredEyebrow}</p>
-              <h2 className="display mt-4 text-[clamp(2rem,4.4vw,3.4rem)]">
-                {dict.home.featuredTitle}
+              <h2 className="mt-4">
+                <MiwonTitle
+                  slug="featured"
+                  locale={locale}
+                  alt={dict.home.featuredTitle}
+                />
               </h2>
             </div>
             <div>
-              <p className="max-w-xl text-[15px] leading-[1.9] text-muted">
+              <p className="longform max-w-xl text-muted">
                 {dict.home.featuredBody}
               </p>
               <div className="mt-8 divide-y divide-line border-y border-line">
@@ -262,15 +268,17 @@ export default async function HomePage({
       <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 md:grid-cols-2 md:gap-16 md:px-8 md:py-24">
         <div>
           <p className="eyebrow">{dict.home.aboutEyebrow}</p>
-          <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.6rem)]">
-            {dict.home.aboutTitle}
+          <h2 className="mt-4">
+            <MiwonTitle
+              slug="method"
+              locale={locale}
+              alt={dict.home.aboutTitle}
+            />
           </h2>
         </div>
         <div>
-          <p className="text-[16px] leading-[1.9] text-muted">
-            {dict.home.aboutBody}
-          </p>
-          <p className="mt-4 text-[16px] leading-[1.9] text-muted">
+          <p className="longform text-muted">{dict.home.aboutBody}</p>
+          <p className="longform mt-4 text-muted">
             {t(locale, { ko: BIOS.ko.short, en: BIOS.en.short })}
           </p>
           <Link
@@ -287,9 +295,9 @@ export default async function HomePage({
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-end md:px-8 md:py-24">
           <div>
             <p className="mono text-paper/60">{dict.home.showEyebrow}</p>
-            <p className="display mt-5 text-[clamp(3.2rem,9vw,7rem)]">
-              12.04
-            </p>
+            <div className="mt-5">
+              <MiwonTitle slug="date" locale={locale} alt="12.04" />
+            </div>
             <p className="mt-4 text-xl font-semibold tracking-[-0.02em]">
               {t(locale, { ko: show.title, en: show.titleEn })}
             </p>

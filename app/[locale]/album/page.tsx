@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TrackList } from "@/components/track-list";
+import { BrandTitle } from "@/components/brand-title";
 import {
   ALBUM,
   CREDITS,
@@ -71,17 +72,21 @@ export default async function AlbumPage({
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="display text-[clamp(2.4rem,6vw,4.6rem)]">
-            {dict.album.title}
+          <h1>
+            <BrandTitle
+              slug="album-brand"
+              locale={locale}
+              alt={dict.album.title}
+              priority
+              className="h-auto w-full max-w-[520px]"
+            />
           </h1>
           {locale === "ko" && (
             <p className="latin mt-3 text-lg font-light tracking-[0.16em] text-muted">
               Kim Dongsan &amp; Blueeewoot
             </p>
           )}
-          <p className="mt-7 max-w-xl text-[15px] leading-[1.9] text-muted">
-            {dict.album.lead}
-          </p>
+          <p className="longform mt-7 max-w-xl text-muted">{dict.album.lead}</p>
 
           <dl className="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-7 text-sm">
             <div>
@@ -156,14 +161,14 @@ export default async function AlbumPage({
         <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
           {dict.album.creditsTitle}
         </h2>
-        <p className="mt-3 max-w-2xl text-[14px] leading-[1.8] text-muted">
+        <p className="longform mt-3 max-w-2xl text-[15px] text-muted">
           {dict.album.creditsNote}
         </p>
         <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
           {CREDITS.map((group) => (
             <div key={group.group}>
               <p className="mono mb-3 text-muted">{group.group}</p>
-              <ul className="space-y-1.5 text-[14px] leading-[1.75]">
+              <ul className="longform space-y-1.5 text-[14px] leading-[1.75]">
                 {(locale === "ko" ? group.ko : group.en).map((line) => (
                   <li key={line}>{line}</li>
                 ))}

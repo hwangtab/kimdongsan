@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/print-button";
+import { BrandTitle } from "@/components/brand-title";
 import { ALBUM, CREDITS, TRACKS } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
@@ -32,14 +33,19 @@ export default async function OneSheetPage({
         <header className="flex items-start justify-between gap-8 border-b border-ink pb-5">
           <div>
             <p className="mono text-muted">EPK · 2026 · AFTERNOON</p>
-            <h1 className="mt-2 text-3xl font-bold tracking-[-0.03em] md:text-4xl">
-              김동산과 블루이웃
+            <h1 className="mt-2">
+              <BrandTitle
+                slug="album-brand"
+                locale={locale}
+                alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
+                className="h-12 w-auto"
+              />
             </h1>
             <p className="latin mt-1 text-base font-light tracking-[0.12em] text-muted">
               Kim Dongsan &amp; Blueeewoot
             </p>
           </div>
-          <div className="w-24 shrink-0 md:w-28">
+          <div className="one-sheet-cover w-24 shrink-0 md:w-28">
             <Image
               src={ALBUM.coverSmall}
               alt=""

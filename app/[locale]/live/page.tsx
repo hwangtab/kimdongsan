@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SHOWS, SHOW_DETAILS } from "@/data/shows";
+import { MiwonTitle } from "@/components/miwon-title";
 import { SITE } from "@/data/site";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
@@ -41,8 +42,8 @@ export default async function LivePage({
   return (
     <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
       <p className="eyebrow">{dict.live.eyebrow}</p>
-      <h1 className="display mt-5 text-[clamp(2.8rem,7vw,5.4rem)]">
-        {dict.live.title}
+      <h1 className="mt-5">
+        <MiwonTitle slug="live-title" locale={locale} alt={dict.live.title} priority />
       </h1>
 
       <section className="mt-10 grid gap-10 border-t border-ink pt-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
@@ -76,9 +77,9 @@ export default async function LivePage({
               })}
             </span>
           </div>
-          <p className="latin mt-6 text-[clamp(2.8rem,7vw,5rem)] font-light leading-none">
-            12.04
-          </p>
+          <div className="mt-6">
+            <MiwonTitle slug="date-ink" locale={locale} alt="12.04" />
+          </div>
           <h2 className="mt-3 text-[clamp(1.3rem,2.6vw,1.7rem)] font-semibold tracking-[-0.03em]">
             {t(locale, { ko: featured.title, en: featured.titleEn })}
           </h2>
@@ -154,7 +155,7 @@ export default async function LivePage({
         </div>
         <div>
           <h3 className="mono mb-4 text-muted">{dict.live.notes}</h3>
-          <p className="border-t border-line pt-4 text-[14px] leading-[1.85] text-muted">
+          <p className="longform border-t border-line pt-4 text-[15px] text-muted">
             {t(locale, { ko: featured.note, en: featured.noteEn })}
           </p>
         </div>
@@ -190,8 +191,8 @@ export default async function LivePage({
       <section className="mt-20 grid gap-8 border-y border-line py-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-14">
         <div>
           <p className="eyebrow">{dict.live.techEyebrow}</p>
-          <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
-            {dict.live.techTitle}
+          <h2 className="mt-4">
+            <MiwonTitle slug="tech" locale={locale} alt={dict.live.techTitle} />
           </h2>
         </div>
         <div>
