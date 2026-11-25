@@ -133,33 +133,22 @@ export default async function AboutPage({
               className="grid gap-2 border-b border-line py-5 md:grid-cols-[82px_1fr_auto] md:items-baseline md:gap-8"
             >
               <p className="latin text-xl font-light">{release.year}</p>
-              <div className="flex items-baseline gap-4">
-                {release.art && (
-                  <Image
-                    src={release.art}
-                    alt=""
-                    width={56}
-                    height={56}
-                    className="hidden h-14 w-14 border border-line object-cover sm:block"
-                  />
+              <div>
+                <p className="font-medium tracking-[-0.01em]">
+                  {t(locale, {
+                    ko: release.title,
+                    en: release.titleEn,
+                  })}
+                </p>
+                <p className="mt-0.5 text-[13px] text-muted">
+                  {t(locale, { ko: release.type, en: release.typeEn })} ·{" "}
+                  {t(locale, { ko: release.role, en: release.roleEn })}
+                </p>
+                {release.note && (
+                  <p className="longform mt-1 text-[13px] text-muted">
+                    {t(locale, { ko: release.note, en: release.noteEn })}
+                  </p>
                 )}
-                <div>
-                  <p className="font-medium tracking-[-0.01em]">
-                    {t(locale, {
-                      ko: release.title,
-                      en: release.titleEn,
-                    })}
-                  </p>
-                  <p className="mt-0.5 text-[13px] text-muted">
-                    {t(locale, { ko: release.type, en: release.typeEn })} ·{" "}
-                    {t(locale, { ko: release.role, en: release.roleEn })}
-                  </p>
-                  {release.note && (
-                    <p className="longform mt-1 text-[13px] text-muted">
-                      {t(locale, { ko: release.note, en: release.noteEn })}
-                    </p>
-                  )}
-                </div>
               </div>
               <p className="mono text-muted">{release.date}</p>
             </div>
