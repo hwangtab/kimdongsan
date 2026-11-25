@@ -161,14 +161,14 @@ export default async function AlbumPage({
         <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
           {dict.album.creditsTitle}
         </h2>
-        <p className="longform mt-3 max-w-2xl text-[15px] text-muted">
+        <p className="longform mt-3 max-w-2xl text-[16px] text-muted">
           {dict.album.creditsNote}
         </p>
         <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
           {CREDITS.map((group) => (
             <div key={group.group}>
               <p className="mono mb-3 text-muted">{group.group}</p>
-              <ul className="longform space-y-1.5 text-[14px] leading-[1.75]">
+              <ul className="longform space-y-1.5 text-[15px] leading-[1.75]">
                 {(locale === "ko" ? group.ko : group.en).map((line) => (
                   <li key={line}>{line}</li>
                 ))}

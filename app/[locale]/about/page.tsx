@@ -85,7 +85,7 @@ export default async function AboutPage({
               <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em]">
                 {step.title}
               </h3>
-              <p className="longform mt-3 text-[14px] text-muted">
+              <p className="longform mt-3 text-[15px] text-muted">
                 {step.body}
               </p>
             </div>
@@ -145,7 +145,7 @@ export default async function AboutPage({
                   {t(locale, { ko: release.role, en: release.roleEn })}
                 </p>
                 {release.note && (
-                  <p className="longform mt-1 text-[13px] text-muted">
+                  <p className="longform mt-1 text-[14px] text-muted">
                     {t(locale, { ko: release.note, en: release.noteEn })}
                   </p>
                 )}

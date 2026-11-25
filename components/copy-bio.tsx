@@ -37,7 +37,7 @@ export function CopyBio({
               {copied === index ? copiedLabel : copyLabel}
             </button>
           </div>
-          <p className="longform text-[14px]">{bio.text}</p>
+          <p className="longform text-[15px]">{bio.text}</p>
         </div>
       ))}
     </div>

@@ -155,7 +155,7 @@ export default async function LivePage({
         </div>
         <div>
           <h3 className="mono mb-4 text-muted">{dict.live.notes}</h3>
-          <p className="longform border-t border-line pt-4 text-[15px] text-muted">
+          <p className="longform border-t border-line pt-4 text-[16px] text-muted">
             {t(locale, { ko: featured.note, en: featured.noteEn })}
           </p>
         </div>

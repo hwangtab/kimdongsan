@@ -23,7 +23,7 @@
   --color-yellow: var(--yellow);
   --color-stamp: var(--stamp);
 
-  --font-sans: var(--font-pixel), var(--font-gothic), system-ui,
+  --font-sans: var(--font-pixel), var(--font-batang), system-ui,
     -apple-system, "Apple SD Gothic Neo", sans-serif;
   --font-serif: var(--font-batang), Georgia, serif;
   --font-latin: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
@@ -40,7 +40,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-pixel), var(--font-gothic), system-ui,
+  font-family: var(--font-pixel), var(--font-batang), system-ui,
     -apple-system, "Apple SD Gothic Neo", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -78,15 +78,14 @@ a {
 }
 
 .longform {
-  font-family: var(--font-gothic), system-ui, -apple-system, "Apple SD Gothic Neo",
-    sans-serif;
-  font-size: 16px;
-  line-height: 1.9;
-  letter-spacing: -0.01em;
+  font-family: var(--font-batang), Georgia, serif;
+  font-size: 17px;
+  line-height: 1.88;
+  letter-spacing: 0;
 }
 
 .eyebrow {
-  font-family: var(--font-pixel), var(--font-gothic), sans-serif;
+  font-family: var(--font-pixel), var(--font-batang), sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -95,7 +94,7 @@ a {
 }
 
 .mono {
-  font-family: var(--font-pixel), var(--font-gothic), monospace;
+  font-family: var(--font-pixel), var(--font-batang), monospace;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -161,7 +160,7 @@ a {
 
 .btn {
   display: inline-flex;
-  font-family: var(--font-pixel), var(--font-gothic), sans-serif;
+  font-family: var(--font-pixel), var(--font-batang), sans-serif;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -232,7 +231,7 @@ a {
 .one-sheet,
 .one-sheet .mono,
 .one-sheet .eyebrow {
-  font-family: var(--font-gothic), system-ui, sans-serif;
+  font-family: var(--font-one-sheet), system-ui, sans-serif;
   letter-spacing: normal;
 }
 

@@ -1,11 +1,19 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/print-button";
 import { BrandTitle } from "@/components/brand-title";
 import { ALBUM, CREDITS, TRACKS } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+
+const oneSheetFont = localFont({
+  src: "../../../../public/fonts/Pretendard-subset.woff2",
+  variable: "--font-one-sheet",
+  display: "swap",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -23,7 +31,7 @@ export default async function OneSheetPage({
   const bio = locale === "ko" ? BIOS.ko : BIOS.en;
 
   return (
-    <div className="mx-auto max-w-4xl px-5 py-10 md:px-8 md:py-14">
+    <div className={`${oneSheetFont.variable} mx-auto max-w-4xl px-5 py-10 md:px-8 md:py-14`}>
       <div className="no-print mb-6 flex items-center justify-between gap-4">
         <p className="eyebrow">{dict.press.oneSheetTitle}</p>
         <PrintButton label={dict.press.print} />

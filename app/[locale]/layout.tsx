@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Gowun_Batang, Jost } from "next/font/google";
+import { Jost } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getDictionary, isLocale, LOCALES, type Locale } from "@/lib/i18n";
 import { SITE } from "@/data/site";
-
-const pretendard = localFont({
-  src: "../../public/fonts/Pretendard-subset.woff2",
-  variable: "--font-gothic",
-  display: "swap",
-  weight: "100 900",
-});
 
 const pixel = localFont({
   src: "../../public/fonts/DungGeunMo-subset.woff2",
@@ -22,11 +15,11 @@ const pixel = localFont({
   weight: "400",
 });
 
-const batang = Gowun_Batang({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const batang = localFont({
+  src: "../../public/fonts/GowunBatang-subset.woff2",
   variable: "--font-batang",
   display: "swap",
+  weight: "400",
 });
 
 const jost = Jost({
@@ -91,7 +84,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${pretendard.variable} ${pixel.variable} ${batang.variable} ${jost.variable}`}
+      className={`${pixel.variable} ${batang.variable} ${jost.variable}`}
     >
       <body className="flex min-h-screen flex-col">
         <SiteHeader

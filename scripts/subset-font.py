@@ -20,6 +20,7 @@ if not SOURCE.exists():
 chars: set[str] = set()
 patterns = [
     "data/**/*.ts",
+    "data/*.json",
     "messages/*.ts",
     "app/**/*.tsx",
     "components/**/*.tsx",

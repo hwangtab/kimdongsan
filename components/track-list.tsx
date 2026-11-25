@@ -96,7 +96,7 @@ export function TrackList({
             {isOpen && (
               <div className="grid gap-8 pb-10 md:grid-cols-[1.08fr_0.92fr] md:gap-12">
                 <div>
-                  <p className="longform text-[15px] text-muted">{note}</p>
+                  <p className="longform text-[16px] text-muted">{note}</p>
 
                   {excerpt.length > 0 && (
                     <div className="mt-7 border-l-2 border-ink pl-5">
@@ -150,7 +150,7 @@ export function TrackList({
                   </div>
                   <div>
                     <p className="mono mb-2 text-muted">{labels.trackCredits}</p>
-                    <ul className="longform space-y-1.5 text-[13px] leading-[1.7] text-muted">
+                    <ul className="longform space-y-1.5 text-[14px] leading-[1.7] text-muted">
                       {credits.map((credit) => (
                         <li key={credit}>{credit}</li>
                       ))}

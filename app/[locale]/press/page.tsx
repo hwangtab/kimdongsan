@@ -137,7 +137,7 @@ export default async function PressPage({
         <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
           {dict.press.kitTitle}
         </h2>
-        <p className="longform mt-4 max-w-2xl text-[15px] text-muted">
+        <p className="longform mt-4 max-w-2xl text-[16px] text-muted">
           {dict.press.kitNote}
         </p>
         <div className="mt-8 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">

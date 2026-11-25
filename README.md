@@ -98,12 +98,15 @@ npm run assets:og         # 1200×630 소셜 카드 (uv + Pillow)
 | 브랜드 | **온글잎 재건사** (온글잎) | 밴드명, 출장작곡가 김동산, 헤더·푸터, 앨범 h1, 원시트 | 웹·BI/CI 허용, 수정·재배포 금지 → **PNG 이미지**로 렌더링. 원본은 `media-src/`에만 |
 | 에디토리얼 | **미원체** (대상) | 섹션 제목, 큰 날짜 | 웹 허용, **임베딩·BI/CI 금지** → **PNG 이미지**. 원본은 `media-src/`에만 |
 | 인터페이스 | **둥근모꼴+ Fixedsys** (길형진) | 내비, 라벨, 짧은 글, 버튼, 티커, 트랙리스트 | 퍼블릭 도메인 → 12KB 서브셋을 셀프호스팅 |
-| 읽기 | Pretendard · Gowun Batang | 긴 바이오, 곡 노트, 크레딧, 가사, 인용 | OFL. 가독성용 |
+| 읽기 | **Gowun Batang** | 긴 바이오, 곡 노트, 크레딧, 가사, 인용 | OFL. 74KB 서브셋 셀프호스팅 |
+| 인쇄 전용 | Pretendard | 인쇄용 원시트만 | OFL. 원시트 페이지에서만 로드 |
 
 ```bash
 npm run assets:brand       # 온글잎 브랜드 PNG 8장
 npm run assets:miwon       # 미원체 제목 PNG 22장
 npm run assets:pixel-font  # 둥근모꼴 서브셋 (약 12KB)
+npm run assets:serif-font  # 고운바탕 서브셋 (약 74KB)
+npm run assets:font        # 인쇄용 Pretendard 서브셋 (원시트 전용)
 ```
 
 브랜드·제목 이미지는 `data/brand-titles.json`, `data/miwon-titles.json`의 크기 값을 사용합니다.
