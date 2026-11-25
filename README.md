@@ -79,8 +79,10 @@ npm run assets:og         # 1200×630 소셜 카드 (uv + Pillow)
 
 ## 배포
 
-`data/site.ts`의 `SITE.url`을 실제 도메인으로 바꾼 뒤 Vercel에 연결합니다.
-`robots.txt`와 `sitemap.xml`이 이 주소를 사용합니다. 원시트는 검색에서 제외됩니다.
+- 저장소: https://github.com/hwangtab/kimdongsan (public)
+- 프로덕션: https://kimdongsan.vercel.app
+- `main`에 푸시하면 Vercel이 자동 배포하고, PR은 프리뷰 배포를 만듭니다.
+- `data/site.ts`의 `SITE.url`이 canonical·sitemap·OG에 쓰입니다. 도메인을 바꾸면 이 값을 함께 고칩니다.
 
 ## 권리
 
