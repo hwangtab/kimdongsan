@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Jost } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
@@ -8,29 +7,46 @@ import { SiteFooter } from "@/components/site-footer";
 import { getDictionary, isLocale, LOCALES, type Locale } from "@/lib/i18n";
 import { SITE } from "@/data/site";
 
-const pixel = localFont({
-  src: "../../public/fonts/DungGeunMo-subset.woff2",
-  variable: "--font-pixel",
+// DOS font family (MIT, leedheo). Subsets are committed; they only carry the
+// characters this site actually renders.
+const dos = localFont({
+  src: "../../public/fonts/DosGothic-subset.woff2",
+  variable: "--font-dos",
   display: "swap",
   weight: "400",
+  preload: true,
+  adjustFontFallback: false,
 });
 
-const batang = localFont({
-  src: "../../public/fonts/GowunBatang-subset.woff2",
-  variable: "--font-batang",
+const dosSerif = localFont({
+  src: "../../public/fonts/DosMyeongjo-subset.woff2",
+  variable: "--font-dos-serif",
   display: "swap",
   weight: "400",
+  preload: false,
+  adjustFontFallback: false,
 });
 
-const jost = Jost({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500"],
-  variable: "--font-jost",
+// DosGothic has no punctuation or box drawing at all. MiraeroNormal fills
+// those gaps character by character.
+const dosSymbols = localFont({
+  src: "../../public/fonts/DosSymbols-subset.woff2",
+  variable: "--font-dos-symbols",
   display: "swap",
+  weight: "400",
+  preload: true,
+  adjustFontFallback: false,
 });
 
 export const generateStaticParams = () =>
   LOCALES.map((locale) => ({ locale }));
+
+// Keeps mobile browser chrome and native widgets (scrollbars, form controls)
+// on the navy theme instead of defaulting to light.
+export const viewport: Viewport = {
+  themeColor: "#070a18",
+  colorScheme: "dark",
+};
 
 export async function generateMetadata({
   params,
@@ -84,9 +100,15 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${pixel.variable} ${batang.variable} ${jost.variable}`}
+      className={`${dos.variable} ${dosSerif.variable} ${dosSymbols.variable}`}
     >
       <body className="flex min-h-screen flex-col">
+        <a
+          href="#main"
+          className="no-print sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:border focus:border-ink focus:bg-ink focus:px-4 focus:py-2 focus:text-void"
+        >
+          {locale === "ko" ? "본문으로 건너뛰기" : "Skip to content"}
+        </a>
         <SiteHeader
           locale={locale}
           nav={dict.nav}
@@ -95,7 +117,9 @@ export default async function LocaleLayout({
             locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"
           }
         />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </main>
         <SiteFooter locale={locale} dict={dict} />
       </body>
     </html>

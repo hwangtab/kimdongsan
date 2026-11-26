@@ -103,6 +103,8 @@ export const en: Dictionary = {
   about: {
     eyebrow: "About",
     title: "Kim Dongsan,\nsong-commissioning songwriter",
+    latin: "KIM DONGSAN · SONGWRITER",
+    shopCredit: "Long Player · Voice of the People, 2018",
     lead: "He finds the person who needs a song, listens, and makes one on the spot.",
     bioTitle: "Meeting people",
     methodEyebrow: "The method",
@@ -155,6 +157,8 @@ export const en: Dictionary = {
     past: "Past shows",
     date: "Date",
     venue: "Venue",
+    venueAddress: "49, World Cup buk-ro 2-gil, Mapo-gu, Seoul",
+    showLine: "12.04 · Youth Culture Space ju",
     time: "Time",
     status: "Tickets",
     prices: "Tickets",

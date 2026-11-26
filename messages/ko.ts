@@ -101,6 +101,8 @@ export const ko = {
   about: {
     eyebrow: "소개",
     title: "출장작곡가\n김동산",
+    latin: "KIM DONGSAN · SONGWRITER",
+    shopCredit: "롱플레이어 · 민중의소리 2018",
     lead: "노래가 필요한 사람을 찾아가, 이야기를 듣고, 그 자리에서 곡을 만든다.",
     bioTitle: "사람을 만나는 일",
     methodEyebrow: "방식",
@@ -153,6 +155,8 @@ export const ko = {
     past: "지난 공연",
     date: "일시",
     venue: "장소",
+    venueAddress: "서울특별시 마포구 월드컵북로2길 49",
+    showLine: "12.04 · 청년문화공간 ju",
     time: "시간",
     status: "예매",
     prices: "티켓",

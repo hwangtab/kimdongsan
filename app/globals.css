@@ -1,141 +1,115 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f1e8;
-  --paper-deep: #ece5d6;
-  --ink: #171512;
-  --muted: #686156;
-  --line: #d7cfbe;
-  --green: #4f6b45;
-  --green-soft: #dfe6d8;
-  --yellow: #f2d21b;
-  --stamp: #b8402a;
+  /* Native scrollbars, form controls, and the canvas behind the page follow
+     this instead of defaulting to light. */
+  color-scheme: dark;
+
+  /* surfaces — 1990s VGA navy */
+  --void: #070a18;
+  --panel: #0e1330;
+  --panel-deep: #0a0f26;
+
+  /* text */
+  --ink: #e8e6dc;
+  --muted: #8c93b5;
+
+  /* bars */
+  --line: #2b3268;
+
+  /* accents */
+  --signal: #5be9f0;
+  --kitsch: #ff4fa3;
+  --ticket: #ffd23f;
+
+  /* one inverted screen (press bios, lyric sheets) */
+  --screen: #e8e6dc;
+  --screen-ink: #070a18;
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-paper-deep: var(--paper-deep);
+  --color-void: var(--void);
+  --color-panel: var(--panel);
+  --color-panel-deep: var(--panel-deep);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-green: var(--green);
-  --color-green-soft: var(--green-soft);
-  --color-yellow: var(--yellow);
-  --color-stamp: var(--stamp);
+  --color-signal: var(--signal);
+  --color-kitsch: var(--kitsch);
+  --color-ticket: var(--ticket);
+  --color-screen: var(--screen);
+  --color-screen-ink: var(--screen-ink);
 
-  --font-sans: var(--font-pixel), var(--font-batang), system-ui,
-    -apple-system, "Apple SD Gothic Neo", sans-serif;
-  --font-serif: var(--font-batang), Georgia, serif;
-  --font-latin: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-dos), var(--font-dos-symbols), var(--font-dos-serif),
+    ui-monospace, monospace;
+  --font-serif: var(--font-dos-serif), var(--font-dos-symbols),
+    ui-monospace, monospace;
+  --font-mono: var(--font-dos), var(--font-dos-symbols), ui-monospace,
+    monospace;
+
+  /* every size is a multiple of 16px — the DOS grid (1em = 16px = 1 char cell) */
+  --text-mid: 32px;
+  --text-mid--line-height: 40px;
+  --text-head: 48px;
+  --text-head--line-height: 56px;
+  --text-hero: 64px;
+  --text-hero--line-height: 72px;
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--void);
+  }
+
+  body {
+    background: var(--void);
+    color: var(--ink);
+    font-family: var(--font-dos), var(--font-dos-symbols),
+      var(--font-dos-serif), ui-monospace, monospace;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    background: var(--signal);
+    color: var(--void);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    /* Two-tone ring: the dark outline reads on the cream buttons, the cyan
+       halo reads on the navy page. A single colour vanishes on one or the
+       other (cyan on ticket yellow is 1.01:1). */
+    outline: 2px solid var(--void);
+    outline-offset: 1px;
+    box-shadow: 0 0 0 3px var(--signal);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-pixel), var(--font-batang), system-ui,
-    -apple-system, "Apple SD Gothic Neo", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-::selection {
-  background: var(--yellow);
-  color: var(--ink);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* --- type --- */
-
-.latin {
-  font-family: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: 0.02em;
-}
-
-.serif {
-  font-family: var(--font-batang), Georgia, serif;
-}
-
-.display {
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.longform {
-  font-family: var(--font-batang), Georgia, serif;
-  font-size: 17px;
-  line-height: 1.88;
-  letter-spacing: 0;
-}
-
-.eyebrow {
-  font-family: var(--font-pixel), var(--font-batang), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.mono {
-  font-family: var(--font-pixel), var(--font-batang), monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* --- surfaces --- */
-
-.hairline {
-  border-color: var(--line);
-}
-
-.grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-}
-
-.paper-edge {
-  position: relative;
-}
-
-.paper-edge::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -1px;
-  height: 1px;
-  background: var(--line);
-}
-
-/* --- ticker --- */
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker 38s linear infinite;
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes ticker {
@@ -147,8 +121,216 @@ a {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@layer components {
+  /* --- type --- */
+
+  .mono {
+    font-family: var(--font-dos), var(--font-dos-symbols), ui-monospace,
+      monospace;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  /* Latin text that must keep its own case (emails, handles) — .mono
+     uppercases everything. */
+  .plain {
+    font-family: var(--font-dos), var(--font-dos-symbols), ui-monospace,
+      monospace;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .longform {
+    font-family: var(--font-dos-serif), var(--font-dos-symbols), ui-monospace,
+      monospace;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--muted);
+  }
+
+  /* A drawn block rather than "▌": the glyph lives in the CSS only, so the
+     font subset never carried it and every OS substituted its own. */
+  .eyebrow::before {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 16px;
+    background: var(--signal);
+  }
+
+  /* --- window chrome --- */
+
+  .win {
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  .win-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding: 2px 8px;
+  }
+
+  .win-body {
+    position: relative;
+  }
+
+  /* --- cursor --- */
+
+  .cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.8em;
+    background: var(--signal);
+    animation: blink 1.06s steps(1, end) infinite;
+  }
+
+  /* --- ticker --- */
+
   .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 38s linear infinite;
+  }
+
+  .ticker:hover .ticker-track,
+  .ticker:focus-within .ticker-track {
+    animation-play-state: paused;
+  }
+
+  /* --- controls --- */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    padding: 12px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--ink);
+    background: transparent;
+    transition: color 80ms linear, background-color 80ms linear,
+      border-color 80ms linear;
+  }
+
+  .btn:hover {
+    border-color: var(--signal);
+    color: var(--signal);
+  }
+
+  .btn-solid {
+    background: var(--ink);
+    color: var(--void);
+  }
+
+  .btn-solid:hover {
+    background: var(--signal);
+    color: var(--void);
+    border-color: var(--signal);
+  }
+
+  .btn-ticket {
+    background: var(--ticket);
+    color: var(--void);
+    border-color: var(--ticket);
+  }
+
+  .btn-ticket:hover {
+    background: var(--signal);
+    color: var(--void);
+    border-color: var(--signal);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--signal);
+    color: var(--signal);
+  }
+
+  .link-underline {
+    position: relative;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 140ms linear;
+  }
+
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* --- waveform --- */
+
+  .wave-bar {
+    background: currentColor;
+    opacity: 0.24;
+    transition: opacity 80ms linear;
+  }
+
+  .wave-bar.is-played {
+    opacity: 1;
+    color: var(--signal);
+  }
+
+  /* --- print --- */
+
+  .one-sheet,
+  .one-sheet .mono,
+  .one-sheet .eyebrow {
+    font-family: var(--font-one-sheet), system-ui, sans-serif;
+    text-transform: none;
+  }
+
+  .one-sheet .eyebrow::before {
+    content: none;
+  }
+
+  /* The one-sheet is a light document: pin its colours so the dark theme
+     tokens never leak into print or screen preview. */
+  .one-sheet {
+    color: #111;
+    background: #fff;
+  }
+
+  .one-sheet .text-muted,
+  .one-sheet .text-signal,
+  .one-sheet .text-ink,
+  .one-sheet .text-ticket,
+  .one-sheet .text-kitsch {
+    color: #555;
+  }
+
+  .one-sheet .border-line,
+  .one-sheet .border-ink,
+  .one-sheet .border-b,
+  .one-sheet .border-y,
+  .one-sheet .border-t {
+    border-color: #c9c4b8;
+  }
+
+  .one-sheet .bg-panel,
+  .one-sheet .bg-screen {
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track,
+  .cursor {
     animation: none;
   }
   html {
@@ -156,96 +338,69 @@ a {
   }
 }
 
-/* --- controls --- */
-
-.btn {
-  display: inline-flex;
-  font-family: var(--font-pixel), var(--font-batang), sans-serif;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.35rem;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1;
-  border: 1px solid var(--ink);
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-solid {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.btn-solid:hover {
-  background: #000;
-}
-
-.btn-ticket {
-  background: var(--yellow);
-  color: var(--ink);
-  border-color: var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-}
-
-.btn-ticket:hover {
-  box-shadow: 1px 1px 0 var(--ink);
-}
-
-.btn-ghost:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.link-underline {
-  position: relative;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 220ms ease;
-}
-
-.link-underline:hover {
-  background-size: 100% 1px;
-}
-
-/* --- waveform --- */
-
-.wave-bar {
-  background: currentColor;
-  opacity: 0.22;
-  transition: opacity 120ms linear;
-}
-
-.wave-bar.is-played {
-  opacity: 1;
-}
-
-/* --- print --- */
-
-.one-sheet,
-.one-sheet .mono,
-.one-sheet .eyebrow {
-  font-family: var(--font-one-sheet), system-ui, sans-serif;
-  letter-spacing: normal;
-}
-
 @media print {
   @page {
     margin: 12mm;
   }
-  .no-print,
-  .site-footer {
-    display: none !important;
+
+  /* Flip the palette to ink-on-paper. Overriding the tokens rather than each
+     utility means every accent (ticket yellow, signal cyan, kitsch pink) keeps
+     its meaning but lands on a printable contrast. Without this, printing a
+     normal page dropped 12.04 and the facts numbers to ~1.4:1 on white. */
+  :root {
+    --void: #ffffff;
+    --panel: #ffffff;
+    --panel-deep: #ffffff;
+    --ink: #111111;
+    --muted: #4a4a4a;
+    --line: #b8b8b8;
+    --signal: #0b5d61;
+    --kitsch: #9c0a53;
+    --ticket: #6b5200;
+    --screen: #ffffff;
+    --screen-ink: #111111;
+    color-scheme: light;
   }
+
+  html,
   body {
     background: #fff;
+    color: var(--ink);
   }
+
+  .no-print,
+  .site-footer,
+  .ticker,
+  .cursor {
+    display: none !important;
+  }
+
+  /* Main pages are a two-column web layout; the tall cover image spilled a
+     blank page, so cap images and keep the grid columns intact. */
+  main img {
+    max-width: 62mm !important;
+    max-height: 62mm !important;
+    height: auto !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* wave bars and the decorative window bars would print as smudges */
+  .wave-bar {
+    opacity: 0.45;
+  }
+
+  .win {
+    border-color: var(--line);
+  }
+
+  .btn-ticket,
+  .btn-solid {
+    background: transparent !important;
+    color: var(--ink) !important;
+    border-color: var(--ink) !important;
+  }
+
   .one-sheet {
     border: 0 !important;
     padding: 0 !important;

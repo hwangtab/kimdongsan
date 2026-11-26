@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyBio } from "@/components/copy-bio";
-import { MiwonTitle } from "@/components/miwon-title";
+import { Prompt } from "@/components/win";
 import { BIOS } from "@/data/site";
 import { COVERAGE, PRESS_KIT, QUOTES } from "@/data/press";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
@@ -39,21 +39,19 @@ export default async function PressPage({
   const bio = locale === "ko" ? BIOS.ko : BIOS.en;
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
-      <p className="eyebrow">{dict.press.eyebrow}</p>
-      <h1 className="mt-5">
-        <MiwonTitle slug="press-title" locale={locale} alt={dict.press.title} priority />
-      </h1>
+    <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <Prompt path="PRESS" label="dir" />
 
-      <section className="mt-12 grid gap-10 border-t border-ink pt-10 md:grid-cols-[0.72fr_1.28fr] md:gap-16">
+      <h1 className="text-head mt-4 md:text-hero">{dict.press.title}</h1>
+      <p className="mono mt-2 text-muted">PRESS KIT · 2026.11.17</p>
+
+      <section className="mt-8 grid gap-8 border-t border-line pt-6 md:grid-cols-[0.72fr_1.28fr] md:gap-10">
         <div>
-          <p className="eyebrow">{dict.press.bioEyebrow}</p>
-          <h2 className="mt-4">
-            <MiwonTitle slug="press-bio" locale={locale} alt={dict.press.bioTitle} />
+          <p className="mono text-signal">BIO.TXT</p>
+          <h2 className="text-mid mt-2 leading-tight">
+            {dict.press.bioTitle}
           </h2>
-          <p className="mt-4 text-[14px] leading-[1.8] text-muted">
-            {dict.press.bioNote}
-          </p>
+          <p className="mono mt-3 text-muted">{dict.press.bioNote}</p>
         </div>
         <CopyBio
           bios={[
@@ -75,18 +73,19 @@ export default async function PressPage({
         />
       </section>
 
-      <section className="mt-20 md:mt-28">
-        <p className="eyebrow">{dict.press.quotesEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
-          {dict.press.quotesTitle}
-        </h2>
-        <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
+      <section className="mt-12">
+        <Prompt path="PRESS" label="dir quotes\*" />
+        <h2 className="text-mid mt-4 md:text-head">{dict.press.quotesTitle}</h2>
+        <div className="mt-5 grid border border-line md:grid-cols-2">
           {QUOTES.map((quote) => (
-            <figure key={quote.text} className="flex flex-col">
-              <blockquote className="serif flex-1 text-[19px] leading-[1.75]">
+            <figure
+              key={quote.text}
+              className="flex flex-col border-b border-line p-4 last:border-b-0 md:even:border-l md:[&:nth-last-child(-n+2)]:border-b-0"
+            >
+              <blockquote className="longform flex-1">
                 “{t(locale, { ko: quote.text, en: quote.textEn })}”
               </blockquote>
-              <figcaption className="mono mt-4 text-muted">
+              <figcaption className="mono mt-3 text-muted">
                 {quote.url ? (
                   <a
                     href={quote.url}
@@ -106,67 +105,58 @@ export default async function PressPage({
         </div>
       </section>
 
-      <section className="mt-20 md:mt-28">
-        <p className="eyebrow">{dict.press.coverageEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
-          {dict.press.coverageTitle}
-        </h2>
-        <div className="mt-8 border-t border-ink">
+      <section className="mt-12">
+        <Prompt path="PRESS" label="type coverage.log" />
+        <h2 className="text-mid mt-4 md:text-head">{dict.press.coverageTitle}</h2>
+        <div className="mt-5 border-t border-line">
           {COVERAGE.map((item) => (
             <a
               key={item.url}
               href={item.url}
               target="_blank"
               rel="noreferrer"
-              className="group grid gap-1 border-b border-line py-4 md:grid-cols-[120px_1fr_auto] md:items-baseline md:gap-8"
+              className="group grid gap-1 border-b border-line py-3 md:grid-cols-[140px_1fr_110px] md:items-baseline md:gap-8"
             >
               <span className="mono text-muted">
                 {t(locale, { ko: item.outlet, en: item.outletEn })}
               </span>
-              <span className="font-medium tracking-[-0.01em] group-hover:underline">
+              <span className="group-hover:text-signal">
                 {t(locale, { ko: item.title, en: item.titleEn })}
               </span>
-              <span className="mono text-muted">{item.date}</span>
+              <span className="mono text-muted md:text-right">{item.date}</span>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="mt-20 md:mt-28">
-        <p className="eyebrow">{dict.press.kitEyebrow}</p>
-        <h2 className="display mt-4 text-[clamp(1.8rem,4vw,2.8rem)]">
-          {dict.press.kitTitle}
-        </h2>
-        <p className="longform mt-4 max-w-2xl text-[16px] text-muted">
+      <section className="mt-12">
+        <Prompt path="PRESS" label="dir assets\*" />
+        <h2 className="text-mid mt-4 md:text-head">{dict.press.kitTitle}</h2>
+        <p className="longform mt-3 max-w-2xl text-muted">
           {dict.press.kitNote}
         </p>
-        <div className="mt-8 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
+        <div className="mt-5 grid border border-line sm:grid-cols-2">
           {PRESS_KIT.map((item) => (
             <a
               key={item.href}
               href={item.href}
               download={item.download}
-              className="group flex items-baseline justify-between border border-line p-5 transition-colors hover:border-ink"
+              className="group flex items-baseline justify-between gap-4 border-b border-line px-4 py-3 last:border-b-0 hover:bg-panel sm:[&:nth-last-child(-n+2)]:border-b-0 sm:odd:border-r"
             >
               <span>
-                <span className="block font-medium">
+                <span className="block group-hover:text-signal">
                   {t(locale, { ko: item.label, en: item.labelEn })}
                 </span>
                 <span className="mono mt-1 block text-muted">{item.meta}</span>
               </span>
-              <span className="mono shrink-0 text-muted group-hover:text-ink">
-                ↓
-              </span>
+              <span aria-hidden="true" className="mono shrink-0 text-signal">↓</span>
             </a>
           ))}
         </div>
-        <Link
-          href={`/${locale}/press/one-sheet`}
-          className="btn btn-ghost mt-6"
-        >
-          {dict.press.oneSheet}
+        <Link href={`/${locale}/press/one-sheet`} className="btn btn-ghost mt-5">
+          {dict.press.oneSheet}{" "}<span aria-hidden="true">→</span>
         </Link>
-        <p className="mono mt-6 text-muted">{dict.press.credit}</p>
+        <p className="mono mt-5 text-muted">{dict.press.credit}</p>
       </section>
     </div>
   );

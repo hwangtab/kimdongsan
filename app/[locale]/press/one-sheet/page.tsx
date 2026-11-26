@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/print-button";
-import { BrandTitle } from "@/components/brand-title";
 import { ALBUM, CREDITS, TRACKS } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
@@ -41,16 +40,11 @@ export default async function OneSheetPage({
         <header className="flex items-start justify-between gap-8 border-b border-ink pb-5">
           <div>
             <p className="mono text-muted">EPK · 2026 · AFTERNOON</p>
-            <h1 className="mt-2">
-              <BrandTitle
-                slug="album-brand"
-                locale={locale}
-                alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
-                className="h-12 w-auto"
-              />
+            <h1 className="mt-2 text-[22pt] leading-[1.2]">
+              {locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
             </h1>
-            <p className="latin mt-1 text-base font-light tracking-[0.12em] text-muted">
-              Kim Dongsan &amp; Blueeewoot
+            <p className="mono mt-1">
+              {locale === "ko" ? "Kim Dongsan & Blueeewoot" : "김동산과 블루이웃"}
             </p>
           </div>
           <div className="one-sheet-cover w-24 shrink-0 md:w-28">
@@ -89,7 +83,7 @@ export default async function OneSheetPage({
 
         <div className="one-sheet-body mt-4 grid gap-6 md:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="mono mb-2 text-muted">{dict.album.tracklist}</p>
+            <h2 className="mono mb-2 text-muted">{dict.album.tracklist}</h2>
             <ol className="space-y-0.5 text-[10.5px]">
               {TRACKS.map((track) => (
                 <li
@@ -105,7 +99,7 @@ export default async function OneSheetPage({
               ))}
             </ol>
 
-            <p className="mono mt-5 mb-2 text-muted">{dict.contact.eyebrow}</p>
+            <h2 className="mono mt-5 mb-2 text-muted">{dict.contact.eyebrow}</h2>
             <div className="space-y-0.5 text-[10.5px] leading-[1.6]">
               <p>
                 {SITE.email} · {SITE.phone}
@@ -122,7 +116,7 @@ export default async function OneSheetPage({
           </div>
 
           <div>
-            <p className="mono mb-2 text-muted">{dict.album.creditsTitle}</p>
+            <h2 className="mono mb-2 text-muted">{dict.album.creditsTitle}</h2>
             <div className="space-y-2">
               {CREDITS.map((group) => (
                 <div key={group.group}>

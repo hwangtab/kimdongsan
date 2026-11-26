@@ -86,30 +86,26 @@ export function AudioPlayer({
 
   return (
     <div className={`flex items-center gap-3 ${compact ? "" : "w-full"}`}>
+      <audio ref={ref} src={src} preload="none" />
+
       <button
         type="button"
         onClick={toggle}
         aria-label={playing ? pauseLabel : playLabel}
-        className="flex h-11 w-11 shrink-0 items-center justify-center border border-ink bg-ink text-paper transition-colors hover:bg-paper hover:text-ink"
+        className={`mono flex h-7 w-9 shrink-0 items-center justify-center border border-line transition-colors ${
+          playing
+            ? "border-signal text-signal"
+            : "text-ink hover:border-signal hover:text-signal"
+        }`}
       >
-        {playing ? (
-          <span className="flex gap-[3px]" aria-hidden>
-            <span className="block h-3 w-[3px] bg-current" />
-            <span className="block h-3 w-[3px] bg-current" />
-          </span>
-        ) : (
-          <span
-            aria-hidden
-            className="ml-[2px] block h-0 w-0 border-y-[6px] border-l-[9px] border-y-transparent border-l-current"
-          />
-        )}
+        {playing ? "❚❚" : "▶"}
       </button>
 
       <div className="min-w-0 flex-1">
         {!compact && (
-          <div className="mb-1.5 flex items-baseline justify-between gap-3">
+          <div className="mb-1 flex items-baseline justify-between gap-3">
             {showTitle ? (
-              <span className="truncate text-[13px] font-medium">{title}</span>
+              <span className="mono truncate">{title}</span>
             ) : (
               <span aria-hidden />
             )}
@@ -143,28 +139,27 @@ export function AudioPlayer({
             const rect = e.currentTarget.getBoundingClientRect();
             seek((e.clientX - rect.left) / rect.width);
           }}
-          className="flex h-9 cursor-pointer items-center gap-[2px] outline-none focus-visible:ring-1 focus-visible:ring-ink"
+          className="flex h-8 cursor-pointer items-center gap-px"
         >
           {bars.map((peak, i) => {
             const isPlayed = i / bars.length <= played;
+            const height = Math.max(2, Math.round((peak * 0.28) / 2) * 2);
             return (
               <span
                 key={i}
                 className={`wave-bar w-full ${isPlayed ? "is-played" : ""}`}
-                style={{ height: `${Math.max(8, peak * 0.34)}px` }}
+                style={{ height: `${height}px` }}
               />
             );
           })}
         </div>
         {compact && (
           <div className="mt-1 flex items-baseline justify-between">
-            <span className="truncate text-[12px] font-medium">{title}</span>
             <span className="mono text-muted">{fmt(progress)}</span>
+            <span className="mono text-muted">{fmt(duration)}</span>
           </div>
         )}
       </div>
-
-      <audio ref={ref} src={src} preload="none" />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MiwonTitle } from "@/components/miwon-title";
 import { ARCHIVE } from "@/data/archive";
+import { Prompt, Win } from "@/components/win";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -31,43 +31,43 @@ export default async function GalleryPage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
-      <p className="eyebrow">{dict.gallery.eyebrow}</p>
-      <h1 className="mt-5">
-        <MiwonTitle
-          slug="gallery"
-          locale={locale}
-          alt={dict.gallery.title}
-          priority
-        />
-      </h1>
-      <p className="longform mt-7 max-w-2xl text-muted">
-        {dict.gallery.intro}
-      </p>
-      <p className="mono mt-4 max-w-2xl text-muted">{dict.gallery.creditNote}</p>
+    <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <Prompt path="PHOTO" label="dir /w *.jpg" />
 
-      <div className="mt-10 grid gap-8 md:grid-cols-2">
-        {ARCHIVE.map((photo) => (
-          <figure key={photo.src} className="border border-line bg-paper-deep">
-            <a
-              href={photo.href}
-              target="_blank"
-              rel="noreferrer"
-              className="block"
+      <h1 className="text-head mt-4 md:text-hero">{dict.gallery.title}</h1>
+      <p className="mono mt-2 text-muted">
+        ARCHIVE · 2018 · {ARCHIVE.length} FILES
+      </p>
+      <p className="longform mt-5 max-w-2xl text-muted">{dict.gallery.intro}</p>
+      <p className="mono mt-3 max-w-2xl text-muted">{dict.gallery.creditNote}</p>
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {ARCHIVE.map((photo, i) => (
+          <figure key={photo.src}>
+            <Win
+              label={`IMG_${String(i + 1).padStart(2, "0")}.JPG`}
+              right={`${photo.width}×${photo.height}`}
+              bodyClassName="p-0"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={photo.src}
-                  alt={t(locale, { ko: photo.alt, en: photo.altEn })}
-                  width={photo.width}
-                  height={photo.height}
-                  sizes="(min-width: 768px) 46vw, 92vw"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </a>
-            <figcaption className="p-4">
-              <p className="text-[15px] font-medium tracking-[-0.01em]">
+              <a href={photo.href} target="_blank" rel="noreferrer" className="block">
+                {/* each photo keeps its own ratio instead of a forced 4:3 crop */}
+                <div
+                  className="relative overflow-hidden"
+                  style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={t(locale, { ko: photo.alt, en: photo.altEn })}
+                    width={photo.width}
+                    height={photo.height}
+                    sizes="(min-width: 768px) 46vw, 92vw"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </a>
+            </Win>
+            <figcaption className="mt-2">
+              <p className="longform">
                 {t(locale, { ko: photo.caption, en: photo.captionEn })}
               </p>
               <p className="mono mt-1 text-muted">
@@ -79,7 +79,7 @@ export default async function GalleryPage({
                 >
                   {t(locale, { ko: photo.credit, en: photo.creditEn })}
                 </a>
-                <span className="ml-2">{dict.gallery.source} ↗</span>
+                <span aria-hidden="true" className="ml-2">↗</span>
               </p>
             </figcaption>
           </figure>

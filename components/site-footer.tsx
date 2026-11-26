@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Dictionary } from "@/messages/ko";
 import type { Locale } from "@/lib/i18n";
+import { ALBUM } from "@/data/album";
 import { SITE } from "@/data/site";
-import { BrandTitle } from "@/components/brand-title";
 
 export function SiteFooter({
   locale,
@@ -12,75 +12,49 @@ export function SiteFooter({
   dict: Dictionary;
 }) {
   return (
-    <footer className="site-footer no-print border-t border-line bg-paper-deep">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-8">
+    <footer className="site-footer no-print mt-16 border-t border-line">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:grid-cols-[1.5fr_1fr_1fr] md:px-8">
         <div>
-          <BrandTitle
-            slug="brand-small"
-            locale={locale}
-            alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
-            className="h-6 w-auto"
-          />
-          <p className="latin mt-1 text-sm text-muted">
-            Kim Dongsan &amp; Blueeewoot
-          </p>
-          <p className="serif mt-6 max-w-sm text-[15px] leading-relaxed text-muted">
+          <p className="text-mid leading-none">김동산과 블루이웃</p>
+          <p className="mono mt-2 text-muted">Kim Dongsan &amp; Blueeewoot</p>
+          <p className="longform mt-5 max-w-sm text-muted">
             {dict.footer.tagline}
           </p>
           <a
             href={locale === "ko" ? SITE.showUrl : SITE.showUrlEn}
-            className="btn btn-ticket mt-7"
+            className="btn btn-ticket mt-6"
             target="_blank"
             rel="noreferrer"
           >
-            {dict.common.tickets}
+            {dict.common.tickets}{" "}<span aria-hidden="true">↗</span>
           </a>
         </div>
 
         <div>
-          <p className="eyebrow">{dict.footer.album}</p>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            <li>
-              <Link className="link-underline" href={`/${locale}/album`}>
-                {dict.nav.album}
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" href={`/${locale}/about`}>
-                {dict.nav.about}
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" href={`/${locale}/live`}>
-                {dict.nav.live}
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" href={`/${locale}/press`}>
-                {dict.nav.press}
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" href={`/${locale}/gallery`}>
-                {dict.nav.gallery}
-              </Link>
-            </li>
-            <li>
-              <Link className="link-underline" href={`/${locale}/contact`}>
-                {dict.nav.contact}
-              </Link>
-            </li>
+          <p className="eyebrow">NAV</p>
+          <ul className="mt-3 space-y-1">
+            {[
+              ["album", dict.nav.album],
+              ["about", dict.nav.about],
+              ["live", dict.nav.live],
+              ["press", dict.nav.press],
+              ["gallery", dict.nav.gallery],
+              ["contact", dict.nav.contact],
+            ].map(([slug, label]) => (
+              <li key={slug}>
+                <Link className="link-underline mono" href={`/${locale}/${slug}`}>
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <p className="eyebrow">{dict.footer.contact}</p>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <p className="eyebrow">CONTACT</p>
+          <ul className="plain mt-3 space-y-1 break-all">
             <li>
-              <a
-                className="link-underline"
-                href={`mailto:${SITE.email}`}
-              >
+              <a className="link-underline" href={`mailto:${SITE.email}`}>
                 {SITE.email}
               </a>
             </li>
@@ -106,18 +80,22 @@ export function SiteFooter({
                 target="_blank"
                 rel="noreferrer"
               >
-                {SITE.longPlayer.name} · 수원
+                LONG PLAYER · 수원
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-[11px] text-muted md:flex-row md:items-center md:justify-between md:px-8">
-          <p>{dict.footer.rights}</p>
-          <p className="mono">
-            {dict.footer.credit} · {dict.press.credit}
+      <div className="border-t border-line bg-panel-deep">
+        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-2 md:flex-row md:items-center md:justify-between md:px-8">
+          <p className="mono text-muted">
+            <span className="text-signal">F1</span> {dict.footer.rights}
+            <span className="mx-2 text-line">│</span>
+            <span className="text-signal">F2</span> {dict.common.tickets}
+          </p>
+          <p className="mono text-muted">
+            {ALBUM.runtime} · 2026.11.17 · {dict.press.credit}
           </p>
         </div>
       </div>

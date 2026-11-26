@@ -2,13 +2,8 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TrackList } from "@/components/track-list";
-import { BrandTitle } from "@/components/brand-title";
-import {
-  ALBUM,
-  CREDITS,
-  TRACKS,
-  waveformFor,
-} from "@/data/album";
+import { Prompt, Win } from "@/components/win";
+import { ALBUM, CREDITS, TRACKS, waveformFor } from "@/data/album";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -45,12 +40,17 @@ export default async function AlbumPage({
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-20">
-      <p className="eyebrow">{dict.album.eyebrow}</p>
+    <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <Prompt path="ALBUM" label="dir" />
 
-      <div className="mt-8 grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:gap-16">
+      <h1 className="text-head mt-4 md:text-hero">{dict.nav.album}</h1>
+      <p className="mono mt-2 text-muted">
+        {dict.album.eyebrow} · 1ST ALBUM · {ALBUM.releaseLabel}
+      </p>
+
+      <div className="mt-6 grid gap-8 md:grid-cols-[0.92fr_1.08fr] md:gap-10">
         <div>
-          <div className="relative border border-ink/15 bg-paper-deep">
+          <Win label="COVER.JPG" right="1000×1000" bodyClassName="p-0">
             <Image
               src={ALBUM.cover}
               alt={
@@ -63,80 +63,49 @@ export default async function AlbumPage({
               loading="eager"
               fetchPriority="high"
               sizes="(min-width: 768px) 44vw, 92vw"
-              className="h-auto w-full"
+              className="block h-auto w-full"
             />
-          </div>
-          <p className="mono mt-3 text-muted">
+          </Win>
+          <p className="mono mt-2 text-muted">
             {t(locale, { ko: "커버 사진", en: "Cover photograph" })}
           </p>
         </div>
 
-        <div className="flex flex-col justify-center">
-          <h1>
-            <BrandTitle
-              slug="album-brand"
-              locale={locale}
-              alt={dict.album.title}
-              priority
-              className="h-auto w-full max-w-[520px]"
-            />
-          </h1>
-          {locale === "ko" && (
-            <p className="latin mt-3 text-lg font-light tracking-[0.16em] text-muted">
-              Kim Dongsan &amp; Blueeewoot
-            </p>
-          )}
-          <p className="longform mt-7 max-w-xl text-muted">{dict.album.lead}</p>
+        <div className="md:self-center">
+          <p className="text-mid leading-tight">{ALBUM.title}</p>
+          <p className="mono mt-1 text-kitsch">{ALBUM.titleEn}</p>
+          <p className="longform mt-4 max-w-xl text-muted">{dict.album.lead}</p>
 
-          <dl className="mt-9 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-7 text-sm">
-            <div>
-              <dt className="mono text-muted">{dict.common.released}</dt>
-              <dd className="mt-1 font-medium">{ALBUM.releaseLabel}</dd>
-            </div>
-            <div>
-              <dt className="mono text-muted">{dict.common.label}</dt>
-              <dd className="mt-1 font-medium">
-                {t(locale, { ko: ALBUM.label, en: ALBUM.labelEn })}
-              </dd>
-            </div>
-            <div>
-              <dt className="mono text-muted">{dict.common.genre}</dt>
-              <dd className="mt-1 font-medium">
-                {t(locale, { ko: ALBUM.genre, en: ALBUM.genreEn })}
-              </dd>
-            </div>
-            <div>
-              <dt className="mono text-muted">{dict.common.runtime}</dt>
-              <dd className="mt-1 font-medium">{ALBUM.runtime}</dd>
-            </div>
+          <dl className="mono mt-6 grid grid-cols-[96px_1fr] gap-x-4 gap-y-1 border-t border-line pt-4">
+            <dt className="text-muted">{dict.common.released}</dt>
+            <dd>{ALBUM.releaseLabel}</dd>
+            <dt className="text-muted">{dict.common.label}</dt>
+            <dd>{t(locale, { ko: ALBUM.label, en: ALBUM.labelEn })}</dd>
+            <dt className="text-muted">{dict.common.genre}</dt>
+            <dd>{t(locale, { ko: ALBUM.genre, en: ALBUM.genreEn })}</dd>
+            <dt className="text-muted">{dict.common.runtime}</dt>
+            <dd>{ALBUM.runtime}</dd>
           </dl>
 
-          <div className="mt-9 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {ALBUM.streaming.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="mono border border-line px-3 py-2 transition-colors hover:border-ink"
+                className="btn"
               >
-                {link.label}
+                {link.label}{" "}<span aria-hidden="true">↗</span>
               </a>
             ))}
           </div>
         </div>
       </div>
 
-      <section className="mt-16 md:mt-24">
-        <div className="flex items-baseline justify-between">
-          <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
-            {dict.album.tracklist}
-          </h2>
-          <span className="mono text-muted">
-            {ALBUM.trackCount} · {ALBUM.runtime}
-          </span>
-        </div>
-        <div className="mt-8">
+      <section className="mt-10">
+        <Prompt path="ALBUM" label="type tracklist.txt" />
+        <div className="mt-4">
           <TrackList
             tracks={TRACKS}
             locale={locale}
@@ -150,27 +119,24 @@ export default async function AlbumPage({
               credits: dict.common.credits,
               play: dict.common.play,
               pause: dict.common.pause,
-              trackCredits: dict.album.trackCredits,
+              trackCredits: dict.common.credits,
             }}
           />
         </div>
-        <p className="mono mt-4 text-muted">{dict.album.lyricsNote}</p>
       </section>
 
-      <section className="mt-16 md:mt-24">
-        <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
-          {dict.album.creditsTitle}
-        </h2>
-        <p className="longform mt-3 max-w-2xl text-[16px] text-muted">
-          {dict.album.creditsNote}
-        </p>
-        <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
+      <section className="mt-10">
+        <Prompt path="ALBUM" label="type credits.txt" />
+        <div className="mt-4 grid border-t border-line md:grid-cols-2">
           {CREDITS.map((group) => (
-            <div key={group.group}>
-              <p className="mono mb-3 text-muted">{group.group}</p>
-              <ul className="longform space-y-1.5 text-[15px] leading-[1.75]">
-                {(locale === "ko" ? group.ko : group.en).map((line) => (
-                  <li key={line}>{line}</li>
+            <div
+              key={group.group}
+              className="border-b border-line px-4 py-4 md:odd:border-r"
+            >
+              <p className="mono text-signal">{group.group}</p>
+              <ul className="longform mt-2 space-y-1 text-muted">
+                {(locale === "ko" ? group.ko : group.en).map((credit) => (
+                  <li key={credit}>{credit}</li>
                 ))}
               </ul>
             </div>

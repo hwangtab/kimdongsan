@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AudioPlayer } from "@/components/audio-player";
-import { BrandTitle } from "@/components/brand-title";
-import { MiwonTitle } from "@/components/miwon-title";
+import { Prompt, Win } from "@/components/win";
 import { ALBUM, TRACKS, waveformFor } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { QUOTES } from "@/data/press";
@@ -111,47 +110,53 @@ export default async function HomePage({
       />
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl gap-12 px-5 pb-16 pt-12 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-16 md:px-8 md:pb-24 md:pt-20">
-        <div>
-          <p className="eyebrow">{dict.home.eyebrow}</p>
-          <h1 className="mt-5">
-            <BrandTitle
-              slug="brand-hero"
-              locale={locale}
-              alt={locale === "ko" ? "김동산과 블루이웃" : "Kim Dongsan & Blueeewoot"}
-              priority
-              className="h-auto w-full max-w-[420px]"
-            />
-          </h1>
-          {locale === "ko" && (
-            <p className="latin mt-5 text-[clamp(1rem,2vw,1.35rem)] font-light tracking-[0.18em] text-muted">
-              Kim Dongsan &amp; Blueeewoot
-            </p>
-          )}
-          <p className="mt-8 max-w-xl whitespace-pre-line text-[clamp(1.05rem,2.2vw,1.35rem)] font-medium leading-[1.55]">
-            {dict.home.lead}
-          </p>
-          <p className="longform mt-5 max-w-xl text-muted">
-            {dict.home.body}
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link href={`/${locale}/album`} className="btn btn-solid">
-              {dict.home.ctaAlbum}
-            </Link>
-            <a
-              href={locale === "ko" ? SITE.showUrl : SITE.showUrlEn}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-ticket"
-            >
-              {dict.home.ctaShow}
-            </a>
-          </div>
-        </div>
+      <section className="mx-auto max-w-6xl px-5 pb-10 pt-6 md:px-8 md:pb-14 md:pt-8">
+        <Prompt path="HOME" label="dir /w" />
 
-        <div className="relative">
-          <div className="absolute -left-3 -top-3 hidden h-full w-full border border-line md:block" />
-          <div className="relative border border-ink/15 bg-paper-deep">
+        <div className="mt-5 grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10">
+          <div>
+            <p className="mono text-muted">{dict.home.eyebrow} · AFTERNOON</p>
+
+            <h1 className="mt-4 text-head md:text-hero">
+              {dict.home.title.split("\n").map((line, i, all) => (
+                <span key={line} className="block">
+                  {line}
+                  {i === all.length - 1 && (
+                    <span className="cursor ml-2" aria-hidden />
+                  )}
+                </span>
+              ))}
+            </h1>
+
+            <p className="mono mt-3 text-kitsch">Kim Dongsan &amp; Blueeewoot</p>
+
+            <p className="mt-6 whitespace-pre-line leading-[1.5] md:text-mid md:leading-[1.4]">
+              {dict.home.lead}
+            </p>
+            <p className="longform mt-4 max-w-xl text-muted">
+              {dict.home.body}
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href={`/${locale}/album`} className="btn btn-solid">
+                {dict.home.ctaAlbum}
+              </Link>
+              <a
+                href={locale === "ko" ? SITE.showUrl : SITE.showUrlEn}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-ticket"
+              >
+                {dict.home.ctaShow}{" "}<span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <Win
+            label="COVER.JPG"
+            right="1000×1000"
+            className="self-start"
+            bodyClassName="p-0"
+          >
             <Image
               src={ALBUM.cover}
               alt={
@@ -164,28 +169,28 @@ export default async function HomePage({
               loading="eager"
               fetchPriority="high"
               sizes="(min-width: 768px) 46vw, 92vw"
-              className="h-auto w-full"
+              className="block h-auto w-full border-b border-line"
             />
-            <div className="flex items-center justify-between border-t border-ink/15 px-4 py-3">
-              <span className="mono">1ST ALBUM · 2026</span>
-              <span className="mono">{ALBUM.runtime}</span>
+            <div className="flex items-center justify-between px-4 py-2">
+              <span className="mono text-muted">1ST ALBUM · 2026</span>
+              <span className="mono text-muted">{ALBUM.runtime}</span>
             </div>
-          </div>
+          </Win>
         </div>
       </section>
 
       {/* Ticker */}
-      <div className="overflow-hidden border-y border-ink bg-yellow py-3">
+      <div className="ticker overflow-hidden border-y border-ticket bg-ticket py-1 text-void">
         <div className="ticker-track">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
               {dict.home.ticker.map((item, i) => (
                 <span
                   key={`${copy}-${i}`}
-                  className="mono flex items-center whitespace-nowrap px-5 text-ink"
+                  className="mono flex items-center whitespace-nowrap px-4"
                 >
                   {item}
-                  <span className="ml-5 inline-block h-1 w-1 rounded-full bg-ink" />
+                  <span className="ml-4">▮</span>
                 </span>
               ))}
             </div>
@@ -194,175 +199,174 @@ export default async function HomePage({
       </div>
 
       {/* Facts */}
-      <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-        <p className="eyebrow">{dict.home.factsEyebrow}</p>
-        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line pt-8 md:grid-cols-4">
-          {dict.home.facts.map((fact) => (
-            <div key={fact.label}>
-              <p className="display text-[clamp(2.4rem,5vw,3.8rem)]">
+      <section className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-14">
+        <Prompt path="FACTS" label="type numbers.txt" />
+        <dl className="mt-4 grid grid-cols-2 border-y border-line md:grid-cols-4">
+          {dict.home.facts.map((fact, i) => (
+            <div
+              key={fact.label}
+              className={`px-4 py-4 ${
+                i % 2 === 1 ? "border-l border-line" : ""
+              } ${i > 1 ? "border-t border-line md:border-t-0" : ""} ${
+                i === 2 ? "md:border-l" : ""
+              }`}
+            >
+              <dd className="text-mid leading-none text-signal md:text-head">
                 {fact.value}
-              </p>
-              <p className="mt-2 text-[13px] text-muted">{fact.label}</p>
+              </dd>
+              <dt className="mono mt-2 text-muted">{fact.label}</dt>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
 
       {/* Featured tracks */}
-      <section className="border-t border-line bg-paper-deep">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-          <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-            <div>
-              <p className="eyebrow">{dict.home.featuredEyebrow}</p>
-              <h2 className="mt-4">
-                <MiwonTitle
-                  slug="featured"
-                  locale={locale}
-                  alt={dict.home.featuredTitle}
-                />
-              </h2>
-            </div>
-            <div>
-              <p className="longform max-w-xl text-muted">
-                {dict.home.featuredBody}
-              </p>
-              <div className="mt-8 divide-y divide-line border-y border-line">
-                {featured.map((track) => (
-                  <div key={track.no} className="py-5">
-                    <div className="mb-3 flex items-baseline gap-4">
-                      <span className="mono text-muted">
-                        {String(track.no).padStart(2, "0")}
-                      </span>
-                      <span className="text-lg font-semibold tracking-[-0.02em]">
-                        {t(locale, { ko: track.title, en: track.titleEn })}
-                      </span>
-                      <span className="mono ml-auto text-muted">
-                        {track.duration}
-                      </span>
-                    </div>
-                    <AudioPlayer
-                      src={track.audio}
-                      title={t(locale, {
-                        ko: track.title,
-                        en: track.titleEn,
-                      })}
-                      peaks={waveformFor(track.no)}
-                      playLabel={dict.common.play}
-                      pauseLabel={dict.common.pause}
-                      showTitle={false}
-                    />
-                  </div>
-                ))}
+      <section className="mx-auto max-w-6xl px-5 pb-10 md:px-8 md:pb-14">
+        <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
+          <div>
+            <Prompt path="PICK" label="play 3 songs" />
+            <h2 className="text-mid mt-4 md:text-head">
+              {dict.home.featuredTitle}
+            </h2>
+          </div>
+          <div>
+            <p className="longform max-w-xl text-muted">
+              {dict.home.featuredBody}
+            </p>
+            <div className="mt-6 border border-line">
+              <div className="win-bar">
+                <span className="mono text-signal">now_playing</span>
+                <span className="mono text-muted">3 FILES</span>
               </div>
-              <Link
-                href={`/${locale}/album`}
-                className="link-underline mono mt-7 inline-block"
-              >
-                {dict.home.listenAlbum} →
-              </Link>
+              {featured.map((track) => (
+                <div
+                  key={track.no}
+                  className="border-b border-line px-4 py-3 last:border-b-0"
+                >
+                  <div className="mb-2 flex items-baseline gap-3">
+                    <span className="mono text-signal">
+                      {String(track.no).padStart(2, "0")}
+                    </span>
+                    <span className="text-mid leading-none">
+                      {t(locale, { ko: track.title, en: track.titleEn })}
+                    </span>
+                    <span className="mono ml-auto text-muted">
+                      {track.duration}
+                    </span>
+                  </div>
+                  <AudioPlayer
+                    src={track.audio}
+                    title={t(locale, { ko: track.title, en: track.titleEn })}
+                    peaks={waveformFor(track.no)}
+                    playLabel={dict.common.play}
+                    pauseLabel={dict.common.pause}
+                    showTitle={false}
+                  />
+                </div>
+              ))}
             </div>
+            <Link
+              href={`/${locale}/album`}
+              className="link-underline mono mt-5 inline-block"
+            >
+              {dict.home.listenAlbum}{" "}<span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Quote */}
-      <section className="border-y border-line">
-        <div className="mx-auto max-w-4xl px-5 py-16 text-center md:px-8 md:py-24">
-          <p className="eyebrow">{dict.home.quoteEyebrow}</p>
-          <blockquote className="serif mt-7 text-[clamp(1.5rem,3.4vw,2.6rem)] leading-[1.55] tracking-[-0.02em]">
+      <section className="mx-auto max-w-6xl px-5 pb-10 md:px-8 md:pb-14">
+        <figure className="border border-line bg-panel px-5 py-6 md:px-10 md:py-8">
+          <Prompt path="QUOTE" label={dict.home.quoteEyebrow} />
+          <blockquote className="longform mt-4 text-mid leading-[1.5]">
             “{t(locale, { ko: quote.text, en: quote.textEn })}”
           </blockquote>
-          <p className="mono mt-6 text-muted">
-            {t(locale, { ko: quote.source, en: quote.sourceEn })} · {quote.date}
-          </p>
-        </div>
+          <figcaption className="mono mt-4 text-muted">
+            — {t(locale, { ko: quote.source, en: quote.sourceEn })} ·{" "}
+            {quote.date}
+          </figcaption>
+        </figure>
       </section>
 
       {/* Method */}
-      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-16 md:grid-cols-2 md:gap-16 md:px-8 md:py-24">
+      <section className="mx-auto grid max-w-6xl gap-8 px-5 pb-10 md:grid-cols-2 md:gap-10 md:px-8 md:pb-14">
         <div>
-          <p className="eyebrow">{dict.home.aboutEyebrow}</p>
-          <h2 className="mt-4">
-            <MiwonTitle
-              slug="method"
-              locale={locale}
-              alt={dict.home.aboutTitle}
-            />
-          </h2>
+          <Prompt path="ABOUT" label="type bio.txt" />
+          <h2 className="text-mid mt-4 md:text-head">{dict.home.aboutTitle}</h2>
         </div>
         <div>
           <p className="longform text-muted">{dict.home.aboutBody}</p>
-          <p className="longform mt-4 text-muted">
+          <p className="longform mt-3 text-muted">
             {t(locale, { ko: BIOS.ko.short, en: BIOS.en.short })}
           </p>
-          <Link
-            href={`/${locale}/about`}
-            className="btn btn-ghost mt-8"
-          >
-            {dict.home.aboutCta}
+          <Link href={`/${locale}/about`} className="btn btn-ghost mt-6">
+            {dict.home.aboutCta}{" "}<span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
 
       {/* Show */}
-      <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-end md:px-8 md:py-24">
-          <div>
-            <p className="mono text-paper/60">{dict.home.showEyebrow}</p>
-            <div className="mt-5">
-              <MiwonTitle slug="date" locale={locale} alt="12.04" />
-            </div>
-            <p className="mt-4 text-xl font-semibold tracking-[-0.02em]">
-              {t(locale, { ko: show.title, en: show.titleEn })}
-            </p>
-            <p className="mt-2 text-[15px] text-paper/70">
-              {t(locale, { ko: show.dateLabel, en: show.dateLabel })} ·{" "}
-              {t(locale, { ko: show.venue, en: show.venueEn })} ·{" "}
-              {t(locale, { ko: show.time!, en: show.timeEn! })}
-            </p>
+      <section className="mx-auto max-w-6xl px-5 pb-12 md:px-8 md:pb-16">
+        <div className="border border-line">
+          <div className="win-bar bg-panel-deep">
+            <span className="mono text-signal">SHOW.EXE</span>
+            <span className="mono text-muted">2026.12.04</span>
           </div>
-          <div className="md:pb-2">
-            <div className="border border-paper/25 bg-paper p-6 text-ink">
+          <div className="grid gap-8 p-5 md:grid-cols-[1fr_0.9fr] md:items-center md:p-8">
+            <div>
+              <p className="mono text-muted">{dict.home.showEyebrow}</p>
+              <p className="text-head mt-3 leading-none text-ticket md:text-hero">12.04</p>
+              <p className="text-mid mt-3 leading-tight">
+                {t(locale, { ko: show.title, en: show.titleEn })}
+              </p>
+              <p className="mono mt-2 text-muted">
+                {t(locale, { ko: show.dateLabel, en: show.dateLabel })} ·{" "}
+                {t(locale, { ko: show.venue, en: show.venueEn })} ·{" "}
+                {t(locale, { ko: show.time!, en: show.timeEn! })}
+              </p>
+            </div>
+            <div className="border border-line bg-panel-deep p-4">
               <div className="flex items-center justify-between">
-                <span className="mono">{dict.live.prices}</span>
-                <span className="mono bg-yellow px-2 py-1">
+                <span className="mono text-muted">{dict.live.prices}</span>
+                <span className="mono bg-ticket px-1 text-void">
                   {t(locale, {
                     ko: show.statusLabel!,
                     en: show.statusLabelEn!,
                   })}
                 </span>
               </div>
-              <div className="mt-5 space-y-2 border-t border-line pt-5 text-sm">
+              <dl className="mono mt-3 space-y-1 border-t border-line pt-3">
                 <div className="flex justify-between">
-                  <span className="text-muted">
+                  <dt className="text-muted">
                     {t(locale, { ko: "얼리버드", en: "Early bird" })}
-                  </span>
-                  <span className="text-muted line-through">
+                  </dt>
+                  <dd className="text-muted line-through">
                     {locale === "ko" ? "20,000원" : "₩20,000"}
-                  </span>
+                  </dd>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted">
+                  <dt className="text-muted">
                     {t(locale, { ko: "사전예매", en: "Advance" })}
-                  </span>
-                  <span className="font-semibold">
+                  </dt>
+                  <dd className="text-signal">
                     {locale === "ko" ? "30,000원" : "₩30,000"}
-                  </span>
+                  </dd>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted">
+                  <dt className="text-muted">
                     {t(locale, { ko: "현장", en: "At the door" })}
-                  </span>
-                  <span>{locale === "ko" ? "40,000원" : "₩40,000"}</span>
+                  </dt>
+                  <dd>{locale === "ko" ? "40,000원" : "₩40,000"}</dd>
                 </div>
-              </div>
+              </dl>
               <a
                 href={locale === "ko" ? SITE.showUrl : SITE.showUrlEn}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-ticket mt-6 w-full"
+                className="btn btn-ticket mt-4 w-full"
               >
-                {dict.live.book}
+                {dict.live.book}{" "}<span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
@@ -370,24 +374,27 @@ export default async function HomePage({
       </section>
 
       {/* Press */}
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+      <section className="mx-auto max-w-6xl px-5 pb-16 md:px-8 md:pb-24">
         <div className="flex items-end justify-between">
-          <p className="eyebrow">{dict.home.pressEyebrow}</p>
+          <Prompt path="PRESS" label="dir *.txt" />
           <Link
             href={`/${locale}/press`}
             className="mono link-underline text-muted"
           >
-            {dict.common.more} →
+            {dict.common.more}{" "}<span aria-hidden="true">→</span>
           </Link>
         </div>
-        <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-3">
+        <div className="mt-4 grid border border-line md:grid-cols-3">
           {QUOTES.slice(1, 4).map((q) => (
-            <figure key={q.text}>
-              <blockquote className="serif text-[19px] leading-[1.7]">
+            <figure
+              key={q.text}
+              className="border-b border-line p-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+            >
+              <blockquote className="longform">
                 “{t(locale, { ko: q.text, en: q.textEn })}”
               </blockquote>
-              <figcaption className="mono mt-4 text-muted">
-                {t(locale, { ko: q.source, en: q.sourceEn })} · {q.date}
+              <figcaption className="mono mt-3 text-muted">
+                — {t(locale, { ko: q.source, en: q.sourceEn })} · {q.date}
               </figcaption>
             </figure>
           ))}

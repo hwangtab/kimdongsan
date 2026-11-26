@@ -5,6 +5,7 @@
 
 - 프레임워크: Next.js 16 (App Router, Turbopack) · React 19 · TypeScript
 - 스타일: Tailwind CSS 4 (`@theme` 토큰은 `app/globals.css`)
+- 분위기: 1990년대 PC통신(VGA 남색) · 도스 창 크롬 · 픽셀 도스 폰트
 - 배포: Vercel (환경변수 없음)
 
 ## 실행
@@ -28,10 +29,11 @@ app/[locale]/               ko · en
   press/one-sheet/          인쇄용 원시트
   gallery/                  2018년 사진 아카이브 (출처 표기)
   contact/                  부킹 · 아티스트 · 롱플레이어
-components/                 헤더 · 푸터 · 오디오 플레이어 · 트랙리스트 · 복사 버튼
+app/global-not-found.tsx    매칭되는 라우트가 없을 때의 404 (도스 창)
+components/                 헤더 · 푸터 · 창 크롬 · 오디오 플레이어 · 트랙리스트 · 복사 버튼
 data/                       콘텐츠 원본 (아래 표)
 messages/                   UI 문자열 ko / en
-media-src/                  음원 마스터와 원본 이미지 (git 제외)
+media-src/                  음원 마스터·원본 이미지·원본 폰트 (git 제외)
 public/                     웹용 이미지·오디오·폰트
 scripts/                    자산 재생성 스크립트
 ```
@@ -56,7 +58,8 @@ scripts/                    자산 재생성 스크립트
 npm run assets:audio      # 60초 발췌 → public/audio/preview/*.m4a
 npm run assets:waveforms  # 파형 → data/waveforms.json
 npm run assets:images     # 커버·포스터·라이브·멤버 → public/images
-npm run assets:og         # 1200×630 소셜 카드 (uv + Pillow)
+npm run assets:og         # 1200×630 소셜 카드 (사이트와 같은 폰트 서브셋 사용)
+npm run assets:favicon    # app/favicon.ico (16·32·48px, 16px는 전용 그리드)
 ```
 
 발췌 시작점은 `scripts/prepare-audio.sh`의 `STARTS` 배열에서 바꿉니다.
@@ -109,23 +112,37 @@ npm run assets:og         # 1200×630 소셜 카드 (uv + Pillow)
 
 ## 폰트
 
-3단 층위로 씁니다. 세 폰트 모두 단일 무게라서 굵기 대신 질감·크기·색으로 위계를 만듭니다.
+1990년대 PC통신/도스 화면을 기준으로 짠 2.5단 체계입니다. 도스 계열 세 폰트는 모두
+단일 무게(400)라서 굵기 대신 **크기·색·반전**으로 위계를 만듭니다.
 
 | 층 | 폰트 | 쓰는 곳 | 라이선스 / 처리 |
 | --- | --- | --- | --- |
-| 브랜드 | **온글잎 재건사** (온글잎) | 밴드명, 출장작곡가 김동산, 헤더·푸터, 앨범 h1, 원시트 | 웹·BI/CI 허용, 수정·재배포 금지 → **PNG 이미지**로 렌더링. 원본은 `media-src/`에만 |
-| 에디토리얼 | **미원체** (대상) | 섹션 제목, 큰 날짜 | 웹 허용, **임베딩·BI/CI 금지** → **PNG 이미지**. 원본은 `media-src/`에만 |
-| 인터페이스 | **둥근모꼴+ Fixedsys** (길형진) | 내비, 라벨, 짧은 글, 버튼, 티커, 트랙리스트 | 퍼블릭 도메인 → 12KB 서브셋을 셀프호스팅 |
-| 읽기 | **Gowun Batang** | 긴 바이오, 곡 노트, 크레딧, 가사, 인용 | OFL. 74KB 서브셋 셀프호스팅 |
+| UI · 제목 | **도스고딕** (leedheo) | 내비, 라벨, 제목, 숫자, 버튼, 트랙리스트 | MIT. 16KB 서브셋을 저장소에 커밋 |
+| 읽기 | **도스명조** (leedheo) | 긴 바이오, 곡 노트, 크레딧, 가사, 인용 | MIT. 20KB 서브셋을 커밋 |
+| 기호 | **미래로글꼴** (leedheo) | `· — 《》 → ★ ─│┌` 등 도스고딕에 없는 문자 | MIT. 2KB 기호 전용 서브셋 |
 | 인쇄 전용 | Pretendard | 인쇄용 원시트만 | OFL. 원시트 페이지에서만 로드 |
 
+도스고딕과 도스명조는 같은 제작자의 같은 1024upem 격자라 섞어 써도 베이스라인이
+어긋나지 않습니다. 도스고딕은 **문장부호·박스문자가 하나도 없어서**, 같은 계열의
+미래로글꼴을 폰트 스택 두 번째에 두고 글자 단위로 폴백합니다.
+
 ```bash
-npm run assets:brand       # 온글잎 브랜드 PNG 8장
-npm run assets:miwon       # 미원체 제목 PNG 22장
-npm run assets:pixel-font  # 둥근모꼴 서브셋 (약 12KB)
-npm run assets:serif-font  # 고운바탕 서브셋 (약 74KB)
-npm run assets:font        # 인쇄용 Pretendard 서브셋 (원시트 전용)
+npm run assets:dos-font  # 도스고딕·도스명조·기호 서브셋 (총 38KB)
+npm run assets:font      # 인쇄용 Pretendard 서브셋 (원시트 전용)
+npm run assets:og        # OG 카드 (도스 폰트로 렌더)
 ```
 
-브랜드·제목 이미지는 `data/brand-titles.json`, `data/miwon-titles.json`의 크기 값을 사용합니다.
-온글잎과 미원체 폰트 파일은 라이선스상 저장소에 커밋하지 않습니다.
+원본 TTF는 `media-src/fonts/`에만 두고, MIT 라이선스라 서브셋 결과물은 커밋합니다.
+출처는 <https://github.com/hurss/fonts>. 폰트 저작권 고지는 `NOTICE.md`에 있습니다.
+
+### 타입 스케일
+
+도스 폰트는 1em = 16px 격자라서 **16의 배수에서만 획이 1px로 떨어집니다.**
+16 / 32 / 48 / 64px 네 단만 쓰고, 작은 라벨도 16px 아래로 내리지 않습니다.
+`body` 16px · `.longform` 16/30px · 제목은 모바일 32/48, 데스크톱 48/64입니다.
+
+### 인쇄
+
+`@media print`에서 토큰(`--void`·`--ink`·`--signal`·`--ticket` …)을 종이용
+흑백 팔레트로 뒤집습니다. 유틸리티 클래스마다 덮어쓰지 않아도 모든 강조색이
+자동으로 인쇄 대비를 확보합니다. 원시트는 Pretendard로 따로 고정됩니다.
