@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BIOS, MEMBERS, SITE, TIMELINE } from "@/data/site";
 import { DISCOGRAPHY } from "@/data/discography";
+import { SONG_STORIES } from "@/data/songs";
 import { MiwonTitle } from "@/components/miwon-title";
 import { BrandTitle } from "@/components/brand-title";
 import { QUOTES } from "@/data/press";
@@ -91,6 +93,46 @@ export default async function AboutPage({
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mt-20 md:mt-28">
+        <p className="eyebrow">{dict.about.songsEyebrow}</p>
+        <h2 className="mt-4">
+          <MiwonTitle
+            slug="songs"
+            locale={locale}
+            alt={dict.about.songsTitle}
+          />
+        </h2>
+        <p className="longform mt-5 max-w-2xl text-muted">
+          {dict.about.songsIntro}
+        </p>
+        <div className="mt-10 border-t border-ink">
+          {SONG_STORIES.map((song) => (
+            <Link
+              key={song.title}
+              href={song.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group grid gap-2 border-b border-line py-5 md:grid-cols-[96px_1fr] md:gap-8"
+            >
+              <span className="mono pt-1 text-muted">{song.year}</span>
+              <div>
+                <p className="text-[17px] font-medium tracking-[-0.01em] group-hover:underline">
+                  {t(locale, { ko: song.title, en: song.titleEn })}
+                </p>
+                <p className="mt-1 text-[12px] text-muted">
+                  {t(locale, { ko: song.place, en: song.placeEn })} ·{" "}
+                  {t(locale, { ko: song.release, en: song.releaseEn })}
+                </p>
+                <p className="longform mt-2 text-[15px] text-muted">
+                  {t(locale, { ko: song.note, en: song.noteEn })}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <p className="mono mt-4 max-w-3xl text-muted">{dict.about.songsNote}</p>
       </section>
 
       <section className="mt-20 md:mt-28">
@@ -199,7 +241,26 @@ export default async function AboutPage({
 
       <section className="mt-20 grid gap-10 border-y border-line py-12 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-16">
         <div>
-          <p className="eyebrow">{dict.about.longPlayerEyebrow}</p>
+          <div className="relative aspect-[16/9] overflow-hidden border border-line bg-paper-deep">
+            <Image
+              src="/images/archive/shop-2018.webp"
+              alt={t(locale, {
+                ko: "LP와 중고 물건, 오래된 라디오가 가득한 롱플레이어 내부",
+                en: "The interior of Long Player, filled with LPs and old objects",
+              })}
+              width={800}
+              height={450}
+              sizes="(min-width: 768px) 55vw, 92vw"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <p className="mono mt-2 text-muted">
+            {t(locale, {
+              ko: "롱플레이어, 2018 · 민중의소리",
+              en: "Long Player, 2018 · Voice of the People",
+            })}
+          </p>
+          <p className="eyebrow mt-8">{dict.about.longPlayerEyebrow}</p>
           <h2 className="display mt-4 text-[clamp(2rem,4.6vw,3.4rem)]">
             {dict.about.longPlayerTitle}
           </h2>
@@ -223,6 +284,9 @@ export default async function AboutPage({
             >
               {dict.live.mapKakao}
             </a>
+            <Link href={`/${locale}/gallery`} className="btn btn-ghost">
+              {dict.about.galleryCta}
+            </Link>
           </div>
         </div>
         <dl className="space-y-4 self-end text-sm">

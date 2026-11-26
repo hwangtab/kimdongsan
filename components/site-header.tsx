@@ -11,6 +11,7 @@ type Nav = {
   about: string;
   live: string;
   press: string;
+  gallery: string;
   contact: string;
   menu: string;
   close: string;
@@ -46,6 +47,7 @@ export function SiteHeader({
     { href: `/${locale}/about`, label: nav.about },
     { href: `/${locale}/live`, label: nav.live },
     { href: `/${locale}/press`, label: nav.press },
+    { href: `/${locale}/gallery`, label: nav.gallery },
     { href: `/${locale}/contact`, label: nav.contact },
   ];
 

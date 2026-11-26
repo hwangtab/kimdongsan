@@ -17,6 +17,33 @@ export const QUOTES: Quote[] = [
     url: "https://www.instagram.com/p/DfwRO2FPbgG/",
   },
   {
+    text: "작곡 비용을 천원으로 정한 이유는 의뢰인도 저도 너무 부담을 갖지 말자는 거였죠.",
+    textEn:
+      "I set the price at 1,000 won so that neither the person commissioning nor I would feel burdened.",
+    source: "김동산, 민중의소리 인터뷰",
+    sourceEn: "Kim Dongsan, interviewed by Voice of the People",
+    date: "2018.03.12",
+    url: "http://www.vop.co.kr/A00001264570.html",
+  },
+  {
+    text: "세상사 인생사 모든 이야기가 소재가 되어 세상에 하나밖에 없는 나만의 노래가 된다.",
+    textEn:
+      "Every story of the world and of a life becomes material, and becomes a song that exists nowhere else.",
+    source: "오마이뉴스, 출장작곡 설명",
+    sourceEn: "OhmyNews, describing the commissioned-song practice",
+    date: "2017.12.14",
+    url: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002383442",
+  },
+  {
+    text: "권선징악과 영웅 이야기보다 ‘그냥 살아가는 이야기’에 끌린다.",
+    textEn:
+      "I am drawn to stories of simply getting by, more than to tales of heroes and virtue rewarded.",
+    source: "김동산, 오마이스타",
+    sourceEn: "Kim Dongsan, interviewed by OhmyStar",
+    date: "2018.10.29",
+    url: "https://star.ohmynews.com/NWS_Web/OhmyStar/at_pg.aspx?CNTN_CD=A0002483002",
+  },
+  {
     text: "이 시대의 진정한 음유시인.",
     textEn: "A true troubadour of our time.",
     source: "뉴스아트",
@@ -90,6 +117,47 @@ export const COVERAGE = [
     titleEn: "Kim Dongsan & Blueeewoot",
     date: "2026",
     url: "https://peaceandmusic.net/camps/2026/musicians/3",
+  },
+  {
+    outlet: "민중의소리",
+    outletEn: "Voice of the People",
+    title: "‘출장작곡가’ 김동산 “당신만을 위한 노래를 만들어 드립니다”",
+    titleEn: "'Song-commissioning' Kim Dongsan: 'I will make a song just for you'",
+    date: "2018.03.12",
+    url: "http://www.vop.co.kr/A00001264570.html",
+  },
+  {
+    outlet: "오마이뉴스",
+    outletEn: "OhmyNews",
+    title: "길 위에서 노래하는 출장 작곡가를 아시나요?",
+    titleEn: "Do you know the song-commissioning songwriter who sings on the road?",
+    date: "2017.12.14",
+    url: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002383442",
+  },
+  {
+    outlet: "오마이스타",
+    outletEn: "OhmyStar",
+    title: "콜트콜텍·아현포차도 가사로, 서민의 삶 노래하는 ‘출장작곡가’",
+    titleEn:
+      "Colt Colttek and Ahyeon stalls in song: the 'song-commissioning' songwriter",
+    date: "2018.10.29",
+    url: "https://star.ohmynews.com/NWS_Web/OhmyStar/at_pg.aspx?CNTN_CD=A0002483002",
+  },
+  {
+    outlet: "포크라노스",
+    outletEn: "Poclanos",
+    title: "출장작곡가 김동산 — 아티스트 페이지",
+    titleEn: "Kim Dongsan — artist page",
+    date: "2018",
+    url: "https://poclanos.com/artist/%EC%B6%9C%EC%9E%A5%EC%9E%91%EA%B3%A1%EA%B0%80-%EA%B9%80%EB%8F%99%EC%82%B0/",
+  },
+  {
+    outlet: "뉴스아트",
+    outletEn: "NewsArt",
+    title: "서로 다른 길을 걸어온 네 뮤지션, ‘건강’을 노래하다",
+    titleEn: "Four musicians, four paths, singing 'health'",
+    date: "2026.06.14",
+    url: "https://news-art.co.kr/news/article.html?no=32937",
   },
 ];
 

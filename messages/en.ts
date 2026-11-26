@@ -10,6 +10,9 @@ export const en: Dictionary = {
     aboutTitle: "About — Kim Dongsan & Blueeewoot",
     liveTitle: "Live — Kim Dongsan & Blueeewoot",
     pressTitle: "Press — Kim Dongsan & Blueeewoot",
+    galleryTitle: "Photographs — Kim Dongsan & Blueeewoot",
+    galleryDescription:
+      "Kim Dongsan at Long Player and on Suwon stages, 2018. Each image is credited to its source.",
     contactTitle: "Contact — Kim Dongsan & Blueeewoot",
   },
   nav: {
@@ -17,6 +20,7 @@ export const en: Dictionary = {
     about: "About",
     live: "Live",
     press: "Press",
+    gallery: "Photos",
     contact: "Contact",
     menu: "Menu",
     close: "Close",
@@ -72,7 +76,7 @@ export const en: Dictionary = {
     featuredEyebrow: "Three songs to start",
     featuredTitle: "Songs that open the door",
     featuredBody:
-      "'Time', which follows a father's life; 'What Money Cannot Buy', for a heart that no sale could beat; and 'Ripples', sixteen years in the making.",
+      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for a heart that no sale could beat; and 'Ripples', sixteen years in the making.",
     quoteEyebrow: "The band said",
     showEyebrow: "Next stage",
     pressEyebrow: "Press",
@@ -106,12 +110,12 @@ export const en: Dictionary = {
     method: [
       {
         step: "01",
-        title: "Listen — 10 minutes",
+        title: "Listen — 10–30 minutes",
         body: "What do you want kept as a song? A layoff, redevelopment, family, love, loss. As they talk, a different story often surfaces.",
       },
       {
         step: "02",
-        title: "Write — 20 minutes",
+        title: "Write — 20 minutes to two hours",
         body: "He picks up the guitar there and then: words, melody. No fixed genre. A trot if a trot is needed, a blues if a blues is needed.",
       },
       {
@@ -120,8 +124,15 @@ export const en: Dictionary = {
         body: "He sings the finished song back to them. The moment it becomes theirs. More than a hundred songs since 2010.",
       },
     ],
+    songsEyebrow: "Commissioned songs",
+    songsTitle: "People who became songs",
+    songsIntro:
+      "Restaurants, alleys, factories, markets. He went to the people who needed a song and made one on the spot. Only what is documented in album notes and interviews.",
+    songsNote:
+      "Select a title to open the record it appears on. Places and communities are named rather than the people, out of respect for their privacy.",
+    galleryCta: "See more photographs",
     timelineEyebrow: "Timeline",
-    timelineTitle: "2010 → 2026",
+    timelineTitle: "2006 → 2026",
     membersEyebrow: "The band",
     membersTitle: "Four people",
     discographyEyebrow: "Releases",
@@ -131,7 +142,7 @@ export const en: Dictionary = {
     longPlayerEyebrow: "Suwon",
     longPlayerTitle: "Long Player",
     longPlayerBody:
-      "An LP and secondhand record shop near Janganmun in Suwon, also selling film cameras. He still listens to whoever opens the door. It doubles as a small living room for music and shows.",
+      "A reuse shop opened in May 2017 near Janganmun in Suwon. It sells LPs, secondhand records, film cameras and old objects, and doubles as a small living room for music and shows. He still listens to whoever opens the door.",
     longPlayerCta: "Open in maps",
     quoteText:
       "It has been seven years since we became a band. Because of this band I have been able to keep music in my hands and keep living.",
@@ -163,6 +174,11 @@ export const en: Dictionary = {
     mapKakao: "Kakao Map",
     onSaleNote:
       "Online sales close at midnight the day before the show. Tickets (QR) are sent by email.",
+    videosEyebrow: "Video",
+    videosTitle: "Songs off the stage",
+    videosNote:
+      "Click to play on YouTube. Each video links to its original public upload.",
+    watchOnYouTube: "Watch on YouTube",
   },
   press: {
     eyebrow: "Press",
@@ -184,6 +200,15 @@ export const en: Dictionary = {
     oneSheetTitle: "EPK one-sheet",
     print: "Print",
     credit: "Photos courtesy of Kim Dongsan & Blueeewoot",
+  },
+  gallery: {
+    eyebrow: "Photos",
+    title: "Records",
+    intro:
+      "Photographs from Long Player and Suwon venues in 2018 — before the band's first album.",
+    creditNote:
+      "Used with permission. Each image is credited below and links to the original article.",
+    source: "View original",
   },
   contact: {
     eyebrow: "Contact",
@@ -212,5 +237,6 @@ export const en: Dictionary = {
     about: "About",
     live: "Live",
     press: "Press",
+    gallery: "Photos",
   },
 };

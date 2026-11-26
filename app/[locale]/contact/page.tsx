@@ -100,6 +100,16 @@ export default async function ContactPage({
                 Facebook
               </a>
             </li>
+            <li>
+              <a
+                className="link-underline"
+                href={SITE.poclanos}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Poclanos
+              </a>
+            </li>
           </ul>
         </section>
 

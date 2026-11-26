@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { SHOWS, SHOW_DETAILS } from "@/data/shows";
 import { MiwonTitle } from "@/components/miwon-title";
 import { SITE } from "@/data/site";
+import { VIDEOS } from "@/data/videos";
+import { VideoEmbed } from "@/components/video-embed";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -186,6 +188,40 @@ export default async function LivePage({
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mt-20 md:mt-28">
+        <p className="eyebrow">{dict.live.videosEyebrow}</p>
+        <h2 className="mt-4">
+          <MiwonTitle
+            slug="videos"
+            locale={locale}
+            alt={dict.live.videosTitle}
+          />
+        </h2>
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {VIDEOS.map((video) => (
+            <div key={video.id}>
+              <VideoEmbed
+                id={video.id}
+                title={t(locale, { ko: video.title, en: video.titleEn })}
+                playLabel={dict.common.play}
+                watchLabel={dict.live.watchOnYouTube}
+              />
+              <p className="mt-3 text-[15px] font-medium tracking-[-0.01em]">
+                {t(locale, { ko: video.title, en: video.titleEn })}
+              </p>
+              <p className="mono mt-1 text-muted">
+                {video.date ? `${video.date} · ` : ""}
+                {t(locale, { ko: video.venue, en: video.venueEn })}
+              </p>
+              <p className="longform mt-2 text-[14px] text-muted">
+                {t(locale, { ko: video.note, en: video.noteEn })}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mono mt-6 text-muted">{dict.live.videosNote}</p>
       </section>
 
       <section className="mt-20 grid gap-8 border-y border-line py-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-14">

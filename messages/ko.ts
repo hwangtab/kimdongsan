@@ -8,6 +8,9 @@ export const ko = {
     aboutTitle: "소개 — 김동산과 블루이웃",
     liveTitle: "공연 — 김동산과 블루이웃",
     pressTitle: "프레스 — 김동산과 블루이웃",
+    galleryTitle: "사진 — 김동산과 블루이웃",
+    galleryDescription:
+      "롱플레이어와 수원 공연에서 찍은 김동산의 기록. 사진 출처를 표기했습니다.",
     contactTitle: "컨택트 — 김동산과 블루이웃",
   },
   nav: {
@@ -15,6 +18,7 @@ export const ko = {
     about: "소개",
     live: "공연",
     press: "프레스",
+    gallery: "사진",
     contact: "컨택트",
     menu: "메뉴",
     close: "닫기",
@@ -70,7 +74,7 @@ export const ko = {
     featuredEyebrow: "먼저 들어볼 세 곡",
     featuredTitle: "문을 여는 노래들",
     featuredBody:
-      "아버지의 시간을 따라가는 〈시간〉, 건물을 팔아도 이길 수 없었던 마음을 부르는 〈돈으로 살 수 없는 것〉, 16년을 흘러온 〈물결〉.",
+      "석관동 시계방의 시간을 따라가는 〈시간〉, 건물을 팔아도 이길 수 없었던 마음을 부르는 〈돈으로 살 수 없는 것〉, 16년을 흘러온 〈물결〉.",
     quoteEyebrow: "밴드가 말했다",
     showEyebrow: "다음 무대",
     pressEyebrow: "프레스",
@@ -104,12 +108,12 @@ export const ko = {
     method: [
       {
         step: "01",
-        title: "듣기 — 10분",
+        title: "듣기 — 10~30분",
         body: "무엇을 노래로 남기고 싶은지 묻는다. 해고, 재개발, 가족, 사랑, 상실. 말하다 보면 처음 생각과 다른 이야기가 나온다.",
       },
       {
         step: "02",
-        title: "만들기 — 20분",
+        title: "만들기 — 20분~두 시간",
         body: "그 자리에서 기타를 잡고 가사를 쓰고 멜로디를 만든다. 장르는 정해 두지 않는다. 트로트가 필요하면 트로트, 블루스가 필요하면 블루스.",
       },
       {
@@ -118,8 +122,15 @@ export const ko = {
         body: "완성된 노래를 그 사람 앞에서 부른다. 노래가 사람의 것이 되는 순간. 2010년부터 지금까지 100곡이 넘는다.",
       },
     ],
+    songsEyebrow: "출장작곡",
+    songsTitle: "노래가 된 사람들",
+    songsIntro:
+      "가게, 골목, 공장, 시장. 노래가 필요한 사람을 찾아가 그 자리에서 만든 곡들. 공개된 앨범 소개와 인터뷰에서 확인한 범위만 적었다.",
+    songsNote:
+      "곡 제목을 누르면 그 곡이 실린 음반으로 이동합니다. 사연의 당사자를 함부로 호명하지 않기 위해 장소와 공동체를 중심으로 적었습니다.",
+    galleryCta: "사진 더 보기",
     timelineEyebrow: "연표",
-    timelineTitle: "2010 → 2026",
+    timelineTitle: "2006 → 2026",
     membersEyebrow: "밴드",
     membersTitle: "네 사람",
     discographyEyebrow: "발매",
@@ -129,7 +140,7 @@ export const ko = {
     longPlayerEyebrow: "수원",
     longPlayerTitle: "롱플레이어",
     longPlayerBody:
-      "수원 장안문 근처에서 LP와 중고 음반, 필름카메라를 파는 가게. 가게 문을 여는 손님의 사연을 듣는 일이 지금도 이어진다. 공연과 음악이 머무는 작은 거실이기도 하다.",
+      "2017년 5월 문을 연 되살림 가게. LP와 중고 음반, 필름카메라, 오래된 물건을 되살려 팔고, 공연과 음악이 머무는 작은 거실로도 쓴다. 가게 문을 여는 손님의 사연을 듣는 일이 지금도 이어진다.",
     longPlayerCta: "지도에서 보기",
     quoteText:
       "밴드를 한지도 어느덧 7년째가 됐습니다. 이 밴드 덕분에 음악을 손에서 놓지 않고 살아 올 수 있었습니다.",
@@ -160,6 +171,11 @@ export const ko = {
     mapNaver: "네이버 지도",
     mapKakao: "카카오맵",
     onSaleNote: "온라인 예매는 공연 전날 자정에 마감됩니다. 티켓(QR)은 메일로 발송됩니다.",
+    videosEyebrow: "영상",
+    videosTitle: "무대 밖의 노래",
+    videosNote:
+      "클릭하면 유튜브에서 재생됩니다. 영상은 각 채널의 공개 링크를 그대로 연결했습니다.",
+    watchOnYouTube: "유튜브에서 보기",
   },
   press: {
     eyebrow: "프레스",
@@ -181,6 +197,15 @@ export const ko = {
     oneSheetTitle: "EPK 원시트",
     print: "인쇄하기",
     credit: "사진 제공 — 김동산과 블루이웃",
+  },
+  gallery: {
+    eyebrow: "사진",
+    title: "기록",
+    intro:
+      "롱플레이어와 수원의 공연장에서 찍은 사진들. 2018년, 아직 밴드의 첫 정규앨범이 나오기 전의 기록입니다.",
+    creditNote:
+      "사진 사용 허락을 받았습니다. 이미지 아래에 출처를 표기했고, 원문 기사로 연결됩니다.",
+    source: "원문 보기",
   },
   contact: {
     eyebrow: "컨택트",
@@ -209,6 +234,7 @@ export const ko = {
     about: "소개",
     live: "공연",
     press: "프레스",
+    gallery: "사진",
   },
 };
 

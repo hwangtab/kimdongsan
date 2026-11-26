@@ -52,12 +52,26 @@ export default async function HomePage({
         alternateName: "Kim Dongsan & Blueeewoot",
         url: SITE.url,
         genre: ["Folk", "Blues"],
+        sameAs: [SITE.instagram, SITE.facebook, SITE.poclanos],
         member: [
           { "@type": "Person", name: "김동산" },
           { "@type": "Person", name: "류준철" },
           { "@type": "Person", name: "이인우" },
           { "@type": "Person", name: "김예준" },
         ],
+      },
+      {
+        "@type": "Person",
+        "@id": `${SITE.url}/#kim-dongsan`,
+        name: "김동산",
+        alternateName: ["출장작곡가 김동산", "Kim Dongsan"],
+        jobTitle: "싱어송라이터, 출장작곡가",
+        url: `${SITE.url}/ko/about`,
+        sameAs: [SITE.instagram, SITE.facebook, SITE.poclanos],
+        memberOf: {
+          "@type": "MusicGroup",
+          name: "김동산과 블루이웃",
+        },
       },
       {
         "@type": "MusicAlbum",

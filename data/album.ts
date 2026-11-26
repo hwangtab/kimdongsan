@@ -187,9 +187,9 @@ export const TRACKS: Track[] = [
     titleTrack: true,
     audio: "/audio/preview/04.m4a",
     previewStart: 253,
-    note: "아버지의 생애를 시계추처럼 따라간다. 강화 교동에서 바라보이는 황해 연백, 전쟁, 보위부, 미 8240 켈로부대, 양구의 시계방, 석관동. 기술자였던 한 사람이 시간 속에서 흘러가는 이야기.",
+    note: "석관시장 골목 시계방의 노장인. 1930년에 태어난 시계 수리공의 생애를 시계추처럼 따라간다. 강화 교동에서 바라보이는 황해 연백, 전쟁, 보위부, 미 8240 켈로부대, 양구의 시계방, 석관동. 기술자였던 한 사람이 시간 속에서 흘러가는 이야기.",
     noteEn:
-      "His father's life, followed like a pendulum: Hwanghae across the water from Ganghwa, the war, a prison, the US 8240th Kello base, a clock shop in Yanggu, a room in Seokgwan-dong. The story of a technician carried along by time.",
+      "The old watchmaker in a Seokgwan Market alley. The life of a repairman born in 1930, followed like a pendulum: Hwanghae across the water from Ganghwa, the war, a prison, the US 8240th Kello base, a clock shop in Yanggu, a room in Seokgwan-dong. The story of a technician carried along by time.",
     lyricExcerpt: [
       "시간이 흘러가서 당신과 함께 고향을 보며 잠들 날이 멀지 않았소",
       "내게 시간은 음 ... 그렇게 별 이유없이 흘러 간다네",

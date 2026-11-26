@@ -11,9 +11,12 @@ export const SITE = {
   instagramHandle: "@dongsan_blueeewoot",
   longPlayerInstagram: "https://www.instagram.com/long_player_/",
   facebook: "https://www.facebook.com/takeoutsong/",
+  poclanos:
+    "https://poclanos.com/artist/%EC%B6%9C%EC%9E%A5%EC%9E%91%EA%B3%A1%EA%B0%80-%EA%B9%80%EB%8F%99%EC%82%B0/",
   longPlayer: {
     name: "롱플레이어",
     nameEn: "Long Player",
+    opened: "2017.05",
     address: "수원시 팔달구 정조로 886번길 12",
     addressEn: "12, Jeongjo-ro 886beon-gil, Paldal-gu, Suwon",
     phone: "010-3015-5985",
@@ -39,7 +42,7 @@ export const BIOS = {
     medium:
       "사람을 만나 이야기를 듣고, 그 자리에서 노래를 만든다. 2010년 수원의 공원에서 ‘단돈 1,000원’ 라면박스로 시작한 출장작곡이 7년 함께한 밴드의 첫 정규앨범이 되었다. 김동산(보컬·기타), 류준철(피아노·해먼드 오르간), 이인우(베이스), 김예준(드럼).",
     long:
-      "김동산은 스스로를 ‘출장작곡가’라 부른다. 2010년 수원의 한 공원에서 반핵 노래를 부르다 관객 반응이 없자, 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’이라고 적어 붙였다. 그날 이후 해고 노동자, 재개발 앞에 선 상인, 왕따를 겪은 아이까지, 자기 사연을 노래로 남기고 싶은 사람들이 그의 앞에 앉았다. 인터뷰 10분, 작곡과 즉흥연주 20분. 만들어진 노래가 100곡을 넘는다.\n\n2026년, 그 노래들이 밴드의 것이 되었다. 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준과 7년을 함께한 끝에 첫 정규앨범 《김동산과 블루이웃》을 냈다. 여덟 곡 동안 포크와 블루스, 재즈가 자리를 바꿔 앉는다. 해고와 젠트리피케이션, 전쟁을 건너온 아버지의 시간, 상여소리를 지켜온 사람의 목소리가 한 앨범에서 만난다.\n\n지금도 그는 수원 장안문 근처에서 LP와 중고 음반을 파는 가게 ‘롱플레이어’를 열어 두고, 문을 여는 손님의 사연을 듣는다.",
+      "김동산은 스스로를 ‘출장작곡가’라 부른다. 철학을 전공하고 외상 후 스트레스 연구소에서 사람들의 이야기를 기록했으며, 2007년부터 2010년까지 수원환경운동센터에서 반핵·4대강·쓰레기 줄이기 운동을 기획했다.\n\n2010년 수원의 한 공원에서 반핵 노래를 부르다 관객 반응이 없자, 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’이라고 적어 붙였다. 그날 이후 해고 노동자, 재개발 앞에 선 상인, 왕따를 겪은 아이까지, 자기 사연을 노래로 남기고 싶은 사람들이 그의 앞에 앉았다. 인터뷰 10~30분, 작곡과 즉흥연주 20분에서 두 시간. 만들어진 노래가 100곡을 넘는다.\n\n2026년, 그 노래들이 밴드의 것이 되었다. 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준과 7년을 함께한 끝에 첫 정규앨범 《김동산과 블루이웃》을 냈다. 여덟 곡 동안 포크와 블루스, 재즈가 자리를 바꿔 앉는다. 해고와 젠트리피케이션, 전쟁을 건너온 시계 수리공의 시간, 상여소리를 지켜온 사람의 목소리가 한 앨범에서 만난다.\n\n2017년 5월, 수원 장안문 근처에 되살림 가게 ‘롱플레이어’를 열었다. LP와 중고 음반, 필름카메라, 오래된 물건을 되살려 팔고, 공연과 음악이 머무는 작은 거실로 쓴다. 지금도 문을 여는 손님의 사연을 듣는다.",
   },
   en: {
     short:
@@ -47,20 +50,40 @@ export const BIOS = {
     medium:
       "He meets a person, listens to their story, and makes a song on the spot. What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Kim Dongsan (vocals, guitar), Ryu Jun-cheol (piano, Hammond organ), Lee In-woo (bass), Kim Ye-jun (drums).",
     long:
-      "Kim Dongsan calls himself a 'song-commissioning songwriter'. In 2010, after an anti-nuclear song fell flat in a Suwon park, he taped a ramen box that read 'Songs commissioned — 1,000 won only' and sat down. Since then, laid-off workers, shopkeepers facing redevelopment, a child who had been bullied — anyone who wanted their story kept as a song — have sat down in front of him. Ten minutes of interview, twenty minutes of writing and improvising. More than a hundred songs.\n\nIn 2026 those songs became a band's songs. After seven years with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun, the first full-length album, Kim Dongsan & Blueeewoot, arrived. Across eight tracks, folk, blues and jazz trade seats. Layoffs and gentrification, a father's life across the war, the voice of a man who has kept the funeral song alive — all meet on one record.\n\nHe still keeps Long Player, an LP and secondhand record shop near Janganmun in Suwon, and still listens to whoever walks in.",
+      "Kim Dongsan calls himself a 'song-commissioning songwriter'. He studied philosophy and worked at a PTSD research institute, recording people's stories; from 2007 to 2010 he programmed anti-nuclear, anti-dam and anti-waste campaigns at the Suwon Environmental Movement Center.\n\nIn 2010, after an anti-nuclear song fell flat in a Suwon park, he taped a ramen box that read 'Songs commissioned — 1,000 won only' and sat down. Since then, laid-off workers, shopkeepers facing redevelopment, a child who had been bullied — anyone who wanted their story kept as a song — have sat down in front of him. Ten to thirty minutes of interview, twenty minutes to two hours of writing and improvising. More than a hundred songs.\n\nIn 2026 those songs became a band's songs. After seven years with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun, the first full-length album, Kim Dongsan & Blueeewoot, arrived. Across eight tracks, folk, blues and jazz trade seats. Layoffs and gentrification, a watchmaker's life across the war, the voice of a man who has kept the funeral song alive — all meet on one record.\n\nIn May 2017 he opened Long Player, a reuse shop near Janganmun in Suwon. It sells LPs, secondhand records, film cameras and old objects, and doubles as a small living room for music and shows. He still listens to whoever walks in.",
   },
 };
 
 export const TIMELINE = [
   {
+    year: "2006",
+    ko: "서울내러티브연구소에서 외상 후 스트레스 연구·기록 업무를 한다. 사람의 이야기를 듣고 기록하는 일을 배운다.",
+    en: "Works at the Seoul Narrative Institute on PTSD research and documentation — learning to listen to, and record, other people's stories.",
+  },
+  {
+    year: "2007",
+    ko: "수원환경운동센터에서 2010년까지 반핵·4대강·쓰레기 줄이기 운동을 기획한다.",
+    en: "From 2007 to 2010 he programmes anti-nuclear, anti-dam and anti-waste campaigns at the Suwon Environmental Movement Center.",
+  },
+  {
     year: "2010",
-    ko: "수원의 한 공원. 반핵 노래 〈물결〉을 부른 뒤 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’을 적어 붙인다.",
-    en: "A park in Suwon. After singing the anti-nuclear song 'Ripples', he tapes a ramen box: 'Songs commissioned — 1,000 won only'.",
+    ko: "수원의 한 공원. 반핵 노래 〈물결〉을 부른 뒤 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’을 적어 붙인다. 2018년 무렵 5,000원으로 오른다.",
+    en: "A park in Suwon. After singing the anti-nuclear song 'Ripples', he tapes a ramen box: 'Songs commissioned — 1,000 won only'. By 2018 the price is 5,000 won.",
+  },
+  {
+    year: "2015",
+    ko: "미술관 명칭 변경 운동, 경기문화재단 프로젝트 등에서 사회적 사연을 노래로 만들기 시작한다.",
+    en: "He begins turning social stories into songs — a museum naming campaign, Gyeonggi Cultural Foundation projects.",
   },
   {
     year: "2016",
     ko: "자립음악생산조합의 컴필레이션 《젠트리피케이션》에 참여한다. 이 음반은 이듬해 한국대중음악상 선정위원회 특별상을 받는다.",
     en: "He contributes to Gentrification, a compilation by the Independent Music Producers' Cooperative. The album receives a special jury award at the Korean Music Awards the following year.",
+  },
+  {
+    year: "2017",
+    ko: "5월, 수원 장안문 근처에 되살림 가게 ‘롱플레이어’를 연다. 《새 민중음악 선곡집 Vol.2》에 〈연대의 노래〉가 실린다.",
+    en: "In May he opens Long Player, a reuse shop near Janganmun in Suwon. 'A Song of Solidarity' appears on New Folk Music Selection Vol.2.",
   },
   {
     year: "2018",

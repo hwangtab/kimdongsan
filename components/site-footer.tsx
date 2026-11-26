@@ -61,6 +61,11 @@ export function SiteFooter({
               </Link>
             </li>
             <li>
+              <Link className="link-underline" href={`/${locale}/gallery`}>
+                {dict.nav.gallery}
+              </Link>
+            </li>
+            <li>
               <Link className="link-underline" href={`/${locale}/contact`}>
                 {dict.nav.contact}
               </Link>

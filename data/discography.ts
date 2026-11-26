@@ -74,10 +74,12 @@ export const DISCOGRAPHY: Release[] = [
     titleEn: "New Folk Music Selection Vol.2 — Songs of Solidarity",
     type: "컴필레이션",
     typeEn: "Compilation",
-    role: "참여",
-    roleEn: "Featured",
-    note: "",
-    noteEn: "",
+    role: "참여 — 〈연대의 노래〉",
+    roleEn: "Featured — 'A Song of Solidarity'",
+    note: "성주 소성리 사드 배치 반대 투쟁 현장에서 정진석을 인터뷰해 만든 곡이 실렸다.",
+    noteEn:
+      "Includes 'A Song of Solidarity', made from an interview with Jeong Jin-seok at the Seongju Soseong-ri struggle against THAAD.",
+
   },
   {
     year: "2016",
