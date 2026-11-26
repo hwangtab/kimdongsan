@@ -39,6 +39,7 @@ export const BIOS = {
   ko: {
     short:
       "출장작곡가 김동산과 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준이 함께 만드는 포크·블루스 밴드.",
+    oneLine: "블루스와 포크를 한국 입맛으로 내는 집.",
     medium:
       "사람을 만나 이야기를 듣고, 그 자리에서 노래를 만든다. 2010년 수원의 공원에서 ‘단돈 1,000원’ 라면박스로 시작한 출장작곡이 7년 함께한 밴드의 첫 정규앨범이 되었다. 김동산(보컬·기타), 류준철(피아노·해먼드 오르간), 이인우(베이스), 김예준(드럼).",
     long:
@@ -47,6 +48,7 @@ export const BIOS = {
   en: {
     short:
       "A folk and blues band led by song-commissioning songwriter Kim Dongsan, with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun.",
+    oneLine: "Blues and folk, cooked the Korean way.",
     medium:
       "He meets a person, listens to their story, and makes a song on the spot. What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Kim Dongsan (vocals, guitar), Ryu Jun-cheol (piano, Hammond organ), Lee In-woo (bass), Kim Ye-jun (drums).",
     long:
@@ -143,5 +145,54 @@ export const MEMBERS = [
     note: "",
     noteEn: "",
     photo: "/images/band/member-4.jpg",
+  },
+];
+
+/* 하우스 룰. 경양식집 비유는 밴드의 태도와 방식에만 붙이고, 곡의 주제에는
+   쓰지 않는다는 전제 아래 네 항목을 고정한다. */
+export const PRINCIPLES = [
+  {
+    no: "01",
+    title: {
+      ko: "원 마이크, 원 테이크",
+      en: "One microphone, one take",
+    },
+    body: {
+      ko: "2018년 《서울·수원 이야기》의 방식 그대로. 편집보다 기록을 먼저 둔다.",
+      en: "As on Seoul · Suwon Stories (2018). Record first, edit second.",
+    },
+  },
+  {
+    no: "02",
+    title: {
+      ko: "장르를 정해두지 않는다",
+      en: "No fixed genre",
+    },
+    body: {
+      ko: "트로트가 필요하면 트로트, 블루스가 필요하면 블루스. 곡은 손님에 맞춰 낸다.",
+      en: "A trot if a trot is needed, a blues if a blues is needed. The song is made for the guest.",
+    },
+  },
+  {
+    no: "03",
+    title: {
+      ko: "사연의 주인을 호명하지 않는다",
+      en: "The owner of the story is not named",
+    },
+    body: {
+      ko: "곡의 자리는 사람 이름이 아니라 장소와 공동체로 적는다.",
+      en: "Songs are marked by their place and community, not by a person's name.",
+    },
+  },
+  {
+    no: "04",
+    title: {
+      ko: "값은 낮게 둔다",
+      en: "Keep the price low",
+    },
+    body: {
+      ko: "1,000원으로 정한 이유는 의뢰인도 나도 부담을 갖지 말자는 것이었다.",
+      en: "The 1,000-won price was set so that neither the person commissioning nor I would feel the weight.",
+    },
   },
 ];

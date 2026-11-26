@@ -58,9 +58,11 @@ export default async function OneSheetPage({
           </div>
         </header>
 
-        <p className="mt-4 text-[12px] leading-[1.75]">
-          {bio.medium}
+        <p className="mt-4 text-[13px] font-semibold leading-[1.5]">
+          {bio.oneLine}
         </p>
+
+        <p className="mt-2 text-[12px] leading-[1.75]">{bio.medium}</p>
 
         <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 border-y border-line py-3 text-[10px]">
           <p>

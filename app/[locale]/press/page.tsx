@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { CopyBio } from "@/components/copy-bio";
 import { Prompt } from "@/components/win";
 import { BIOS } from "@/data/site";
-import { COVERAGE, PRESS_KIT, QUOTES } from "@/data/press";
+import { COVERAGE, PRESS_KIT, PRESS_NOTE, QUOTES } from "@/data/press";
 import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -44,6 +44,37 @@ export default async function PressPage({
 
       <h1 className="text-head mt-4 md:text-hero">{dict.press.title}</h1>
       <p className="mono mt-2 text-muted">PRESS KIT · 2026.11.17</p>
+
+      <section className="mt-8 border-t border-line pt-6">
+        <Prompt path="PRESS" label={dict.press.pitchCmd} />
+        <div className="mt-4 grid gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-10">
+          <div>
+            <p className="mono text-signal">PITCH.TXT</p>
+            <h2 className="text-mid mt-2 leading-tight">
+              {dict.press.pitchTitle}
+            </h2>
+            <p className="mono mt-3 text-muted">{dict.press.pitchNote}</p>
+          </div>
+          <CopyBio
+            bios={[
+              {
+                label: PRESS_NOTE[locale].label,
+                text: PRESS_NOTE[locale].text,
+              },
+            ]}
+            copyLabel={dict.press.copy}
+            copiedLabel={dict.press.copied}
+          />
+        </div>
+        <div className="mt-8 border border-line p-4 md:p-5">
+          <p className="mono text-signal">{dict.press.factTitle}</p>
+          <ul className="longform mt-3 space-y-2 text-muted">
+            {PRESS_NOTE[locale].facts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <section className="mt-8 grid gap-8 border-t border-line pt-6 md:grid-cols-[0.72fr_1.28fr] md:gap-10">
         <div>

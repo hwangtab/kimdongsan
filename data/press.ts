@@ -161,6 +161,28 @@ export const COVERAGE = [
   },
 ];
 
+/* 기사용으로 그대로 복사해 쓸 수 있는 한 줄 소개와, 바로 확인할 사실 몇 가지. */
+export const PRESS_NOTE = {
+  ko: {
+    label: "한 줄 소개",
+    text: "블루스와 포크를 한국 입맛으로 내는 집.\n\n블루스·포크·록은 서양에서 온 요리다. 이 밴드는 그 요리를 한국의 재료와 입맛으로 다시 조리한다. 경양식집이 돈까스와 함박스테이크를 한국 식탁의 것으로 만들었듯, 김동산과 블루이웃은 블루스를 한국말의 리듬과 사연으로 다시 만든다.",
+    facts: [
+      "정규 1집은 2026년 11월 17일 발매했습니다.",
+      "〈시간〉은 석관시장 시계방의 시계 수리공(1930년생)의 이야기입니다.",
+      "2017 한국대중음악상 선정위원회 특별상은 《젠트리피케이션》 참여 음악인의 공동 수상입니다.",
+    ],
+  },
+  en: {
+    label: "One-liner",
+    text: "Blues and folk, cooked the Korean way.\n\nBlues, folk and rock came from elsewhere. This band re-cooks them with Korean ingredients, the way the old diners took Western dishes and made them belong to the neighbourhood.",
+    facts: [
+      "The debut album came out on November 17, 2026.",
+      "'Time' is the story of a watch repairer born in 1930, who kept a shop in Seokgwan Market.",
+      "The 2017 Korean Music Awards special jury award went jointly to the musicians who took part in the compilation Gentrification.",
+    ],
+  },
+} as const;
+
 export const PRESS_KIT = [
   {
     label: "앨범 커버",

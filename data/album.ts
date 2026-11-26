@@ -14,6 +14,12 @@ export type Track = {
   previewStart: number;
   note: string;
   noteEn: string;
+  /* 차림표(메뉴판) 열 — 재료는 사연의 주인 대신 장소·공동체로, 조리는 그 곡이
+     만들어진 방식으로 적는다. 사람 이름은 넣지 않는다. */
+  ingredient: string;
+  ingredientEn: string;
+  method: string;
+  methodEn: string;
   lyricExcerpt: string[];
   lyricExcerptEn: string[];
   lyrics: string[];
@@ -69,6 +75,10 @@ export const TRACKS: Track[] = [
     note: "가사 없이 문을 여는 연주. 누군가 들어오기를 기다리는 자리의 온도로 앨범이 시작된다.",
     noteEn:
       "An instrumental that opens the door. The album begins at the temperature of a room waiting for someone to walk in.",
+    ingredient: "—",
+    ingredientEn: "—",
+    method: "문을 여는 연주",
+    methodEn: "An instrumental that opens the door",
     lyricExcerpt: [],
     lyricExcerptEn: [],
     lyrics: [],
@@ -89,6 +99,10 @@ export const TRACKS: Track[] = [
     note: "서촌의 족발집 ‘궁중족발’. 사장 윤경자 씨의 이야기를 듣고 만든 곡이다. 가게를 지키려 모인 음악가, 시인, 신학생, 여성들, 다른 상인들. 건물을 팔아 얻은 돈이 이기지 못한 마음 하나를 노래한다.",
     noteEn:
       "A pork-trotter restaurant in Seochon called Gungjung Jokbal, its owner Yoon Kyung-ja, and the neighbours who stood outside to keep the demolition crews away. The song is about the one thing the sale of a building could not buy.",
+    ingredient: "서촌의 족발집",
+    ingredientEn: "A pork-trotter restaurant in Seochon",
+    method: "그 자리에서 즉흥",
+    methodEn: "Written there and then",
     lyricExcerpt: [
       "그가 길고 긴 잠에 들기 전엔 알 수 있을까?",
       "세상에 돈으로도 살 수 없는 게 있다는 걸",
@@ -138,6 +152,10 @@ export const TRACKS: Track[] = [
     note: "불안을 낮추는 약의 이름을 제목으로 삼은 블루스. 나약해진 마음, 끊이지 않는 기억, 천장만 바라보는 하루. 탓하지 않고 옆에 앉아 있는 곡이다.",
     noteEn:
       "A blues named after a tranquilliser. A will that has gone soft, memories that arrive uninvited, an afternoon spent staring at the ceiling. The song does not scold; it sits down beside it.",
+    ingredient: "천장만 바라보는 하루",
+    ingredientEn: "An afternoon spent staring at the ceiling",
+    method: "탓하지 않고 옆에 앉아서",
+    methodEn: "Sitting down beside it, without blame",
     lyricExcerpt: [
       "자유론 영혼 나약한 의지",
       "그 강했던 몸도 망가져",
@@ -190,6 +208,10 @@ export const TRACKS: Track[] = [
     note: "석관시장 골목 시계방의 노장인. 1930년에 태어난 시계 수리공의 생애를 시계추처럼 따라간다. 강화 교동에서 바라보이는 황해 연백, 전쟁, 보위부, 미 8240 켈로부대, 양구의 시계방, 석관동. 기술자였던 한 사람이 시간 속에서 흘러가는 이야기.",
     noteEn:
       "The old watchmaker in a Seokgwan Market alley. The life of a repairman born in 1930, followed like a pendulum: Hwanghae across the water from Ganghwa, the war, a prison, the US 8240th Kello base, a clock shop in Yanggu, a room in Seokgwan-dong. The story of a technician carried along by time.",
+    ingredient: "석관시장 시계방",
+    ingredientEn: "A clock shop in Seokgwan Market",
+    method: "인터뷰와 두 시간의 작업",
+    methodEn: "An interview and two hours of work",
     lyricExcerpt: [
       "시간이 흘러가서 당신과 함께 고향을 보며 잠들 날이 멀지 않았소",
       "내게 시간은 음 ... 그렇게 별 이유없이 흘러 간다네",
@@ -255,6 +277,10 @@ export const TRACKS: Track[] = [
     note: "큰일을 겪은 뒤의 공포와 고독. 말은 할 수 있었지만 대화는 할 수 없던 시간. 그 시간을 견디게 한 누군가를 ‘친구’라 부르고, 끝내 ‘우리’라 부른다.",
     noteEn:
       "Fear and solitude after something enormous. A time when he could speak but could not converse. The presence that carried him through is called a friend, and finally, 'we'.",
+    ingredient: "큰일을 겪은 뒤의 고독",
+    ingredientEn: "Solitude after something enormous",
+    method: "혼자에서 우리로",
+    methodEn: "From alone to us",
     lyricExcerpt: [
       "오 그렇다면 나는 당신을",
       "친구라고 부르겠소",
@@ -307,6 +333,10 @@ export const TRACKS: Track[] = [
     note: "아홉 살에 할아버지의 상여 소리를 듣고 귀에 담아 둔 사람이, 스물넷에 요령과 북을 잡고 열두 대문 가는 길을 부른다. 양평 상여소리꾼의 구술 생애가 전통 상여소리와 한 곡 안에서 겹친다.",
     noteEn:
       "At nine he heard his grandfather's funeral song and kept it in his ear. At twenty-four he took up the bell and drum and sang the road through twelve gates. An oral history of a Yangpyeong bier singer, folded into the traditional funeral song.",
+    ingredient: "양평의 상여소리꾼",
+    ingredientEn: "A bier singer in Yangpyeong",
+    method: "구술 생애와 한 곡 안에서",
+    methodEn: "An oral life, folded into one song",
     lyricExcerpt: [
       "아홉살 때 할아버지 상여나가는 소리",
       "나 귀에 담아뒀다가",
@@ -397,6 +427,10 @@ export const TRACKS: Track[] = [
     note: "2010년 수원의 한 공원에서 부른 반핵 노래. 2024년 싱글로 먼저 나왔고, 이번 앨범에서 강가 히말라야의 목소리를 얻어 다시 흐른다. 노래도 눈물도 같은 물결 속으로 간다.",
     noteEn:
       "An anti-nuclear song first sung in a Suwon park in 2010. It came out as a single in 2024 and returns here with Gangga Himalaya's voice. The song and the tears go into the same ripple.",
+    ingredient: "2010년 수원의 공원",
+    ingredientEn: "A park in Suwon, 2010",
+    method: "16년 뒤 다시 흐름",
+    methodEn: "Rising again sixteen years on",
     lyricExcerpt: [
       "얼마나 울고 내가 울고 또 울어야",
       "내 안의 당신을 만나게 될까",
@@ -457,6 +491,10 @@ export const TRACKS: Track[] = [
     note: "앨범의 다섯 번째 곡을 혼 섹션과 함께 다시 연다. Jonathan Schou의 편곡으로, 혼자였던 노래가 여럿의 자리로 바뀐다.",
     noteEn:
       "The fifth song opens again, this time with a horn section. In Jonathan Schou's arrangement, a song that began alone becomes a room full of people.",
+    ingredient: "다섯 번째 곡",
+    ingredientEn: "The fifth song",
+    method: "혼 섹션으로 다시 연다",
+    methodEn: "Opened again with a horn section",
     lyricExcerpt: [
       "오 그렇다면 나는 당신을",
       "친구라고 부르겠소",

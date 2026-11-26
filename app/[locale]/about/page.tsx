@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BIOS, MEMBERS, SITE, TIMELINE } from "@/data/site";
+import { BIOS, MEMBERS, PRINCIPLES, SITE, TIMELINE } from "@/data/site";
 import { DISCOGRAPHY } from "@/data/discography";
 import { SONG_STORIES } from "@/data/songs";
 import { QUOTES } from "@/data/press";
@@ -72,14 +72,40 @@ export default async function AboutPage({
         <Prompt path="ABOUT" label="type method.txt" />
         <h2 className="text-mid mt-4 md:text-head">{dict.about.methodTitle}</h2>
         <div className="mt-5 grid border border-line md:grid-cols-3">
-          {dict.about.method.map((step) => (
+          {dict.about.method.map((step, i) => (
             <div
               key={step.step}
               className="border-b border-line px-4 py-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
             >
               <p className="text-mid leading-none text-signal md:text-head">{step.step}</p>
+              <p className="mono mt-2 text-kitsch">{dict.about.methodCook[i]}</p>
               <h3 className="mt-3 text-[16px] leading-[1.5]">{step.title}</h3>
               <p className="longform mt-2 text-muted">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <Prompt path="ABOUT" label={dict.about.principlesEyebrow} />
+        <h2 className="text-mid mt-4 md:text-head">
+          {dict.about.principlesTitle}
+        </h2>
+        <div className="mt-5 grid border border-line sm:grid-cols-2">
+          {PRINCIPLES.map((principle) => (
+            <div
+              key={principle.no}
+              className="border-b border-line px-4 py-5 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 sm:odd:border-r"
+            >
+              <p className="text-mid leading-none text-signal md:text-head">
+                {principle.no}
+              </p>
+              <h3 className="mt-3 text-[16px] leading-[1.5]">
+                {t(locale, principle.title)}
+              </h3>
+              <p className="longform mt-2 text-muted">
+                {t(locale, principle.body)}
+              </p>
             </div>
           ))}
         </div>
@@ -101,7 +127,7 @@ export default async function AboutPage({
               className="group grid gap-1 border-t border-line py-4 md:grid-cols-[96px_1fr] md:gap-8"
             >
               <span className="mono text-muted">{song.year}</span>
-              <div>
+              <div className="min-w-0">
                 <p className="text-mid leading-tight group-hover:text-signal">
                   {t(locale, { ko: song.title, en: song.titleEn })}
                 </p>

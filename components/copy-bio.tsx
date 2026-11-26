@@ -37,7 +37,9 @@ export function CopyBio({
               {copied === index ? copiedLabel : copyLabel}
             </button>
           </div>
-          <p className="longform bg-screen p-4 text-screen-ink">{bio.text}</p>
+          <p className="longform whitespace-pre-line bg-screen p-4 text-screen-ink">
+            {bio.text}
+          </p>
           <p aria-live="polite" className="sr-only">
             {copied === index ? copiedLabel : ""}
           </p>

@@ -104,6 +104,59 @@ export default async function AlbumPage({
       </div>
 
       <section className="mt-10">
+        <Prompt path="ALBUM" label={dict.album.menuPrompt} />
+        <div className="mt-4">
+          <Win
+            label={locale === "ko" ? "차림표.TXT" : "MENU.TXT"}
+            right="SINCE 2010"
+            bodyClassName="p-0"
+          >
+            <div className="hidden gap-4 border-b border-line px-4 py-2 md:grid md:grid-cols-[48px_1fr_1.1fr_1.2fr_72px]">
+              <span className="mono text-muted">{dict.album.menuNo}</span>
+              <span className="mono text-muted">{dict.album.menuDish}</span>
+              <span className="mono text-muted">
+                {dict.album.menuIngredients}
+              </span>
+              <span className="mono text-muted">{dict.album.menuMethod}</span>
+              <span className="mono text-right text-muted">
+                {dict.album.menuServes}
+              </span>
+            </div>
+            {TRACKS.map((track) => (
+              <div
+                key={track.no}
+                className="grid gap-1 border-b border-line px-4 py-3 last:border-b-0 md:grid-cols-[48px_1fr_1.1fr_1.2fr_72px] md:items-baseline md:gap-4"
+              >
+                <div className="flex items-baseline gap-3 md:contents">
+                  <span className="mono text-signal">
+                    {String(track.no).padStart(2, "0")}
+                  </span>
+                  <span className="leading-tight">
+                    {t(locale, { ko: track.title, en: track.titleEn })}
+                  </span>
+                  <span className="mono ml-auto text-muted md:hidden">
+                    {track.duration}
+                  </span>
+                </div>
+                <span className="longform text-muted">
+                  {t(locale, {
+                    ko: track.ingredient,
+                    en: track.ingredientEn,
+                  })}
+                </span>
+                <span className="longform text-muted">
+                  {t(locale, { ko: track.method, en: track.methodEn })}
+                </span>
+                <span className="mono hidden text-muted md:block md:text-right">
+                  {track.duration}
+                </span>
+              </div>
+            ))}
+          </Win>
+        </div>
+      </section>
+
+      <section className="mt-10">
         <Prompt path="ALBUM" label="type tracklist.txt" />
         <div className="mt-4">
           <TrackList
