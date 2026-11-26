@@ -191,8 +191,8 @@
 
   .cursor {
     display: inline-block;
-    width: 0.06em;
-    height: 0.8em;
+    width: 0.3em;
+    height: 0.75em;
     background: var(--signal);
     animation: blink 1.06s steps(1, end) infinite;
   }
