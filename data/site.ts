@@ -21,8 +21,8 @@ export const SITE = {
     addressEn: "12, Jeongjo-ro 886beon-gil, Paldal-gu, Suwon",
     phone: "010-3015-5985",
     phoneHref: "+821030155985",
-    hours: "11:00–21:00 (비정기 휴무)",
-    hoursEn: "11:00–21:00 (irregular closures)",
+    hours: "13:00–22:00 (월·화 휴무)",
+    hoursEn: "13:00–22:00 (closed Mon & Tue)",
     naver: "https://map.naver.com/p/search/%EB%A1%B1%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4%20%EC%88%98%EC%9B%90",
     kakao: "https://map.kakao.com/?q=%EB%A1%B1%ED%94%8C%EB%A0%88%EC%9D%B4%EC%96%B4",
   },
@@ -43,7 +43,7 @@ export const BIOS = {
     medium:
       "사람을 만나 이야기를 듣고, 그 자리에서 노래를 만든다. 2010년 수원의 공원에서 ‘단돈 1,000원’ 라면박스로 시작한 출장작곡이 7년 함께한 밴드의 첫 정규앨범이 되었다. 김동산(보컬·기타), 류준철(피아노·해먼드 오르간), 이인우(베이스), 김예준(드럼).",
     long:
-      "김동산은 스스로를 ‘출장작곡가’라 부른다. 철학을 전공하고 외상 후 스트레스 연구소에서 사람들의 이야기를 기록했으며, 2007년부터 2010년까지 수원환경운동센터에서 반핵·4대강·쓰레기 줄이기 운동을 기획했다.\n\n2010년 수원의 한 공원에서 반핵 노래를 부르다 관객 반응이 없자, 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’이라고 적어 붙였다. 그날 이후 해고 노동자, 재개발 앞에 선 상인, 왕따를 겪은 아이까지, 자기 사연을 노래로 남기고 싶은 사람들이 그의 앞에 앉았다. 인터뷰 10~30분, 작곡과 즉흥연주 20분에서 두 시간. 만들어진 노래가 100곡을 넘는다.\n\n2026년, 그 노래들은 밴드의 노래가 됐다. 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준과 7년을 함께한 끝에 첫 정규앨범 《김동산과 블루이웃》을 냈다. 여덟 곡에 걸쳐 포크와 블루스, 재즈가 번갈아 나온다. 해고와 젠트리피케이션, 전쟁을 건너온 시계 수리공의 시간, 상여소리를 지켜온 사람의 목소리가 한 앨범에 모였다.\n\n2017년 5월, 수원 장안문 근처에 되살림 가게 ‘롱플레이어’를 열었다. LP와 중고 음반, 필름카메라, 오래된 물건을 되살려 팔고, 공연과 음악이 머무는 작은 거실로 쓴다. 지금도 가게에 들어오는 손님의 사연을 듣는다.",
+      "김동산(본명 김동현)은 스스로를 ‘출장작곡가’라 부른다. 철학을 전공하고 외상 후 스트레스 연구소에서 사람들의 이야기를 기록했으며, 2007년부터 2010년까지 수원환경운동센터에서 반핵·4대강·쓰레기 줄이기 운동을 기획했다.\n\n2010년 수원의 한 공원에서 반핵 노래를 부르다 관객 반응이 없자, 라면박스에 ‘출장작곡 해 드림 — 단돈 1,000원’이라고 적어 붙였다. 그날 이후 해고 노동자, 재개발 앞에 선 상인, 왕따를 겪은 아이까지, 자기 사연을 노래로 남기고 싶은 사람들이 그의 앞에 앉았다. 인터뷰 10~30분, 작곡과 즉흥연주 20분에서 두 시간. 만들어진 노래가 100곡을 넘는다. ‘한국의 우디 거스리’라는 별명도 그때부터 따라붙었다.\n\n2026년, 그 노래들은 밴드의 노래가 됐다. 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준과 7년을 함께한 끝에 첫 정규앨범 《김동산과 블루이웃》을 냈다. 여덟 곡에 걸쳐 포크와 블루스, 재즈가 번갈아 나온다. 해고와 젠트리피케이션, 전쟁을 건너온 시계 수리공의 시간, 상여소리를 지켜온 사람의 목소리가 한 앨범에 모였다.\n\n2017년 5월, 수원 장안문 근처에 되살림 가게 ‘롱플레이어’를 열었다. LP와 중고 음반, 필름카메라, 드립 커피를 매개로 하는 공간으로, 2층은 100석 규모의 공연장으로도 쓴다. 지금도 가게에 들어오는 손님의 사연을 듣는다.",
   },
   en: {
     short:
@@ -52,15 +52,14 @@ export const BIOS = {
     medium:
       "He meets a person, listens to their story, and makes a song on the spot. What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Kim Dongsan (vocals, guitar), Ryu Jun-cheol (piano, Hammond organ), Lee In-woo (bass), Kim Ye-jun (drums).",
     long:
-      "Kim Dongsan calls himself a 'song-commissioning songwriter'. He studied philosophy and worked at a PTSD research institute, recording people's stories; from 2007 to 2010 he programmed anti-nuclear, anti-dam and anti-waste campaigns at the Suwon Environmental Movement Center.\n\nIn 2010, after an anti-nuclear song fell flat in a Suwon park, he taped a ramen box that read 'Songs commissioned — 1,000 won only' and sat down. Since then, laid-off workers, shopkeepers facing redevelopment, a child who had been bullied — anyone who wanted their story kept as a song — have sat down in front of him. Ten to thirty minutes of interview, twenty minutes to two hours of writing and improvising. More than a hundred songs.\n\nIn 2026 those songs became the band's songs. After seven years with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun, the first full-length album, Kim Dongsan & Blueeewoot, arrived. Across eight tracks, folk, blues and jazz take turns. Layoffs and gentrification, a watchmaker's life across the war, the voice of a man who has kept the funeral song alive — all come together on one record.\n\nIn May 2017 he opened Long Player, a reuse shop near Janganmun in Suwon. It sells LPs, secondhand records, film cameras and old objects, and doubles as a small living room for music and shows. He still listens to whoever walks in.",
+      "Kim Dongsan (born Kim Dong-hyeon) calls himself a 'song-commissioning songwriter'. He studied philosophy and worked at a PTSD research institute, recording people's stories; from 2007 to 2010 he programmed anti-nuclear, anti-dam and anti-waste campaigns at the Suwon Environmental Movement Center.\n\nIn 2010, after an anti-nuclear song fell flat in a Suwon park, he taped a ramen box that read 'Songs commissioned — 1,000 won only' and sat down. Since then, laid-off workers, shopkeepers facing redevelopment, a child who had been bullied — anyone who wanted their story kept as a song — have sat down in front of him. Ten to thirty minutes of interview, twenty minutes to two hours of writing and improvising. More than a hundred songs; the nickname 'the Korean Woody Guthrie' has followed him since.\n\nIn 2026 those songs became the band's songs. After seven years with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun, the first full-length album, Kim Dongsan & Blueeewoot, arrived. Across eight tracks, folk, blues and jazz take turns. Layoffs and gentrification, a watchmaker's life across the war, the voice of a man who has kept the funeral song alive — all come together on one record.\n\nIn May 2017 he opened Long Player, a reuse shop near Janganmun in Suwon, built around records, film cameras and drip coffee. Its second floor doubles as a hundred-seat performance room. He still listens to whoever walks in.",
   },
 };
 
 export const TIMELINE = [
   {
     year: "2006",
-    ko: "서울내러티브연구소에서 외상 후 스트레스 연구·기록 업무를 한다. 사람의 이야기를 듣고 기록하는 일을 배운다.",
-    en: "Works at the Seoul Narrative Institute on PTSD research and documentation — learning to listen to, and record, other people's stories.",
+    ko: "서울내러티브연구소에서 외상 후 스트레스 연구·기록 업무를 한다. 사람의 이야기를 듣고 기록하는 일을 배운다.",    en: "Works at the Seoul Narrative Institute on PTSD research and documentation — learning to listen to, and record, other people's stories.",
   },
   {
     year: "2007",
@@ -79,8 +78,8 @@ export const TIMELINE = [
   },
   {
     year: "2016",
-    ko: "자립음악생산조합의 컴필레이션 《젠트리피케이션》에 참여한다. 이 음반은 이듬해 한국대중음악상 선정위원회 특별상을 받는다.",
-    en: "He contributes to Gentrification, a compilation by the Independent Music Producers' Cooperative. The album receives a special jury award at the Korean Music Awards the following year.",
+    ko: "테이크아웃드로잉 컴필레이션에 〈Game, Invisible Enemy〉로 참여한다. 이어 자립음악생산조합의 《젠트리피케이션》에 참여하고, 이 음반은 이듬해 한국대중음악상 선정위원회 특별상을 받는다.",
+    en: "Contributes 'Game, Invisible Enemy' to the Takeout Drawing compilation, then joins Gentrification, a compilation by the Independent Music Producers' Cooperative. The album receives a special jury award at the Korean Music Awards the following year.",
   },
   {
     year: "2017",
@@ -99,8 +98,8 @@ export const TIMELINE = [
   },
   {
     year: "2024",
-    ko: "밴드와 싱글 〈물결〉을 발매한다. 강정피스앤뮤직캠프 컴필레이션 《이름을 모르는 먼 곳의 그대에게》에도 참여한다.",
-    en: "The band releases the single 'Ripples' and joins the Gangjeong Peace Music Camp compilation To You in a Distant Place Whose Name I Don't Know.",
+    ko: "밴드와 싱글 〈물결〉을 발매한다. 강정피스앤뮤직캠프 컴필레이션 《이름을 모르는 먼 곳의 그대에게》에 참여하고, 이 음반은 CD로 먼저 완판된 뒤 2025년 2월 7일 음원으로 나온다.",
+    en: "The band releases the single 'Ripples' and joins the Gangjeong Peace Music Camp compilation To You in a Distant Place Whose Name I Don't Know. The CD sells out first; the digital release follows on 7 February 2025.",
   },
   {
     year: "2026",
@@ -124,8 +123,8 @@ export const MEMBERS = [
     nameEn: "Ryu Jun-cheol",
     role: "피아노 · 해먼드 오르간",
     roleEn: "Piano · Hammond organ",
-    note: "재즈 피아니스트.",
-    noteEn: "Jazz pianist.",
+    note: "재즈 피아니스트. 《My Favorite Things》(2019), 《From My Childhood 'til Now》(2020), 《Landscape》(2022).",
+    noteEn: "Jazz pianist. My Favorite Things (2019), From My Childhood 'til Now (2020), Landscape (2022).",
     photo: "/images/band/member-2.jpg",
   },
   {
@@ -133,8 +132,8 @@ export const MEMBERS = [
     nameEn: "Lee In-woo",
     role: "베이스",
     roleEn: "Bass",
-    note: "",
-    noteEn: "",
+    note: "수원 재즈씬에서 활동하는 베이시스트.",
+    noteEn: "A bassist working in the Suwon jazz scene.",
     photo: "/images/band/member-3.jpg",
   },
   {
@@ -142,8 +141,8 @@ export const MEMBERS = [
     nameEn: "Kim Ye-jun",
     role: "드럼",
     roleEn: "Drums",
-    note: "",
-    noteEn: "",
+    note: "밴드 버즈의 드러머. 2003년 데뷔.",
+    noteEn: "Drummer of the band Buzz. Debut in 2003.",
     photo: "/images/band/member-4.jpg",
   },
 ];

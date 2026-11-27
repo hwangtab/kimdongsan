@@ -42,17 +42,17 @@ export const DISCOGRAPHY: Release[] = [
       "The 2010 anti-nuclear song, rearranged by the band. It returns on the 2026 album.",
   },
   {
-    year: "2024",
-    date: "2024.11",
+    year: "2025",
+    date: "2025.02.07",
     title: "이름을 모르는 먼 곳의 그대에게",
     titleEn: "To You in a Distant Place Whose Name I Don't Know",
     type: "컴필레이션",
     typeEn: "Compilation",
     role: "참여 — 〈물결〉",
     roleEn: "Featured — 'Ripples'",
-    note: "강정피스앤뮤직캠프. 12팀이 전쟁과 폭력에 반대하며 만든 음반.",
+    note: "강정피스앤뮤직캠프. 12팀이 전쟁과 폭력에 반대하며 만든 음반. 2024년 10월 CD로 먼저 완판되고 2025년 2월 7일 음원으로 발매됐다.",
     noteEn:
-      "Gangjeong Peace Music Camp. Twelve acts against war and violence.",
+      "Gangjeong Peace Music Camp. Twelve acts against war and violence. The CD sold out in October 2024; the digital release followed on 7 February 2025.",
   },
   {
     year: "2018",
@@ -93,5 +93,18 @@ export const DISCOGRAPHY: Release[] = [
     note: "자립음악생산조합. 제14회 한국대중음악상 선정위원회 특별상 공동 수상.",
     noteEn:
       "Independent Music Producers' Cooperative. Shared special jury award at the 14th Korean Music Awards.",
+  },
+  {
+    year: "2016",
+    date: "2016.02.18",
+    title: "테이크아웃드로잉 컴필레이션",
+    titleEn: "Takeout Drawing Compilation",
+    type: "컴필레이션",
+    typeEn: "Compilation",
+    role: "참여 — 〈Game, Invisible Enemy〉",
+    roleEn: "Featured — 'Game, Invisible Enemy'",
+    note: "한남동 카페 ‘테이크아웃드로잉’이 건물주와 겪은 갈등을 기록한 음반. 카페 안에서 녹음했고, 김동산은 운영진의 사연을 듣고 30분 만에 〈Game, Invisible Enemy〉를 만들었다.",
+    noteEn:
+      "A record of the Hannam-dong cafe Takeout Drawing's conflict with its landlord, recorded inside the cafe. Kim Dongsan made 'Game, Invisible Enemy' in thirty minutes after hearing the staff's story.",
   },
 ];

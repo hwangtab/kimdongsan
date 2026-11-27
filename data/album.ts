@@ -424,9 +424,9 @@ export const TRACKS: Track[] = [
     duration: "5:15",
     audio: "/audio/preview/07.m4a",
     previewStart: 172,
-    note: "2010년 수원의 한 공원에서 부른 반핵 노래. 2024년 싱글로 먼저 나왔고, 이번 앨범에서 강가 히말라야의 목소리를 더해 다시 나온다. 노래도 눈물도 같은 물결 속으로 간다.",
+    note: "2010년 수원의 한 공원에서 부른 반핵 노래. 2024년 싱글로 먼저 나왔고, 이번 앨범에서 강가 히말라야의 목소리를 더해 다시 나온다. 싱글의 코러스는 세민이 맡았다. 노래도 눈물도 같은 물결 속으로 간다.",
     noteEn:
-      "An anti-nuclear song first sung in a Suwon park in 2010. It came out as a single in 2024 and returns here with Gangga Himalaya's voice. The song and the tears go into the same ripple.",
+      "An anti-nuclear song first sung in a Suwon park in 2010. It came out as a single in 2024, with Semin on harmony, and returns here with Gangga Himalaya's voice. The song and the tears go into the same ripple.",
     ingredient: "2010년 수원의 공원",
     ingredientEn: "A park in Suwon, 2010",
     method: "16년 뒤 다시 흐름",
