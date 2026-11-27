@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { ALBUM } from "@/data/album";
 import { ARCHIVE } from "@/data/archive";
 import { SITE } from "@/data/site";
-import { VIDEOS } from "@/data/videos";
 
 const base = SITE.url;
 
@@ -31,23 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
             ? [`${base}/images/live/poster-1800.jpg`]
             : undefined;
 
-    const videos =
-      path === "/live"
-        ? VIDEOS.map((video) => ({
-            title: video.title,
-            thumbnail_loc: `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`,
-            description: video.note,
-            player_loc: `https://www.youtube-nocookie.com/embed/${video.id}`,
-          }))
-        : undefined;
-
+    // No <video:video> here: Naver's sitemap parser rejects the extension
+    // ("형식이 올바르지 않습니다"). The four YouTube performances are declared
+    // as VideoObject JSON-LD on /live instead, which Google reads anyway.
     return ["ko", "en"].map((locale) => ({
       url: `${base}/${locale}${path}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority,
       images,
-      videos,
       alternates: {
         languages: {
           ko: `${base}/ko${path}`,

@@ -2,6 +2,7 @@ import { ALBUM, TRACKS } from "@/data/album";
 import { ARCHIVE } from "@/data/archive";
 import { COVERAGE, QUOTES } from "@/data/press";
 import { SITE } from "@/data/site";
+import { VIDEOS } from "@/data/videos";
 import { FACTS } from "@/data/facts";
 import { href, type Locale } from "@/lib/i18n";
 
@@ -307,7 +308,24 @@ export function albumGraph(locale: Locale) {
 export function liveGraph(locale: Locale) {
   return {
     "@context": "https://schema.org",
-    "@graph": [eventNode(locale), musicGroupNode(locale), albumNode(locale)],
+    "@graph": [
+      eventNode(locale),
+      musicGroupNode(locale),
+      albumNode(locale),
+      // Declared here rather than as <video:video> in the sitemap: Naver's
+      // parser rejects the video extension, and Google reads VideoObject.
+      ...VIDEOS.map((video) => ({
+        "@type": "VideoObject",
+        name: locale === "ko" ? video.title : video.titleEn,
+        description: locale === "ko" ? video.note : video.noteEn,
+        thumbnailUrl: `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`,
+        embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
+        ...(video.date
+          ? { uploadDate: `${video.date.replaceAll(".", "-")}T00:00:00+09:00` }
+          : {}),
+        publisher: { "@id": id.group },
+      })),
+    ],
   };
 }
 
