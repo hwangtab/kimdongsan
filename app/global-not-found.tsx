@@ -39,6 +39,7 @@ export default function GlobalNotFound() {
   return (
     <html
       lang="ko"
+      data-scroll-behavior="smooth"
       className={`${dos.variable} ${dosSerif.variable} ${dosSymbols.variable}`}
     >
       <body>

@@ -100,6 +100,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${dos.variable} ${dosSerif.variable} ${dosSymbols.variable}`}
     >
       <body className="flex min-h-screen flex-col">
