@@ -75,7 +75,7 @@ export const ko = {
     featuredEyebrow: "먼저 들어볼 세 곡",
     featuredTitle: "앨범을 여는 세 곡",
     featuredBody:
-      "석관동 시계방의 시간을 따라가는 〈시간〉, 건물을 팔아도 이길 수 없었던 마음을 부르는 〈돈으로 살 수 없는 것〉, 16년을 흘러온 〈물결〉.",
+      "석관동 시계방의 시간을 따라가는 〈시간〉, 건물을 팔아 얻은 돈으로도 이길 수 없었던 마음을 부르는 〈돈으로 살 수 없는 것〉, 16년을 흘러온 〈물결〉.",
     quoteEyebrow: "밴드가 말했다",
     showEyebrow: "다음 무대",
     pressEyebrow: "프레스",

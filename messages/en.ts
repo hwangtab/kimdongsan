@@ -77,7 +77,7 @@ export const en: Dictionary = {
     featuredEyebrow: "Three songs to start",
     featuredTitle: "Three songs to start with",
     featuredBody:
-      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for a heart that no sale could beat; and 'Ripples', sixteen years on.",
+      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for the heart money could not beat; and 'Ripples', sixteen years on.",
     quoteEyebrow: "The band said",
     showEyebrow: "Next stage",
     pressEyebrow: "Press",
