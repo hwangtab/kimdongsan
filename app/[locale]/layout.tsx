@@ -59,6 +59,12 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE.url),
+    verification: {
+      google: "89qyJKaq_jvjQe8T1bniJbm7YDSTLP2Kc9WGblgUA6A",
+      other: {
+        "naver-site-verification": "897702ad4f751e2e4baabded22011c0445d2f4c3",
+      },
+    },
     title: {
       default: dict.meta.homeTitle,
       template: locale === "ko" ? `%s — 김동산과 블루이웃` : `%s — Kim Dongsan & Blueeewoot`,
