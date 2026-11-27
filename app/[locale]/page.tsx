@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AudioPlayer } from "@/components/audio-player";
+import { JsonLd } from "@/components/json-ld";
 import { Prompt, Win } from "@/components/win";
 import { ALBUM, TRACKS, waveformFor } from "@/data/album";
 import { BIOS, SITE } from "@/data/site";
 import { QUOTES } from "@/data/press";
 import { SHOWS } from "@/data/shows";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { homeGraph } from "@/lib/schema";
 import { DEFAULT_IMAGE, pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -44,72 +46,9 @@ export default async function HomePage({
   const show = SHOWS.find((s) => s.featured)!;
   const quote = QUOTES[0];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MusicGroup",
-        name: "김동산과 블루이웃",
-        alternateName: "Kim Dongsan & Blueeewoot",
-        url: SITE.url,
-        genre: ["Folk", "Blues"],
-        sameAs: [SITE.instagram, SITE.facebook, SITE.poclanos],
-        member: [
-          { "@type": "Person", name: "김동산" },
-          { "@type": "Person", name: "류준철" },
-          { "@type": "Person", name: "이인우" },
-          { "@type": "Person", name: "김예준" },
-        ],
-      },
-      {
-        "@type": "Person",
-        "@id": `${SITE.url}/#kim-dongsan`,
-        name: "김동산",
-        alternateName: ["출장작곡가 김동산", "Kim Dongsan"],
-        jobTitle: "싱어송라이터, 출장작곡가",
-        url: `${SITE.url}/ko/about`,
-        sameAs: [SITE.instagram, SITE.facebook, SITE.poclanos],
-        memberOf: {
-          "@type": "MusicGroup",
-          name: "김동산과 블루이웃",
-        },
-      },
-      {
-        "@type": "MusicAlbum",
-        name: ALBUM.title,
-        byArtist: { "@type": "MusicGroup", name: "김동산과 블루이웃" },
-        datePublished: ALBUM.releaseDate,
-        numTracks: ALBUM.trackCount,
-        url: ALBUM.melon,
-      },
-      {
-        "@type": "MusicEvent",
-        name: "김동산과 블루이웃 정규 1집 발매 쇼케이스",
-        startDate: "2026-12-04T20:00:00+09:00",
-        eventStatus: "https://schema.org/EventScheduled",
-        location: {
-          "@type": "Place",
-          name: "청년문화공간 ju",
-          address: "서울특별시 마포구 월드컵북로2길 49",
-        },
-        performer: { "@type": "MusicGroup", name: "김동산과 블루이웃" },
-        offers: {
-          "@type": "Offer",
-          price: "30000",
-          priceCurrency: "KRW",
-          url: SITE.showUrl,
-          availability: "https://schema.org/InStock",
-        },
-      },
-    ],
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd graph={homeGraph(locale)} />
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-5 pb-10 pt-6 md:px-8 md:pb-14 md:pt-8">

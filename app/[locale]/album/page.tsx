@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TrackList } from "@/components/track-list";
 import { Prompt, Win } from "@/components/win";
+import { JsonLd } from "@/components/json-ld";
 import { ALBUM, CREDITS, TRACKS, waveformFor } from "@/data/album";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { albumGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -47,6 +49,7 @@ export default async function AlbumPage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={albumGraph(locale)} />
       <Prompt path="ALBUM" label="dir" />
 
       <h1 className="text-head mt-4 md:text-hero">

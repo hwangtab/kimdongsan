@@ -224,6 +224,34 @@ export const en: Dictionary = {
     oneSheetTitle: "EPK one-sheet",
     print: "Print",
     credit: "Photos courtesy of Kim Dongsan & Blueeewoot",
+    faqEyebrow: "Common questions",
+    faqTitle: "The short answers",
+    faq: [
+      {
+        q: "What is a commissioned song?",
+        a: "Kim Dongsan meets the person who needs a song, interviews them for 10 to 30 minutes, and writes and performs the song on the spot in 20 minutes to two hours. It began in 2010 in a Suwon park, with a ramen box reading 'Songs commissioned — 1,000 won only'.",
+      },
+      {
+        q: "Who is Kim Dongsan & Blueeewoot?",
+        a: "A folk and blues band: Kim Dongsan (vocals, guitar, harmonica), jazz pianist Ryu Jun-cheol (piano, Hammond organ), bassist Lee In-woo and drummer Kim Ye-jun. After seven years together they released their first full-length album in 2026.",
+      },
+      {
+        q: "When did the debut album come out?",
+        a: "Kim Dongsan & Blueeewoot was released on 17 November 2026 on the Afternoon label. Eight tracks, 45 minutes 5 seconds.",
+      },
+      {
+        q: "Where is the release showcase?",
+        a: "4 December 2026 at 8pm, at Dali Small Theater, Youth Culture Space ju, 49 World Cup buk-ro 2-gil, Mapo-gu, Seoul. 200 general-admission seats, 90 minutes.",
+      },
+      {
+        q: "What is Long Player?",
+        a: "The reuse shop and LP bar Kim Dongsan opened in May 2017 near Janganmun in Suwon. It sells records, secondhand LPs, film cameras and revived old objects, and doubles as a small performance room. 12, Jeongjo-ro 886beon-gil, Paldal-gu, Suwon.",
+      },
+      {
+        q: "How do I book the band?",
+        a: "Bookings, interviews and record enquiries go to Studio NOL (hello@studionol.co.kr, +82 10-4255-7893). The core lineup is four players; a guest horn section and chorus can be added.",
+      },
+    ],
   },
   gallery: {
     eyebrow: "Photos",

@@ -7,7 +7,9 @@ import { DISCOGRAPHY } from "@/data/discography";
 import { SONG_STORIES } from "@/data/songs";
 import { QUOTES } from "@/data/press";
 import { Prompt, Win } from "@/components/win";
+import { JsonLd } from "@/components/json-ld";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { aboutGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -47,6 +49,7 @@ export default async function AboutPage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={aboutGraph(locale)} />
       <Prompt path="ABOUT" label="type who.txt" />
 
       <h1 className="text-head mt-4 md:text-hero">
@@ -159,7 +162,9 @@ export default async function AboutPage({
               key={item.year}
               className="grid gap-1 border-b border-line py-3 md:grid-cols-[120px_1fr] md:gap-8"
             >
-              <p className="mono text-signal">{item.year}</p>
+              <time dateTime={item.year} className="mono text-signal">
+                {item.year}
+              </time>
               <p className="longform text-muted">
                 {t(locale, { ko: item.ko, en: item.en })}
               </p>
@@ -177,7 +182,9 @@ export default async function AboutPage({
               key={`${release.date}-${release.title}`}
               className="grid gap-1 border-b border-line py-3 md:grid-cols-[82px_1fr_120px] md:items-baseline md:gap-8"
             >
-              <p className="mono text-signal">{release.year}</p>
+              <time dateTime={release.date.replaceAll(".", "-")} className="mono text-signal">
+                {release.year}
+              </time>
               <div>
                 <p>{t(locale, { ko: release.title, en: release.titleEn })}</p>
                 <p className="mono mt-1 text-muted">
@@ -190,7 +197,11 @@ export default async function AboutPage({
                   </p>
                 )}
               </div>
-              <p className="mono text-muted md:text-right">{release.date}</p>
+              <p className="mono text-muted md:text-right">
+                <time dateTime={release.date.replaceAll(".", "-")}>
+                  {release.date}
+                </time>
+              </p>
             </div>
           ))}
         </div>
@@ -313,7 +324,7 @@ export default async function AboutPage({
         </blockquote>
         <figcaption className="mono mt-3 text-muted">
           — {t(locale, { ko: quote.source, en: quote.sourceEn })} ·{" "}
-          {quote.date}
+          <time dateTime={quote.date.replaceAll(".", "-")}>{quote.date}</time>
         </figcaption>
       </figure>
     </div>

@@ -5,8 +5,10 @@ import { SHOWS, SHOW_DETAILS } from "@/data/shows";
 import { SITE } from "@/data/site";
 import { VIDEOS } from "@/data/videos";
 import { VideoEmbed } from "@/components/video-embed";
+import { JsonLd } from "@/components/json-ld";
 import { Prompt, Win } from "@/components/win";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { liveGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -49,6 +51,7 @@ export default async function LivePage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={liveGraph(locale)} />
       <Prompt path="LIVE" label="run show.exe" />
 
       <h1 className="text-head mt-4 md:text-hero">
@@ -97,7 +100,9 @@ export default async function LivePage({
           <dl className="mono mt-5 space-y-1 border-t border-line pt-4">
             <div className="grid grid-cols-[88px_1fr] gap-4">
               <dt className="text-muted">{dict.live.date}</dt>
-              <dd>{featured.dateLabel}</dd>
+              <dd>
+                <time dateTime={featured.date}>{featured.dateLabel}</time>
+              </dd>
             </div>
             <div className="grid grid-cols-[88px_1fr] gap-4">
               <dt className="text-muted">{dict.live.time}</dt>
@@ -178,7 +183,9 @@ export default async function LivePage({
               key={show.id}
               className="grid gap-1 border-b border-line py-3 md:grid-cols-[140px_1fr_100px] md:items-baseline md:gap-8"
             >
-              <p className="mono text-signal">{show.dateLabel}</p>
+              <time dateTime={show.date} className="mono text-signal">
+                {show.dateLabel}
+              </time>
               <div>
                 <p>{t(locale, { ko: show.title, en: show.titleEn })}</p>
                 <p className="mono mt-1 text-muted">

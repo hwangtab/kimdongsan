@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyBio } from "@/components/copy-bio";
+import { JsonLd } from "@/components/json-ld";
 import { Prompt } from "@/components/win";
 import { BIOS } from "@/data/site";
 import { COVERAGE, PRESS_KIT, PRESS_NOTE, QUOTES } from "@/data/press";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pressGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -43,6 +45,7 @@ export default async function PressPage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={pressGraph(locale, [...dict.press.faq])} />
       <Prompt path="PRESS" label="dir" />
 
       <h1 className="text-head mt-4 md:text-hero">
@@ -135,7 +138,7 @@ export default async function PressPage({
                 ) : (
                   t(locale, { ko: quote.source, en: quote.sourceEn })
                 )}{" "}
-                · {quote.date}
+                · <time dateTime={quote.date.replaceAll(".", "-")}>{quote.date}</time>
               </figcaption>
             </figure>
           ))}
@@ -160,7 +163,9 @@ export default async function PressPage({
               <span className="group-hover:text-signal">
                 {t(locale, { ko: item.title, en: item.titleEn })}
               </span>
-              <span className="mono text-muted md:text-right">{item.date}</span>
+              <span className="mono text-muted md:text-right">
+                <time dateTime={item.date.replaceAll(".", "-")}>{item.date}</time>
+              </span>
             </a>
           ))}
         </div>
@@ -194,6 +199,19 @@ export default async function PressPage({
           {dict.press.oneSheet}{" "}<span aria-hidden="true">→</span>
         </Link>
         <p className="mono mt-5 text-muted">{dict.press.credit}</p>
+      </section>
+
+      <section className="mt-12">
+        <Prompt path="PRESS" label="type faq.txt" />
+        <h2 className="text-mid mt-4 md:text-head">{dict.press.faqTitle}</h2>
+        <dl className="mt-5 border-t border-line">
+          {dict.press.faq.map((item) => (
+            <div key={item.q} className="border-b border-line py-4 md:grid md:grid-cols-[1fr_1.6fr] md:gap-8">
+              <dt className="leading-tight">{item.q}</dt>
+              <dd className="longform mt-1 text-muted md:mt-0">{item.a}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
     </div>
   );

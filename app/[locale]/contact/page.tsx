@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { Prompt } from "@/components/win";
 import { SITE } from "@/data/site";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { contactGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -33,6 +35,7 @@ export default async function ContactPage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={contactGraph(locale, [])} />
       <Prompt path="CONTACT" label="mail" />
 
       <h1 className="text-head mt-4 md:text-hero">

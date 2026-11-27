@@ -2,8 +2,10 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ARCHIVE } from "@/data/archive";
+import { JsonLd } from "@/components/json-ld";
 import { Prompt, Win } from "@/components/win";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { galleryGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -43,6 +45,7 @@ export default async function GalleryPage({
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
+      <JsonLd graph={galleryGraph(locale)} />
       <Prompt path="PHOTO" label="dir /w *.jpg" />
 
       <h1 className="text-head mt-4 md:text-hero">
