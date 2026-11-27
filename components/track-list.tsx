@@ -49,10 +49,19 @@ export function TrackList({
           const hasLyrics = track.lyrics.length > 0;
           const hasExcerpt = excerpt.length > 0;
 
+          /**
+           * 처음 화면에서 펼쳐 두는 곡.
+           *
+           * 예전에는 `open={track.no === 4}`로 4번만 고정했다. 《김동산과
+           * 블루이웃》의 타이틀곡은 4번(〈시간〉)과 6번(〈양평상여소리꾼 노래〉)
+           * 두 곡이라 6번이 접힌 채로 나갔다. 앨범의 이야기가 가장 먼저 읽혀야
+           * 하는 자리이므로, titleTrack 표시를 따르되 없으면 4번을 쓴다.
+           */
+          const openByDefault = track.titleTrack || track.no === 4;
           return (
             <details
               key={track.no}
-              open={track.no === 4}
+              open={openByDefault}
               className="group border-b border-line last:border-b-0"
             >
               <summary className="flex cursor-pointer list-none items-baseline gap-3 px-4 py-3 text-left group-open:bg-panel-deep [&::-webkit-details-marker]:hidden">

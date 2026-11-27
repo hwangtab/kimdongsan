@@ -77,7 +77,7 @@ export const en: Dictionary = {
     featuredEyebrow: "Three songs to start",
     featuredTitle: "Three songs to start with",
     featuredBody:
-      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for the heart money could not beat; and 'Ripples', sixteen years on.",
+      "In February 2018, a song was recorded inside a pork-trotter restaurant in Seochon. Twelve forced evictions, a husband injured in the process, and neighbours who stood outside every night — 'What Money Cannot Buy'. Eight years later it is the second track on this album. Then 'Time', which follows a watchmaker born in 1930, and 'Ripples', sung in a park in 2010 and rising again sixteen years on.",
     quoteEyebrow: "The band said",
     showEyebrow: "Next stage",
     pressEyebrow: "Press",
