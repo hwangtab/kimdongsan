@@ -117,6 +117,30 @@ npm run assets:favicon    # app/favicon.ico (16·32·48px, 16px는 전용 그리
 - `main`에 푸시하면 Vercel이 자동 배포하고, PR은 프리뷰 배포를 만듭니다.
 - `data/site.ts`의 `SITE.url`이 canonical·sitemap·OG에 쓰입니다. 도메인을 바꾸면 이 값을 함께 고칩니다.
 
+## 검색·AI 등록
+
+소유확인 토큰은 `app/[locale]/layout.tsx`의 `metadata.verification`에 있습니다.
+도메인을 옮기면 새 속성을 등록하고 토큰을 교체합니다.
+
+| 도구 | 상태 | 비고 |
+| --- | --- | --- |
+| Google Search Console | 확인됨 | `sitemap.xml` 제출 (14 URL) |
+| 네이버 서치어드바이저 | 확인됨 | `sitemap.xml` 제출 |
+| Bing Webmaster Tools | 확인됨 | `sitemap.xml` 제출, IndexNow 사용 |
+| `/llms.txt` | 공개 | AI 답변 엔진용 요약 |
+| `/llms-full.txt` | 공개 | EPK 전문 (가사·크레딧·정정 사항) |
+
+```bash
+npm run seo:indexnow          # sitemap의 모든 URL을 IndexNow로 제출
+npm run seo:indexnow -- /ko/album /ko/live   # 특정 URL만
+```
+
+IndexNow 키 파일은 `public/<32자리 hex>.txt`이고, 저장소에 함께 커밋해야
+검색엔진이 소유를 확인할 수 있습니다.
+
+> 네이버는 `<video:video>`가 들어간 사이트맵을 거부합니다. 영상은
+> sitemap이 아니라 `/live`의 `VideoObject` JSON-LD로 선언합니다.
+
 ## 권리
 
 음원·사진·글의 권리는 김동산과 블루이웃에게 있습니다. 이 저장소의 코드는 참고용이며,

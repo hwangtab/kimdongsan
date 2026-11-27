@@ -12,7 +12,8 @@
     "assets:waveforms": "python3 scripts/waveforms.py",
     "assets:og": "uv run --with pillow --with fonttools --with brotli python scripts/prepare-og.py",
     "assets:dos-font": "uv run --with fonttools --with brotli python scripts/subset-dos-font.py",
-    "assets:favicon": "uv run --with pillow python scripts/prepare-favicon.py"
+    "assets:favicon": "uv run --with pillow python scripts/prepare-favicon.py",
+    "seo:indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "next": "16.4.6",
