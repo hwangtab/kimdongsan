@@ -55,7 +55,7 @@ export const en: Dictionary = {
     title: "Kim Dongsan\n& Blueeewoot",
     latin: "Kim Dongsan & Blueeewoot",
     lead: "He meets a person, listens to their story,\nand makes a song on the spot.",
-    body: "What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Across eight tracks, folk, blues and jazz take turns.",
+    body: "What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. All eight tracks are played by four people — folk at the root, reaching into blues, jazz and rock.",
     ctaAlbum: "Listen to the album",
     ctaShow: "Tickets for 12.04",
     ticker: [
@@ -233,7 +233,7 @@ export const en: Dictionary = {
       },
       {
         q: "Who is Kim Dongsan & Blueeewoot?",
-        a: "A folk and blues band: Kim Dongsan (vocals, guitar, harmonica), jazz pianist Ryu Jun-cheol (piano, Hammond organ), bassist Lee In-woo and drummer Kim Ye-jun. After seven years together they released their first full-length album in 2026.",
+        a: "A rock band: Kim Dongsan (vocals, guitar, harmonica), jazz pianist Ryu Jun-cheol (piano, Hammond organ), bassist Lee In-woo and drummer Kim Ye-jun — folk at the root. All eight tracks are played by the four of them. After seven years together they released their first full-length album in 2026.",
       },
       {
         q: "When did the debut album come out?",

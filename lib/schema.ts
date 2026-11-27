@@ -44,9 +44,9 @@ export function musicGroupNode(locale: Locale) {
     url: SITE.url,
     description:
       locale === "ko"
-        ? "출장작곡가 김동산과 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준으로 이루어진 포크·블루스 밴드."
-        : "A folk and blues band led by song-commissioning songwriter Kim Dongsan, with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun.",
-    genre: ["Folk", "Blues", "Jazz"],
+        ? "출장작곡가 김동산과 재즈 피아니스트 류준철, 베이시스트 이인우, 드러머 김예준으로 이루어진 록 밴드. 포크에서 출발해 블루스·재즈를 거쳐 록으로 확장했다."
+        : "A rock band led by song-commissioning songwriter Kim Dongsan, with jazz pianist Ryu Jun-cheol, bassist Lee In-woo and drummer Kim Ye-jun — folk at the root.",
+    genre: ["Rock", "Folk", "Blues", "Jazz"],
     foundingDate: String(FACTS.band.formed),
     foundingLocation: {
       "@type": "Place",

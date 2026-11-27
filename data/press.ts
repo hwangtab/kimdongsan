@@ -165,20 +165,28 @@ export const COVERAGE = [
 export const PRESS_NOTE = {
   ko: {
     label: "한 줄 소개",
-    text: "블루스와 포크를 한국 입맛으로 내는 집.\n\n블루스·포크·록은 서양에서 온 요리다. 이 밴드는 그 요리를 한국의 재료와 입맛으로 다시 조리한다. 경양식집이 돈까스와 함박스테이크를 한국 식탁의 것으로 만들었듯, 김동산과 블루이웃은 블루스를 한국말의 리듬과 사연으로 다시 만든다.",
+    text: "블루스와 포크를 한국 입맛으로 내는 집.\n\n블루스·포크·록은 서양에서 온 요리다. 이 밴드는 그 요리를 한국의 재료와 입맛으로 다시 조리한다. 경양식집이 돈까스와 함박스테이크를 한국 식탁의 것으로 만들었듯, 김동산과 블루이웃은 블루스를 한국말의 리듬과 사연으로 다시 만든다. 이번에는 밴드가 불을 켠다 — 여덟 곡 전부를 네 사람이 연주하고, 세 곡에 알토 색소폰과 트럼펫이 붙는다.",
     facts: [
       "정규 1집은 2026년 11월 17일 발매했습니다.",
+      "여덟 곡 전부를 김동산·류준철·이인우·김예준 네 사람이 연주합니다. 드럼·베이스·해먼드 오르간·일렉트릭 기타가 앨범 전체를 받치고, 세 곡에 알토 색소폰과 트럼펫이 더해집니다.",
+      "대표곡은 〈돈으로 살 수 없는 것〉입니다. 서촌의 족발집 ‘궁중족발’이 문을 닫으며 남긴 연대를 담았습니다.",
+      "〈물결〉은 2010년 수원의 한 공원에서 부른 반핵 노래가 2024년 싱글을 거쳐 밴드의 록 넘버로 완성된 곡입니다.",
       "〈시간〉은 석관시장 시계방의 시계 수리공(1930년생)의 이야기입니다.",
       "2017 한국대중음악상 선정위원회 특별상은 《젠트리피케이션》 참여 음악인의 공동 수상입니다.",
+      "2019 한국대중음악상 최우수 포크 음반 후보는 2018년 《서울·수원 이야기》입니다. 이번 앨범은 그 연장선에서 밴드와 함께 만든 첫 정규앨범입니다.",
     ],
   },
   en: {
     label: "One-liner",
-    text: "Blues and folk, cooked the Korean way.\n\nBlues, folk and rock came from elsewhere. This band re-cooks them with Korean ingredients, the way the old diners took Western dishes and made them belong to the neighbourhood.",
+    text: "Blues and folk, cooked the Korean way.\n\nBlues, folk and rock came from elsewhere. This band re-cooks them with Korean ingredients, the way the old diners took Western dishes and made them belong to the neighbourhood. This time the band turns the lights on: all eight tracks are played by four people, with alto saxophone and trumpet on three songs.",
     facts: [
       "The debut album came out on November 17, 2026.",
+      "All eight tracks are played by Kim Dongsan, Ryu Jun-cheol, Lee In-woo and Kim Ye-jun. Drums, bass, Hammond organ and electric guitar carry the record; alto saxophone and trumpet join on three songs.",
+      "The signature track is 'What Money Cannot Buy', about the solidarity that outlasted a pork-trotter restaurant in Seochon.",
+      "'Ripples' began as an anti-nuclear song sung in a Suwon park in 2010, became a single in 2024, and is now a band rock number.",
       "'Time' is the story of a watch repairer born in 1930, who kept a shop in Seokgwan Market.",
       "The 2017 Korean Music Awards special jury award went jointly to the musicians who took part in the compilation Gentrification.",
+      "The 2019 Best Folk Album nomination was for Seoul · Suwon Stories (2018). This album is the first full-length made with the band since then.",
     ],
   },
 } as const;
