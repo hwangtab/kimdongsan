@@ -274,9 +274,9 @@ export const TRACKS: Track[] = [
     duration: "4:43",
     audio: "/audio/preview/05.m4a",
     previewStart: 107,
-    note: "큰일을 겪은 뒤의 공포와 고독. 말은 할 수 있었지만 대화는 할 수 없던 시간. 그 시간을 견디게 한 누군가를 ‘친구’라 부르고, 끝내 ‘우리’라 부른다.",
+    note: "2007년 삼성 비자금 의혹을 폭로한 김용철 변호사의 사연으로 만든 곡이다. 폭로 뒤 그에게 돌아온 것은 ‘배신자’라는 말, 집까지 따라붙는 사람들, 고립이었다. 큰일을 겪은 뒤의 공포와 고독. 말은 할 수 있었지만 대화는 할 수 없던 시간. 그 시간을 견디게 한 누군가를 ‘친구’라 부르고, 끝내 ‘우리’라 부른다.",
     noteEn:
-      "Fear and solitude after something enormous. A time when he could speak but could not converse. The presence that carried him through is called a friend, and finally, 'we'.",
+      "Made from the story of Kim Yong-cheol, the lawyer who exposed Samsung's slush-fund scandal in 2007. What followed the disclosure was the word 'traitor', people tailing him to his home, and isolation. Fear and solitude after something enormous. A time when he could speak but could not converse. The presence that carried him through is called a friend, and finally, 'we'.",
     ingredient: "큰일을 겪은 뒤의 고독",
     ingredientEn: "Solitude after something enormous",
     method: "혼자에서 우리로",
