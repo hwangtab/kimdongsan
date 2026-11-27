@@ -63,6 +63,7 @@ export async function generateMetadata({
       google: "89qyJKaq_jvjQe8T1bniJbm7YDSTLP2Kc9WGblgUA6A",
       other: {
         "naver-site-verification": "897702ad4f751e2e4baabded22011c0445d2f4c3",
+        "msvalidate.01": "69198AE16B8F17326D9BA1DE992B3897",
       },
     },
     title: {
