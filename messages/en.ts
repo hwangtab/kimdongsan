@@ -111,6 +111,8 @@ export const en: Dictionary = {
   about: {
     eyebrow: "About",
     title: "Kim Dongsan,\nsong-commissioning songwriter",
+    h1Note:
+      " — the commissioned-song practice he began in 2010, his timeline, discography and the band",
     latin: "KIM DONGSAN · SONGWRITER",
     shopCredit: "Long Player · Voice of the People, 2018",
     lead: "He finds the person who needs a song, listens, and makes one on the spot.",
@@ -164,6 +166,8 @@ export const en: Dictionary = {
   live: {
     eyebrow: "Live",
     title: "Next stage",
+    h1Note:
+      " — the December 4, 2026 album release showcase at Youth Culture Space ju, plus past shows and videos",
     upcoming: "Upcoming",
     past: "Past shows",
     date: "Date",
@@ -198,6 +202,7 @@ export const en: Dictionary = {
   press: {
     eyebrow: "Press",
     title: "Words and assets",
+    h1Note: " — articles, interviews, bios and press assets for Kim Dongsan & Blueeewoot",
     bioEyebrow: "Bio",
     bioTitle: "Copy-ready introductions",
     bioNote: "Pick the length you need. Switch language with the button above.",
@@ -223,6 +228,8 @@ export const en: Dictionary = {
   gallery: {
     eyebrow: "Photos",
     title: "Photographs",
+    h1Note:
+      " — a 2018 photo archive of Kim Dongsan at Long Player and on Suwon stages",
     intro:
       "Photographs from Long Player and Suwon venues in 2018 — before the band's first album.",
     creditNote:
@@ -232,6 +239,8 @@ export const en: Dictionary = {
   contact: {
     eyebrow: "Contact",
     title: "Shows and interviews",
+    h1Note:
+      " — booking, press and record enquiries for Kim Dongsan & Blueeewoot, plus Long Player's address and hours",
     lead: "For bookings, interviews and record enquiries.",
     booking: "Booking & press",
     bookingNote: "EPK managed by Studio NOL",

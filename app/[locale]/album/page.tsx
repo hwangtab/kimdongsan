@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { TrackList } from "@/components/track-list";
 import { Prompt, Win } from "@/components/win";
 import { ALBUM, CREDITS, TRACKS, waveformFor } from "@/data/album";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,16 +15,21 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.albumTitle },
+  return pageMetadata({
+    locale,
+    path: "/album",
+    title: dict.meta.albumTitle,
     description: dict.album.lead,
-    alternates: alternates(locale, "/album"),
-    openGraph: {
-      title: dict.meta.albumTitle,
-      description: dict.album.lead,
-      images: [{ url: ALBUM.cover, width: 2000, height: 2000 }],
+    image: {
+      url: ALBUM.cover,
+      width: 2000,
+      height: 2000,
+      alt:
+        locale === "ko"
+          ? "정규 1집 《김동산과 블루이웃》 커버"
+          : "Cover of Kim Dongsan & Blueeewoot",
     },
-  };
+  });
 }
 
 export default async function AlbumPage({
@@ -43,7 +49,15 @@ export default async function AlbumPage({
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
       <Prompt path="ALBUM" label="dir" />
 
-      <h1 className="text-head mt-4 md:text-hero">{dict.nav.album}</h1>
+      <h1 className="text-head mt-4 md:text-hero">
+        {dict.nav.album}
+        <span className="sr-only">
+          {" — "}
+          {locale === "ko"
+            ? `정규 1집 《${ALBUM.title}》 수록곡·가사·크레딧`
+            : `the debut album ${ALBUM.titleEn} — tracklist, lyrics and credits`}
+        </span>
+      </h1>
       <p className="mono mt-2 text-muted">
         {dict.album.eyebrow} · 1ST ALBUM · {ALBUM.releaseLabel}
       </p>
@@ -105,6 +119,7 @@ export default async function AlbumPage({
 
       <section className="mt-10">
         <Prompt path="ALBUM" label={dict.album.menuPrompt} />
+        <h2 className="sr-only">{dict.album.menuTitle}</h2>
         <div className="mt-4">
           <Win
             label={locale === "ko" ? "차림표.TXT" : "MENU.TXT"}
@@ -158,6 +173,7 @@ export default async function AlbumPage({
 
       <section className="mt-10">
         <Prompt path="ALBUM" label="type tracklist.txt" />
+        <h2 className="sr-only">{dict.album.tracklist}</h2>
         <div className="mt-4">
           <TrackList
             tracks={TRACKS}
@@ -180,6 +196,7 @@ export default async function AlbumPage({
 
       <section className="mt-10">
         <Prompt path="ALBUM" label="type credits.txt" />
+        <h2 className="sr-only">{dict.album.creditsTitle}</h2>
         <div className="mt-4 grid border-t border-line md:grid-cols-2">
           {CREDITS.map((group) => (
             <div

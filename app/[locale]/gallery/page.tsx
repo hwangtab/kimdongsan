@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ARCHIVE } from "@/data/archive";
 import { Prompt, Win } from "@/components/win";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -13,11 +14,21 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.galleryTitle },
+  return pageMetadata({
+    locale,
+    path: "/gallery",
+    title: dict.meta.galleryTitle,
     description: dict.meta.galleryDescription,
-    alternates: alternates(locale, "/gallery"),
-  };
+    image: {
+      url: "/images/archive/long-player-2018.webp",
+      width: 800,
+      height: 450,
+      alt:
+        locale === "ko"
+          ? "롱플레이어 안에 서 있는 김동산, 2018"
+          : "Kim Dongsan inside Long Player, 2018",
+    },
+  });
 }
 
 export default async function GalleryPage({
@@ -34,7 +45,10 @@ export default async function GalleryPage({
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
       <Prompt path="PHOTO" label="dir /w *.jpg" />
 
-      <h1 className="text-head mt-4 md:text-hero">{dict.gallery.title}</h1>
+      <h1 className="text-head mt-4 md:text-hero">
+        {dict.gallery.title}
+        <span className="sr-only">{dict.gallery.h1Note}</span>
+      </h1>
       <p className="mono mt-2 text-muted">
         ARCHIVE · 2018 · {ARCHIVE.length} FILES
       </p>

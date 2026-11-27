@@ -66,7 +66,7 @@ export async function generateMetadata({
     description: dict.meta.description,
     alternates: {
       canonical: `/${locale}`,
-      languages: { ko: "/ko", en: "/en" },
+      languages: { ko: "/ko", en: "/en", "x-default": "/ko" },
     },
     openGraph: {
       type: "website",

@@ -25,13 +25,3 @@ export function href(locale: Locale, path = ""): string {
 export function otherLocale(locale: Locale): Locale {
   return locale === "ko" ? "en" : "ko";
 }
-
-export function alternates(locale: Locale, path = "") {
-  return {
-    canonical: href(locale, path),
-    languages: {
-      ko: href("ko", path),
-      en: href("en", path),
-    },
-  };
-}

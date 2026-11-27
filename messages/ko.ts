@@ -109,6 +109,7 @@ export const ko = {
   about: {
     eyebrow: "소개",
     title: "출장작곡가\n김동산",
+    h1Note: " — 2010년 시작한 출장작곡의 방식, 연표, 디스코그래피, 밴드 네 사람",
     latin: "KIM DONGSAN · SONGWRITER",
     shopCredit: "롱플레이어 · 민중의소리 2018",
     lead: "노래가 필요한 사람을 찾아가, 이야기를 듣고, 그 자리에서 곡을 만든다.",
@@ -162,6 +163,7 @@ export const ko = {
   live: {
     eyebrow: "공연",
     title: "다음 무대",
+    h1Note: " — 2026년 12월 4일 청년문화공간 ju 발매 쇼케이스, 지난 공연과 영상 기록",
     upcoming: "예정",
     past: "지난 공연",
     date: "일시",
@@ -195,6 +197,7 @@ export const ko = {
   press: {
     eyebrow: "프레스",
     title: "기사와 자료",
+    h1Note: " — 김동산과 블루이웃 기사·인터뷰·바이오·프레스킷",
     bioEyebrow: "바이오",
     bioTitle: "복사해서 쓰는 소개",
     bioNote: "길이에 맞게 골라 쓰세요. 영문은 언어 버튼에서 전환할 수 있습니다.",
@@ -220,6 +223,7 @@ export const ko = {
   gallery: {
     eyebrow: "사진",
     title: "기록",
+    h1Note: " — 롱플레이어와 수원 공연장에서 찍은 김동산 사진 아카이브, 2018년",
     intro:
       "롱플레이어와 수원의 공연장에서 찍은 사진들. 2018년, 아직 밴드의 첫 정규앨범이 나오기 전의 기록입니다.",
     creditNote:
@@ -229,6 +233,7 @@ export const ko = {
   contact: {
     eyebrow: "문의",
     title: "공연과 인터뷰",
+    h1Note: " — 김동산과 블루이웃 부킹·인터뷰·음반 문의, 롱플레이어 위치와 영업 시간",
     lead: "공연, 인터뷰, 음반 문의를 받습니다.",
     booking: "공연·인터뷰",
     bookingNote: "EPK 운영 — 스튜디오 놀",

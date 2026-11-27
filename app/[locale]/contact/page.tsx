@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Prompt } from "@/components/win";
 import { SITE } from "@/data/site";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,11 +13,12 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.contactTitle },
+  return pageMetadata({
+    locale,
+    path: "/contact",
+    title: dict.meta.contactTitle,
     description: dict.contact.lead,
-    alternates: alternates(locale, "/contact"),
-  };
+  });
 }
 
 export default async function ContactPage({
@@ -33,7 +35,10 @@ export default async function ContactPage({
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
       <Prompt path="CONTACT" label="mail" />
 
-      <h1 className="text-head mt-4 md:text-hero">{dict.contact.title}</h1>
+      <h1 className="text-head mt-4 md:text-hero">
+        {dict.contact.title}
+        <span className="sr-only">{dict.contact.h1Note}</span>
+      </h1>
       <p className="longform mt-4 max-w-xl leading-[1.5] md:text-mid">
         {dict.contact.lead}
       </p>

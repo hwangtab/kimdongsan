@@ -5,7 +5,8 @@ import { CopyBio } from "@/components/copy-bio";
 import { Prompt } from "@/components/win";
 import { BIOS } from "@/data/site";
 import { COVERAGE, PRESS_KIT, PRESS_NOTE, QUOTES } from "@/data/press";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -15,16 +16,18 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.pressTitle },
+  return pageMetadata({
+    locale,
+    path: "/press",
+    title: dict.meta.pressTitle,
     description: dict.press.bioNote,
-    alternates: alternates(locale, "/press"),
-    openGraph: {
-      title: dict.meta.pressTitle,
-      description: dict.press.bioNote,
-      images: [{ url: "/images/album/cover-2000.jpg", width: 2000, height: 2000 }],
+    image: {
+      url: "/images/album/cover-2000.jpg",
+      width: 2000,
+      height: 2000,
+      alt: "정규 1집 《김동산과 블루이웃》 커버",
     },
-  };
+  });
 }
 
 export default async function PressPage({
@@ -42,7 +45,10 @@ export default async function PressPage({
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
       <Prompt path="PRESS" label="dir" />
 
-      <h1 className="text-head mt-4 md:text-hero">{dict.press.title}</h1>
+      <h1 className="text-head mt-4 md:text-hero">
+        {dict.press.title}
+        <span className="sr-only">{dict.press.h1Note}</span>
+      </h1>
       <p className="mono mt-2 text-muted">PRESS KIT · 2026.11.17</p>
 
       <section className="mt-8 border-t border-line pt-6">

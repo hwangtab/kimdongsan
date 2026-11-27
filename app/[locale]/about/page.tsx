@@ -7,7 +7,8 @@ import { DISCOGRAPHY } from "@/data/discography";
 import { SONG_STORIES } from "@/data/songs";
 import { QUOTES } from "@/data/press";
 import { Prompt, Win } from "@/components/win";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,16 +18,19 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.aboutTitle },
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: dict.meta.aboutTitle,
     description: dict.about.lead,
-    alternates: alternates(locale, "/about"),
-    openGraph: {
-      title: dict.meta.aboutTitle,
-      description: dict.about.lead,
-      images: [{ url: "/images/album/cover-2000.jpg", width: 2000, height: 2000 }],
+    image: {
+      url: "/images/album/cover-2000.jpg",
+      width: 2000,
+      height: 2000,
+      alt: "정규 1집 《김동산과 블루이웃》 커버",
     },
-  };
+    type: "profile",
+  });
 }
 
 export default async function AboutPage({
@@ -51,6 +55,7 @@ export default async function AboutPage({
             {line}
           </span>
         ))}
+        <span className="sr-only">{dict.about.h1Note}</span>
       </h1>
       <p className="mono mt-2 text-kitsch">{dict.about.latin}</p>
       <p className="longform mt-5 max-w-2xl leading-[1.5] md:text-mid">

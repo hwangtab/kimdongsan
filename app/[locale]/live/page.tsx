@@ -6,7 +6,8 @@ import { SITE } from "@/data/site";
 import { VIDEOS } from "@/data/videos";
 import { VideoEmbed } from "@/components/video-embed";
 import { Prompt, Win } from "@/components/win";
-import { alternates, getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -16,16 +17,21 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "ko";
   const dict = getDictionary(locale);
-  return {
-    title: { absolute: dict.meta.liveTitle },
+  return pageMetadata({
+    locale,
+    path: "/live",
+    title: dict.meta.liveTitle,
     description: dict.live.title,
-    alternates: alternates(locale, "/live"),
-    openGraph: {
-      title: dict.meta.liveTitle,
-      description: dict.live.title,
-      images: [{ url: "/images/live/poster-1800.jpg", width: 1800, height: 2250 }],
+    image: {
+      url: "/images/live/poster-1800.jpg",
+      width: 1800,
+      height: 2250,
+      alt:
+        locale === "ko"
+          ? "김동산과 블루이웃 정규 1집 발매 쇼케이스 포스터"
+          : "Kim Dongsan & Blueeewoot album release showcase poster",
     },
-  };
+  });
 }
 
 export default async function LivePage({
@@ -45,7 +51,10 @@ export default async function LivePage({
     <div className="mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-8">
       <Prompt path="LIVE" label="run show.exe" />
 
-      <h1 className="text-head mt-4 md:text-hero">{dict.live.title}</h1>
+      <h1 className="text-head mt-4 md:text-hero">
+        {dict.live.title}
+        <span className="sr-only">{dict.live.h1Note}</span>
+      </h1>
       <p className="mono mt-2 text-muted">
         {featured.dateLabel} · {t(locale, { ko: featured.venue, en: featured.venueEn })}
       </p>
