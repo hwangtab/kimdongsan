@@ -198,7 +198,7 @@ export default async function AlbumPage({
               key={group.group}
               className="border-b border-line px-4 py-4 md:odd:border-r"
             >
-              <p className="mono text-signal">{group.group}</p>
+              <p className="mono text-ink">{group.group}</p>
               <ul className="longform mt-2 space-y-1 text-muted">
                 {(locale === "ko" ? group.ko : group.en).map((credit) => (
                   <li key={credit}>{credit}</li>

@@ -10,7 +10,9 @@ import { SITE } from "@/data/site";
 export function NotFoundScreen() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 md:px-8">
-      <p className="mono text-signal">C:\BD&gt; error 404</p>
+      <p className="mono text-ink">
+        C:\BD<span className="text-signal">&gt;</span> error 404
+      </p>
       <h1 className="text-head mt-4 md:text-hero">
         파일을 찾을 수 없습니다
       </h1>

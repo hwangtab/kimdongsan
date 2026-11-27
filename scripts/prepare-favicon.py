@@ -13,12 +13,13 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TARGET = ROOT / "app" / "favicon.ico"
 
-VOID = (7, 10, 24, 255)
-LINE = (43, 50, 104, 255)
+# Same tokens as app/icon.svg and app/globals.css.
+VOID = (5, 10, 46, 255)
+LINE = (84, 92, 171, 255)
 INK = (232, 230, 220, 255)
-SIGNAL = (91, 233, 240, 255)
-KITSCH = (255, 79, 163, 255)
-TICKET = (255, 210, 63, 255)
+SIGNAL = (126, 224, 220, 255)
+KITSCH = (255, 121, 184, 255)
+TICKET = (255, 215, 107, 255)
 
 # 32x32 design, same rectangles as app/icon.svg
 RECTS = [

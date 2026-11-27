@@ -133,7 +133,7 @@ export function SiteHeader({
         <div className="fixed inset-x-0 top-11 bottom-0 z-40 overflow-y-auto bg-void px-5 py-5 md:hidden">
           <nav className="win">
             <div className="win-bar">
-              <span className="mono text-signal">MENU.TXT</span>
+              <span className="mono text-ink">MENU.TXT</span>
               <span className="mono text-muted">06</span>
             </div>
             <div className="divide-y divide-line">

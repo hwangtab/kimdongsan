@@ -5,26 +5,34 @@
      this instead of defaulting to light. */
   color-scheme: dark;
 
-  /* surfaces — 1990s VGA navy */
-  --void: #070a18;
-  --panel: #0e1330;
-  --panel-deep: #0a0f26;
+  /* surfaces — 1990s VGA navy. The hue follows the VT terminal blue
+     (#010080) sampled from a NowNuri session; only the lightness is pulled
+     down so full-width body text still sits on a calm field. */
+  --void: #050a2e;
+  --panel: #0b1140;
+  --panel-deep: #080d36;
 
   /* text */
   --ink: #e8e6dc;
-  --muted: #8c93b5;
+  --muted: #a6adc7;
 
-  /* bars */
-  --line: #2b3268;
+  /* bars — two weights. --line draws table rules, where a 3:1 stroke would
+     read as a wireframe; --line-strong draws window chrome, which has to be
+     visible as a frame. */
+  --line: #3d4589;
+  --line-strong: #545cab;
 
-  /* accents */
-  --signal: #5be9f0;
-  --kitsch: #ff4fa3;
-  --ticket: #ffd23f;
+  /* accents — ANSI hues, chroma toned down. The raw VGA primaries
+     (#55ffff / #ff55ff / #ffff55) were sharper than what shipped, and
+     cyan covers whole lines of prompt text, so saturation is lowered
+     while the hue stays at the terminal's. */
+  --signal: #7ee0dc;
+  --kitsch: #ff79b8;
+  --ticket: #ffd76b;
 
   /* one inverted screen (press bios, lyric sheets) */
   --screen: #e8e6dc;
-  --screen-ink: #070a18;
+  --screen-ink: #050a2e;
 }
 
 @theme inline {
@@ -34,6 +42,7 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-signal: var(--signal);
   --color-kitsch: var(--kitsch);
   --color-ticket: var(--ticket);
@@ -170,7 +179,7 @@
   /* --- window chrome --- */
 
   .win {
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-strong);
     background: var(--panel);
   }
 
@@ -179,7 +188,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-strong);
     padding: 2px 8px;
   }
 
@@ -315,6 +324,7 @@
   }
 
   .one-sheet .border-line,
+  .one-sheet .border-line-strong,
   .one-sheet .border-ink,
   .one-sheet .border-b,
   .one-sheet .border-y,
@@ -354,6 +364,7 @@
     --ink: #111111;
     --muted: #4a4a4a;
     --line: #b8b8b8;
+    --line-strong: #8a8a8a;
     --signal: #0b5d61;
     --kitsch: #9c0a53;
     --ticket: #6b5200;
@@ -391,7 +402,7 @@
   }
 
   .win {
-    border-color: var(--line);
+    border-color: var(--line-strong);
   }
 
   .btn-ticket,

@@ -49,7 +49,7 @@ export default async function ContactPage({
 
       <div className="mt-8 grid border border-line md:grid-cols-3">
         <section className="border-b border-line p-4 md:border-b-0 md:border-r">
-          <p className="mono text-signal">{dict.contact.booking}</p>
+          <p className="mono text-ink">{dict.contact.booking}</p>
           <h2 className="text-mid mt-2 leading-tight">
             {dict.contact.bookingNote}
           </h2>
@@ -68,7 +68,7 @@ export default async function ContactPage({
         </section>
 
         <section className="border-b border-line p-4 md:border-b-0 md:border-r">
-          <p className="mono text-signal">{dict.contact.artist}</p>
+          <p className="mono text-ink">{dict.contact.artist}</p>
           <h2 className="text-mid mt-2 leading-tight">
             {SITE.instagramHandle}
           </h2>
@@ -111,7 +111,7 @@ export default async function ContactPage({
         </section>
 
         <section className="p-4">
-          <p className="mono text-signal">{dict.contact.shop}</p>
+          <p className="mono text-ink">{dict.contact.shop}</p>
           <h2 className="text-mid mt-2 leading-tight">
             {t(locale, {
               ko: SITE.longPlayer.name,
@@ -173,7 +173,7 @@ export default async function ContactPage({
 
       <section className="mt-10 grid gap-8 border-t border-line pt-6 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
         <div>
-          <p className="mono text-signal">{dict.contact.tech}</p>
+          <p className="mono text-ink">{dict.contact.tech}</p>
           <h2 className="text-mid mt-2 md:text-head">{dict.live.techTitle}</h2>
         </div>
         <div>

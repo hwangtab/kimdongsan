@@ -44,7 +44,7 @@ export const generateStaticParams = () =>
 // Keeps mobile browser chrome and native widgets (scrollbars, form controls)
 // on the navy theme instead of defaulting to light.
 export const viewport: Viewport = {
-  themeColor: "#070a18",
+  themeColor: "#050a2e",
   colorScheme: "dark",
 };
 

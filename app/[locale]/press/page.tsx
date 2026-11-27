@@ -53,7 +53,7 @@ export default async function PressPage({
         <Prompt path="PRESS" label={dict.press.pitchCmd} />
         <div className="mt-4 grid gap-8 md:grid-cols-[0.72fr_1.28fr] md:gap-10">
           <div>
-            <p className="mono text-signal">PITCH.TXT</p>
+            <p className="mono text-ink">PITCH.TXT</p>
             <h2 className="text-mid mt-2 leading-tight">
               {dict.press.pitchTitle}
             </h2>
@@ -71,7 +71,7 @@ export default async function PressPage({
           />
         </div>
         <div className="mt-8 border border-line p-4 md:p-5">
-          <p className="mono text-signal">{dict.press.factTitle}</p>
+          <p className="mono text-ink">{dict.press.factTitle}</p>
           <ul className="longform mt-3 space-y-2 text-muted">
             {PRESS_NOTE[locale].facts.map((fact) => (
               <li key={fact}>{fact}</li>
@@ -82,7 +82,7 @@ export default async function PressPage({
 
       <section className="mt-8 grid gap-8 border-t border-line pt-6 md:grid-cols-[0.72fr_1.28fr] md:gap-10">
         <div>
-          <p className="mono text-signal">BIO.TXT</p>
+          <p className="mono text-ink">BIO.TXT</p>
           <h2 className="text-mid mt-2 leading-tight">
             {dict.press.bioTitle}
           </h2>

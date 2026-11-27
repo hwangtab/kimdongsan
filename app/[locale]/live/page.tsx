@@ -149,7 +149,7 @@ export default async function LivePage({
 
       <section className="mt-10 grid gap-8 md:grid-cols-2 md:gap-10">
         <div>
-          <p className="mono text-signal">{dict.live.cast}</p>
+          <p className="mono text-ink">{dict.live.cast}</p>
           <ul className="longform mt-2 space-y-1 border-t border-line pt-3">
             {(locale === "ko" ? SHOW_DETAILS.castKo : SHOW_DETAILS.castEn).map(
               (line) => (
@@ -159,7 +159,7 @@ export default async function LivePage({
           </ul>
         </div>
         <div>
-          <p className="mono text-signal">{dict.live.notes}</p>
+          <p className="mono text-ink">{dict.live.notes}</p>
           <p className="longform mt-2 border-t border-line pt-3 text-muted">
             {t(locale, { ko: featured.note, en: featured.noteEn })}
           </p>

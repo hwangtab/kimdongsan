@@ -30,13 +30,15 @@ SYMBOLS = FONTS / "DosSymbols-subset.woff2"
 OUT = ROOT / "public" / "images" / "og"
 
 W, H = 1200, 630
-VOID = (7, 10, 24)
-MUTED = (140, 147, 181)
+# Mirrors the tokens in app/globals.css. Keep the two in step: the cards are
+# shared links to pages that use these exact colours.
+VOID = (5, 10, 46)
+MUTED = (166, 173, 199)
 INK = (232, 230, 220)
-LINE = (43, 50, 104)
-SIGNAL = (91, 233, 240)
-KITSCH = (255, 79, 163)
-TICKET = (255, 210, 63)
+LINE = (61, 69, 137)
+SIGNAL = (126, 224, 220)
+KITSCH = (255, 121, 184)
+TICKET = (255, 215, 107)
 
 _gothic_cmap = set(TTFont(GOTHIC).getBestCmap())
 _symbol_cmap = set(TTFont(SYMBOLS).getBestCmap())

@@ -28,7 +28,7 @@ export function CopyBio({
       {bios.map((bio, index) => (
         <div key={bio.label} className="border border-line">
           <div className="win-bar">
-            <span className="mono text-signal">{bio.label}.TXT</span>
+            <span className="mono text-ink">{bio.label}.TXT</span>
             <button
               type="button"
               onClick={() => copy(bio.text, index)}

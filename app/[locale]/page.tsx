@@ -120,8 +120,11 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Ticker */}
-      <div className="ticker overflow-hidden border-y border-ticket bg-ticket py-1 text-void">
+      {/* Ticker — a filled yellow band put a full-width high-luminance
+          surface above every page, which is what read as glaring. The VT
+          screen never filled a band like this: the colour sat in the text.
+          So the fill is gone and the amber stays in the type. */}
+      <div className="ticker overflow-hidden border-y border-line-strong bg-panel-deep py-1">
         <div className="ticker-track">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
@@ -131,7 +134,9 @@ export default async function HomePage({
                   className="mono flex items-center whitespace-nowrap px-4"
                 >
                   {item}
-                  <span className="ml-4">▮</span>
+                  <span aria-hidden="true" className="ml-4 text-ticket">
+                    ▮
+                  </span>
                 </span>
               ))}
             </div>
@@ -251,7 +256,7 @@ export default async function HomePage({
       <section className="mx-auto max-w-6xl px-5 pb-12 md:px-8 md:pb-16">
         <div className="border border-line">
           <div className="win-bar bg-panel-deep">
-            <span className="mono text-signal">SHOW.EXE</span>
+            <span className="mono text-ink">SHOW.EXE</span>
             <span className="mono text-muted">2026.12.04</span>
           </div>
           <div className="grid gap-8 p-5 md:grid-cols-[1fr_0.9fr] md:items-center md:p-8">

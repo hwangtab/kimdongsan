@@ -35,7 +35,7 @@ export function TrackList({
   return (
     <div className="border border-line bg-panel">
       <div className="win-bar">
-        <span className="mono text-signal">TRACKLIST</span>
+        <span className="mono text-ink">TRACKLIST</span>
         <span className="mono text-muted">08 FILES</span>
       </div>
       <div>

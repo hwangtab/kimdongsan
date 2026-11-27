@@ -61,7 +61,7 @@ export default async function AboutPage({
       </p>
 
       <div className="mt-8 grid gap-8 border-t border-line pt-6 md:grid-cols-[160px_1fr] md:gap-10">
-        <p className="mono text-signal">BIO.TXT</p>
+        <p className="mono text-ink">BIO.TXT</p>
         <div className="space-y-5">
           {bio.split("\n\n").map((paragraph) => (
             <p key={paragraph.slice(0, 24)} className="longform">
