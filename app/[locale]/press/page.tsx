@@ -8,7 +8,7 @@ import { BIOS } from "@/data/site";
 import { COVERAGE, PRESS_KIT, PRESS_NOTE, QUOTES } from "@/data/press";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { pressGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -23,12 +23,7 @@ export async function generateMetadata({
     path: "/press",
     title: dict.meta.pressTitle,
     description: dict.press.bioNote,
-    image: {
-      url: "/images/album/cover-2000.jpg",
-      width: 2000,
-      height: 2000,
-      alt: "정규 1집 《김동산과 블루이웃》 커버",
-    },
+    image: OG_IMAGES.press,
   });
 }
 

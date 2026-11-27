@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { Prompt, Win } from "@/components/win";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { galleryGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -21,15 +21,7 @@ export async function generateMetadata({
     path: "/gallery",
     title: dict.meta.galleryTitle,
     description: dict.meta.galleryDescription,
-    image: {
-      url: "/images/archive/long-player-2018.webp",
-      width: 800,
-      height: 450,
-      alt:
-        locale === "ko"
-          ? "롱플레이어 안에 서 있는 김동산, 2018"
-          : "Kim Dongsan inside Long Player, 2018",
-    },
+    image: OG_IMAGES.gallery,
   });
 }
 

@@ -10,7 +10,7 @@ import { Prompt, Win } from "@/components/win";
 import { JsonLd } from "@/components/json-ld";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { aboutGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -25,12 +25,7 @@ export async function generateMetadata({
     path: "/about",
     title: dict.meta.aboutTitle,
     description: dict.about.lead,
-    image: {
-      url: "/images/album/cover-2000.jpg",
-      width: 2000,
-      height: 2000,
-      alt: "정규 1집 《김동산과 블루이웃》 커버",
-    },
+    image: OG_IMAGES.about,
     type: "profile",
   });
 }

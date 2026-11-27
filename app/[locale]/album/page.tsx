@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ALBUM, CREDITS, TRACKS, waveformFor } from "@/data/album";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { albumGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -22,15 +22,7 @@ export async function generateMetadata({
     path: "/album",
     title: dict.meta.albumTitle,
     description: dict.album.lead,
-    image: {
-      url: ALBUM.cover,
-      width: 2000,
-      height: 2000,
-      alt:
-        locale === "ko"
-          ? "정규 1집 《김동산과 블루이웃》 커버"
-          : "Cover of Kim Dongsan & Blueeewoot",
-    },
+    image: OG_IMAGES.album,
   });
 }
 

@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import { Prompt, Win } from "@/components/win";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { liveGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -24,15 +24,7 @@ export async function generateMetadata({
     path: "/live",
     title: dict.meta.liveTitle,
     description: dict.live.title,
-    image: {
-      url: "/images/live/poster-1800.jpg",
-      width: 1800,
-      height: 2250,
-      alt:
-        locale === "ko"
-          ? "김동산과 블루이웃 정규 1집 발매 쇼케이스 포스터"
-          : "Kim Dongsan & Blueeewoot album release showcase poster",
-    },
+    image: OG_IMAGES.live,
   });
 }
 

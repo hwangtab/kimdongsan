@@ -58,7 +58,7 @@ scripts/                    자산 재생성 스크립트
 npm run assets:audio      # 60초 발췌 → public/audio/preview/*.m4a
 npm run assets:waveforms  # 파형 → data/waveforms.json
 npm run assets:images     # 커버·포스터·라이브·멤버 → public/images
-npm run assets:og         # 1200×630 소셜 카드 (사이트와 같은 폰트 서브셋 사용)
+npm run assets:og         # 1200×630 소셜 카드 7장 (페이지별, 사이트와 같은 폰트 서브셋 사용)
 npm run assets:favicon    # app/favicon.ico (16·32·48px, 16px는 전용 그리드)
 ```
 
@@ -141,7 +141,7 @@ npm run assets:favicon    # app/favicon.ico (16·32·48px, 16px는 전용 그리
 ```bash
 npm run assets:dos-font  # 도스고딕·도스명조·기호 서브셋 (총 38KB)
 npm run assets:font      # 인쇄용 Pretendard 서브셋 (원시트 전용)
-npm run assets:og        # OG 카드 (도스 폰트로 렌더)
+npm run assets:og        # OG 카드 7장 (도스 폰트로 렌더, 페이지별)
 ```
 
 원본 TTF는 `media-src/fonts/`에만 두고, MIT 라이선스라 서브셋 결과물은 커밋합니다.

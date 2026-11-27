@@ -9,7 +9,7 @@ import { QUOTES } from "@/data/press";
 import { SHOWS } from "@/data/shows";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { homeGraph } from "@/lib/schema";
-import { DEFAULT_IMAGE, pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -25,7 +25,7 @@ export async function generateMetadata({
     locale,
     title: dict.meta.homeTitle,
     description: dict.meta.description,
-    image: DEFAULT_IMAGE,
+    image: OG_IMAGES.home,
   });
 }
 

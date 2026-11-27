@@ -5,7 +5,7 @@ import { Prompt } from "@/components/win";
 import { SITE } from "@/data/site";
 import { getDictionary, isLocale, t, type Locale } from "@/lib/i18n";
 import { contactGraph } from "@/lib/schema";
-import { pageMetadata } from "@/lib/seo";
+import { OG_IMAGES, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -20,6 +20,7 @@ export async function generateMetadata({
     path: "/contact",
     title: dict.meta.contactTitle,
     description: dict.contact.lead,
+    image: OG_IMAGES.contact,
   });
 }
 
