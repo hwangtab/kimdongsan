@@ -87,7 +87,7 @@ export const SHOWS: Show[] = [
     city: "수원",
     cityEn: "Suwon",
     status: "past",
-    note: "펑크록커 유동혁과 블루스 밴드가 마주 앉은 밤. 경기아트콜렉티브 협동조합이 기획했다.",
+    note: "펑크록커 유동혁과 블루스 밴드가 한 무대에 선 밤. 경기아트콜렉티브 협동조합이 기획했다.",
     noteEn:
       "A night pairing punk-rock singer Yoo Dong-hyuk with the blues band, programmed by the Gyeonggi Art Collective.",
   },

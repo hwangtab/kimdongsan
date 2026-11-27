@@ -37,7 +37,7 @@ export const DISCOGRAPHY: Release[] = [
     typeEn: "Single",
     role: "김동산과 블루이웃",
     roleEn: "Kim Dongsan & Blueeewoot",
-    note: "2010년의 반핵 노래가 밴드 편곡으로. 2026년 정규앨범에 다시 실렸다.",
+    note: "2010년의 반핵 노래를 밴드 편곡으로 다시 녹음했다. 2026년 정규앨범에도 실렸다.",
     noteEn:
       "The 2010 anti-nuclear song, rearranged by the band. It returns on the 2026 album.",
   },

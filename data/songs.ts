@@ -35,9 +35,9 @@ export const SONG_STORIES: SongStory[] = [
     year: "2015.10",
     place: "경기문화재단 황금마차",
     placeEn: "Gyeonggi Cultural Foundation's Golden Carriage",
-    note: "한 사람의 긴 생애를 한 곡에 담았다. 이름 없이 지나간 시간의 기록.",
+    note: "한 사람의 긴 생애를 한 곡에 담았다. 이름 없이 지나간 시간을 담았다.",
     noteEn:
-      "A long life folded into one song — a record of time that passed without a name.",
+      "A long life gathered into one song — time that passed without a name.",
     release: "2018 1집 《서울·수원 이야기》",
     releaseEn: "Seoul · Suwon Stories (2018)",
     href: ALBUM_2018,

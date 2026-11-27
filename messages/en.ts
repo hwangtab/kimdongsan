@@ -55,7 +55,7 @@ export const en: Dictionary = {
     title: "Kim Dongsan\n& Blueeewoot",
     latin: "Kim Dongsan & Blueeewoot",
     lead: "He meets a person, listens to their story,\nand makes a song on the spot.",
-    body: "What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Across eight tracks, folk, blues and jazz trade seats.",
+    body: "What began in 2010 in a Suwon park with a ramen box reading 'Songs commissioned — 1,000 won only' became the first album from a band that has played together for seven years. Across eight tracks, folk, blues and jazz take turns.",
     ctaAlbum: "Listen to the album",
     ctaShow: "Tickets for 12.04",
     ticker: [
@@ -75,23 +75,23 @@ export const en: Dictionary = {
       { value: "100+", label: "songs commissioned" },
     ],
     featuredEyebrow: "Three songs to start",
-    featuredTitle: "Songs that open the door",
+    featuredTitle: "Three songs to start with",
     featuredBody:
-      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for a heart that no sale could beat; and 'Ripples', sixteen years in the making.",
+      "'Time', which follows a watchmaker's life; 'What Money Cannot Buy', for a heart that no sale could beat; and 'Ripples', sixteen years on.",
     quoteEyebrow: "The band said",
     showEyebrow: "Next stage",
     pressEyebrow: "Press",
     aboutEyebrow: "The method",
-    aboutTitle: "Listening comes first",
+    aboutTitle: "He listens first",
     aboutBody:
-      "What people want from a song is different every time, and in the end much the same. Inside each of those lives is an enormous art.",
+      "What people want from a song is different every time, and in the end much the same. A whole life is a work of art.",
     aboutCta: "The method and the people",
     listenAlbum: "View the album",
   },
   album: {
     eyebrow: "Debut album",
     title: "Kim Dongsan & Blueeewoot",
-    lead: "What people want from a song differs, but this band's songs belong to wildly different genres. Folk, blues and jazz trade seats across one album.",
+    lead: "What people want from a song differs, but this band's songs belong to wildly different genres. Folk, blues and jazz take turns across one album.",
     menuPrompt: "type menu.txt",
     menuTitle: "Menu",
     menuNo: "No",
@@ -136,7 +136,7 @@ export const en: Dictionary = {
     ],
     methodCook: ["Prep", "Cook", "Serve"],
     principlesEyebrow: "House rules",
-    principlesTitle: "What this kitchen does not change",
+    principlesTitle: "Things this kitchen does not change",
     songsEyebrow: "Commissioned songs",
     songsTitle: "People who became songs",
     songsIntro:
@@ -222,7 +222,7 @@ export const en: Dictionary = {
   },
   gallery: {
     eyebrow: "Photos",
-    title: "Records",
+    title: "Photographs",
     intro:
       "Photographs from Long Player and Suwon venues in 2018 — before the band's first album.",
     creditNote:

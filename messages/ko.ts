@@ -11,7 +11,7 @@ export const ko = {
     galleryTitle: "사진 — 김동산과 블루이웃",
     galleryDescription:
       "롱플레이어와 수원 공연에서 찍은 김동산의 기록. 사진 출처를 표기했습니다.",
-    contactTitle: "컨택트 — 김동산과 블루이웃",
+    contactTitle: "문의 — 김동산과 블루이웃",
   },
   nav: {
     album: "앨범",
@@ -19,7 +19,7 @@ export const ko = {
     live: "공연",
     press: "프레스",
     gallery: "사진",
-    contact: "컨택트",
+    contact: "문의",
     menu: "메뉴",
     close: "닫기",
   },
@@ -53,7 +53,7 @@ export const ko = {
     title: "김동산과\n블루이웃",
     latin: "Kim Dongsan & Blueeewoot",
     lead: "사람을 만나고, 이야기를 듣고,\n그 자리에서 노래를 만든다.",
-    body: "2010년 수원의 공원에서 ‘단돈 1,000원’ 라면박스로 시작한 출장작곡이, 7년 함께한 밴드의 첫 정규앨범이 되었다. 여덟 곡 동안 포크와 블루스, 재즈가 자리를 바꿔 앉는다.",
+    body: "2010년 수원의 공원에서 ‘단돈 1,000원’ 라면박스로 시작한 출장작곡이, 7년 함께한 밴드의 첫 정규앨범이 되었다. 여덟 곡에 걸쳐 포크와 블루스, 재즈가 번갈아 나온다.",
     ctaAlbum: "앨범 듣기",
     ctaShow: "12.04 쇼케이스 예매",
     ticker: [
@@ -73,23 +73,23 @@ export const ko = {
       { value: "100+", label: "출장작곡" },
     ],
     featuredEyebrow: "먼저 들어볼 세 곡",
-    featuredTitle: "문을 여는 노래들",
+    featuredTitle: "앨범을 여는 세 곡",
     featuredBody:
       "석관동 시계방의 시간을 따라가는 〈시간〉, 건물을 팔아도 이길 수 없었던 마음을 부르는 〈돈으로 살 수 없는 것〉, 16년을 흘러온 〈물결〉.",
     quoteEyebrow: "밴드가 말했다",
     showEyebrow: "다음 무대",
     pressEyebrow: "프레스",
     aboutEyebrow: "출장작곡이란",
-    aboutTitle: "듣는 일이 먼저다",
+    aboutTitle: "먼저 듣는다",
     aboutBody:
-      "노래를 의뢰하는 사람은 저마다 다르고, 원하는 곡의 모습도 다르다. 그런데 끝까지 들어보면 결국 같은 이야기다. 그 사람 하나하나의 인생 안에 무엇보다 거대한 아트가 들어 있다.",
+      "노래를 의뢰하는 사람은 저마다 다르고, 원하는 곡의 모습도 다르다. 그런데 끝까지 들어보면 결국 같은 이야기다. 한 사람의 인생이 곧 예술이다.",
     aboutCta: "방식과 사람들",
     listenAlbum: "앨범 전체 보기",
   },
   album: {
     eyebrow: "정규 1집",
     title: "김동산과 블루이웃",
-    lead: "사람들이 원하는 곡의 모습은 각각 다르지만, 이 밴드의 노래들은 장르가 너무나 다르다. 포크와 블루스, 재즈가 한 앨범 안에서 자리를 바꿔 앉는다.",
+    lead: "사람들이 원하는 곡의 모습은 각각 다르지만, 이 밴드의 노래들은 장르가 제각각이다. 포크와 블루스, 재즈가 한 앨범 안에서 번갈아 나온다.",
     menuPrompt: "type 차림표.txt",
     menuTitle: "차림표",
     menuNo: "No",
@@ -100,7 +100,7 @@ export const ko = {
     tracklist: "수록곡",
     creditsTitle: "크레딧",
     creditsNote:
-      "2026년 11월 17일 애프터눈 발매. 전곡 작사·작곡 김동산, 프로듀스 김동산.",
+      "2026년 11월 17일 애프터눈 발매. 전곡 작사·작곡 김동산, 제작 김동산.",
     lyricsNote: "가사는 김동산이 제공한 원문을 따랐습니다.",
     trackCredits: "이 트랙의 크레딧",
     prev: "이전 곡",
@@ -129,12 +129,12 @@ export const ko = {
       {
         step: "03",
         title: "부르기",
-        body: "완성된 노래를 그 사람 앞에서 부른다. 노래가 사람의 것이 되는 순간. 2010년부터 지금까지 100곡이 넘는다.",
+        body: "완성된 노래를 그 사람 앞에서 부른다. 노래가 그 사람 것이 되는 순간. 2010년부터 지금까지 100곡이 넘는다.",
       },
     ],
     methodCook: ["재료 손질", "조리", "서빙"],
     principlesEyebrow: "원칙",
-    principlesTitle: "이 집이 바꾸지 않는 것",
+    principlesTitle: "바꾸지 않는 것들",
     songsEyebrow: "출장작곡",
     songsTitle: "노래가 된 사람들",
     songsIntro:
@@ -153,7 +153,7 @@ export const ko = {
     longPlayerEyebrow: "수원",
     longPlayerTitle: "롱플레이어",
     longPlayerBody:
-      "2017년 5월 문을 연 되살림 가게. LP와 중고 음반, 필름카메라, 오래된 물건을 되살려 팔고, 공연과 음악이 머무는 작은 거실로도 쓴다. 가게 문을 여는 손님의 사연을 듣는 일이 지금도 이어진다.",
+      "2017년 5월 문을 연 되살림 가게. LP와 중고 음반, 필름카메라, 오래된 물건을 되살려 팔고, 공연과 음악이 머무는 작은 거실로도 쓴다. 가게에 들어오는 손님의 사연을 듣는 일이 지금도 이어진다.",
     longPlayerCta: "지도에서 보기",
     quoteText:
       "밴드를 한지도 어느덧 7년째가 됐습니다. 이 밴드 덕분에 음악을 손에서 놓지 않고 살아 올 수 있었습니다.",
@@ -181,7 +181,7 @@ export const ko = {
     techEyebrow: "테크라이더",
     techTitle: "무대 구성",
     techBody:
-      "4인 밴드. 게스트 혼 섹션(테너·알토 색소폰, 트럼펫)과 코러스가 함께하는 구성도 가능하다. 상세 라이더와 스테이지 플롯은 문의 후 보내 드린다.",
+      "4인 밴드. 게스트 혼 섹션(테너·알토 색소폰, 트럼펫)과 코러스가 함께하는 구성도 가능하다. 상세 라이더와 스테이지 플롯은 문의 후 보내 드립니다.",
     techCta: "라이더 문의",
     mapNaver: "네이버 지도",
     mapKakao: "카카오맵",
@@ -227,7 +227,7 @@ export const ko = {
     source: "원문 보기",
   },
   contact: {
-    eyebrow: "컨택트",
+    eyebrow: "문의",
     title: "공연과 인터뷰",
     lead: "공연, 인터뷰, 음반 문의를 받습니다.",
     booking: "공연·인터뷰",
