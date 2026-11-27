@@ -134,6 +134,19 @@ export const SONG_STORIES: SongStory[] = [
     href: COMP_2016,
   },
   {
+    title: "돈으로 살 수 없는 것",
+    titleEn: "What Money Cannot Buy",
+    year: "2018.02",
+    place: "서촌 궁중족발",
+    placeEn: "Gungjung Jokbal, Seochon",
+    note: "임대료를 네 배로 올리겠다는 통보, 열두 차례의 강제집행, 그 과정에서 다친 남편. 가게를 지키려 모인 음악가·시인·신학생·여성들·다른 상인들. 김동산은 2018년 2월 그 가게에서 이 노래를 녹음했다.",
+    noteEn:
+      "A rent demand four times the old rate, twelve forced evictions, and a husband injured in the process. Musicians, poets, seminary students, women and neighbouring shopkeepers who stood together to keep the restaurant open. Kim Dongsan recorded the song there in February 2018.",
+    release: "2026 정규 1집 《김동산과 블루이웃》",
+    releaseEn: "Kim Dongsan & Blueeewoot (2026)",
+    href: ALBUM_2026,
+  },
+  {
     title: "시간",
     titleEn: "Time",
     year: "2026",
@@ -142,19 +155,6 @@ export const SONG_STORIES: SongStory[] = [
     note: "1930년생 시계 수리공의 생애. 황해 연백, 전쟁, 양구의 시계방, 석관동을 지나온 시간.",
     noteEn:
       "The life of a watch repairman born in 1930 — Hwanghae, the war, a clock shop in Yanggu, Seokgwan-dong.",
-    release: "2026 정규 1집 《김동산과 블루이웃》",
-    releaseEn: "Kim Dongsan & Blueeewoot (2026)",
-    href: ALBUM_2026,
-  },
-  {
-    title: "돈으로 살 수 없는 것",
-    titleEn: "What Money Cannot Buy",
-    year: "2026",
-    place: "서촌 궁중족발",
-    placeEn: "Gungjung Jokbal, Seochon",
-    note: "가게를 지키려 모인 음악가, 시인, 신학생, 여성들, 다른 상인들. 팔리지 않는 마음 하나.",
-    noteEn:
-      "Musicians, poets, seminary students, women and neighbouring shopkeepers who stood together to keep a restaurant open.",
     release: "2026 정규 1집 《김동산과 블루이웃》",
     releaseEn: "Kim Dongsan & Blueeewoot (2026)",
     href: ALBUM_2026,

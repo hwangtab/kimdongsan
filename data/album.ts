@@ -96,9 +96,9 @@ export const TRACKS: Track[] = [
     duration: "5:36",
     audio: "/audio/preview/02.m4a",
     previewStart: 41,
-    note: "서촌의 족발집 ‘궁중족발’. 사장 윤경자 씨의 이야기를 듣고 만든 곡이다. 가게를 지키려 모인 음악가, 시인, 신학생, 여성들, 다른 상인들. 건물을 팔아 얻은 돈으로도 이길 수 없었던 마음 하나를 노래한다.",
+    note: "서촌 체부동의 족발집 ‘궁중족발’. 사장 윤경자·김우식 부부에 따르면 2016년 새 건물주가 보증금 3,000만 원·월세 297만 원이던 조건을 보증금 1억 원·월세 1,200만 원으로 올리라고 했다. 부부는 가게를 비우지 않았다. 2017년 10월부터 이듬해 6월까지 강제집행이 열두 번 있었고, 두 번째 집행에서 김우식의 왼손 손가락 네 개가 부분 절단됐다. 음악가가 기타를 치고 시인과 신학생, 여성들, 다른 상인들이 밤마다 가게를 지켰다. 김동산은 2018년 2월 그 가게에서 이 노래를 녹음했다. 건물을 팔아 얻은 돈으로도 이길 수 없었던 마음 하나를 노래한다.",
     noteEn:
-      "A pork-trotter restaurant in Seochon called Gungjung Jokbal, its owner Yoon Kyung-ja, and the neighbours who stood outside to keep the demolition crews away. The song is about the one thing the sale of a building could not buy.",
+      "A pork-trotter restaurant in Seochon called Gungjung Jokbal. According to its owners, Yoon Kyung-ja and Kim Woo-sik, the new landlord raised their deposit from ₩30 million to ₩100 million and their monthly rent from ₩2.97 million to ₩12 million in 2016. The couple refused to leave. Twelve forced evictions followed between October 2017 and June 2018; during the second, four of Kim's fingers on his left hand were partly severed. Musicians played, poets and seminary students and women and neighbouring shopkeepers kept the restaurant occupied at night. Kim Dongsan recorded the song there in February 2018. It is about the one thing the sale of a building could not buy.",
     ingredient: "서촌의 족발집",
     ingredientEn: "A pork-trotter restaurant in Seochon",
     method: "그 자리에서 즉흥",
