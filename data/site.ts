@@ -141,8 +141,8 @@ export const MEMBERS = [
     nameEn: "Kim Ye-jun",
     role: "드럼",
     roleEn: "Drums",
-    note: "밴드 버즈의 드러머. 2003년 데뷔.",
-    noteEn: "Drummer of the band Buzz. Debut in 2003.",
+    note: "록 밴드 활동을 거쳐 온 드러머.",
+    noteEn: "A drummer who came up through rock bands.",
     photo: "/images/band/member-4.jpg",
   },
 ];
